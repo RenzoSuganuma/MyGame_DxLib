@@ -1,0 +1,3 @@
+fxc.exe /T ps_5_0 /E main /Fo erea_projection.pso erea_projection_ps.hlsl
+
+fxc.exe /T vs_5_0 /E main /Fo erea_projection.vso erea_projection_vs.hlsl

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{fc2585e0-9d12-4711-bf6c-c7c35c40fcb1}</ProjectGuid>
+    <RootNamespace>ManagedDxlGame</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\DirectXTex\Inc\DirectXTex;..\DirectXTK\Inc;..\ManagedDxlGame\program\library;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;$(IncludePath)</IncludePath>
+    <LibraryPath>..\DirectXTex\lib_debug;..\DirectXTK\lib_debug;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>..\DirectXTex\Inc\DirectXTex;..\DirectXTK\Inc;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;..\DirectXTK\lib_release;..\DirectXTex\lib_release;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>DirectXTex.lib;DirectXTK.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>DirectXTex.lib;DirectXTK.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ManagedDxlGame.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_barrel.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_box.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_cone.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_cone_cylinder.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_cube.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_cylinder.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_disk.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_disk_ring.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_dome.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_from_height_map.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_half_barrel.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_hollow_out_disk_plane.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_obj.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_plane.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_sphere.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_static_group.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_torus.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_triangle_equilateral.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_triangle_isosceles.cpp" />
+    <ClCompile Include="program\dxlib_ext\create_mesh\dxlib_ext_mesh_triangle_right.cpp" />
+    <ClCompile Include="program\dxlib_ext\dxlib_ext.cpp" />
+    <ClCompile Include="program\dxlib_ext\dxlib_ext_camera.cpp" />
+    <ClCompile Include="program\dxlib_ext\dxlib_ext_data.cpp" />
+    <ClCompile Include="program\dxlib_ext\dxlib_ext_texture.cpp" />
+    <ClCompile Include="program\dxlib_ext\effects\dxlib_ext_erea_projection.cpp" />
+    <ClCompile Include="program\dxlib_ext\effects\dxlib_ext_particle.cpp" />
+    <ClCompile Include="program\dxlib_ext\effects\dxlib_ext_particle_sub.cpp" />
+    <ClCompile Include="program\dxlib_ext\effects\dxlib_ext_screen_effect.cpp" />
+    <ClCompile Include="program\dxlib_ext\effects\dxlib_ext_shadow_map.cpp" />
+    <ClCompile Include="program\dxlib_ext\effects\dxlib_ext_water_plane.cpp" />
+    <ClCompile Include="program\dxlib_ext\effects\dxlib_ext_water_plane_sub.cpp" />
+    <ClCompile Include="program\dxlib_ext\gui\dxlib_ext_gui_check_box.cpp" />
+    <ClCompile Include="program\dxlib_ext\gui\dxlib_ext_gui_drag_box.cpp" />
+    <ClCompile Include="program\dxlib_ext\gui\dxlib_ext_gui_input_box.cpp" />
+    <ClCompile Include="program\dxlib_ext\gui\dxlib_ext_gui_menu_selector.cpp" />
+    <ClCompile Include="program\dxlib_ext\mesh\dxlib_ext_inst_mesh.cpp" />
+    <ClCompile Include="program\dxlib_ext\mesh\dxlib_ext_mesh.cpp" />
+    <ClCompile Include="program\dxlib_ext\mesh\dxlib_ext_mesh_base.cpp" />
+    <ClCompile Include="program\dxlib_ext\mesh\dxlib_ext_mesh_mtrl_gui_controller.cpp" />
+    <ClCompile Include="program\dxlib_ext\OBJLoader.cpp" />
+    <ClCompile Include="program\game\gm_main.cpp" />
+    <ClCompile Include="program\library\json11.cpp" />
+    <ClCompile Include="program\library\tnl_font_texture.cpp" />
+    <ClCompile Include="program\library\tnl_inclution_owner_locked.cpp" />
+    <ClCompile Include="program\library\tnl_input.cpp" />
+    <ClCompile Include="program\library\tnl_instance.cpp" />
+    <ClCompile Include="program\library\tnl_intersect.cpp" />
+    <ClCompile Include="program\library\tnl_math.cpp" />
+    <ClCompile Include="program\library\tnl_matrix.cpp" />
+    <ClCompile Include="program\library\tnl_quaternion.cpp" />
+    <ClCompile Include="program\library\tnl_rect.cpp" />
+    <ClCompile Include="program\library\tnl_seek_unit.cpp" />
+    <ClCompile Include="program\library\tnl_util.cpp" />
+    <ClCompile Include="program\library\tnl_vector2f.cpp" />
+    <ClCompile Include="program\library\tnl_vector2i.cpp" />
+    <ClCompile Include="program\library\tnl_vector3.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ManagedDxlGame.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ManagedDxlGame.ico" />
+    <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="program\dxlib_ext\dxlib_ext.h" />
+    <ClInclude Include="program\dxlib_ext\dxlib_ext_camera.h" />
+    <ClInclude Include="program\dxlib_ext\dxlib_ext_data.h" />
+    <ClInclude Include="program\dxlib_ext\dxlib_ext_render_param.h" />
+    <ClInclude Include="program\dxlib_ext\dxlib_ext_texture.h" />
+    <ClInclude Include="program\dxlib_ext\effects\dxlib_ext_erea_projection.h" />
+    <ClInclude Include="program\dxlib_ext\effects\dxlib_ext_particle.h" />
+    <ClInclude Include="program\dxlib_ext\effects\dxlib_ext_screen_effect.h" />
+    <ClInclude Include="program\dxlib_ext\effects\dxlib_ext_shadow_map.h" />
+    <ClInclude Include="program\dxlib_ext\effects\dxlib_ext_water_plane.h" />
+    <ClInclude Include="program\dxlib_ext\effects\shader\instatncing\shader_instancing_ps.h" />
+    <ClInclude Include="program\dxlib_ext\effects\shader\instatncing\shader_instancing_vs.h" />
+    <ClInclude Include="program\dxlib_ext\effects\shader\particle\shader_particle_gs0.h" />
+    <ClInclude Include="program\dxlib_ext\effects\shader\particle\shader_particle_gs1.h" />
+    <ClInclude Include="program\dxlib_ext\effects\shader\particle\shader_particle_ps.h" />
+    <ClInclude Include="program\dxlib_ext\effects\shader\particle\shader_particle_vs.h" />
+    <ClInclude Include="program\dxlib_ext\example\2D\example_2d_instancing.h" />
+    <ClInclude Include="program\dxlib_ext\example\2D\example_2d_on_select_object_from_line_loop.h" />
+    <ClInclude Include="program\dxlib_ext\example\2D\example_2d_particle.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_adjust_object_velocity.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_camera_free_look.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_camera_transform.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_combined usage.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_convert_to_screen.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_height_map_ground.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_instancing.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_intersect_correct_aabb.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_intersect_correct_sphere.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_intersect_screen_ray.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_particle.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_screen_efffect.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_shadow_map.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_start_up.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_use_skybox.h" />
+    <ClInclude Include="program\dxlib_ext\example\3D\example_3d_water_plane.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\000_example_hello_world.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\001_example_draw_string.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\002_example_input_keybord.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\003_example_input_mouse.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\004_example_input_game_pad.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\005_example_random_value.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\006_example_time_count.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\007_example_draw_shape.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\008_example_draw_graphics.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\009_example_animation.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\010_example_sound.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\011_example_draw_map_chip.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\012_example_intersect_mouse_box.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\013_example_intersect_box.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\014_example_intersect_sphere.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\015_example_intersect_rect_circle.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\016_example_intersect_line_circle.h" />
+    <ClInclude Include="program\dxlib_ext\example\beginner\game\example_junken.h" />
+    <ClInclude Include="program\dxlib_ext\example\util\example_utl_lerp_value.h" />
+    <ClInclude Include="program\dxlib_ext\example\util\example_utl_lerp_vector3.h" />
+    <ClInclude Include="program\dxlib_ext\example\util\example_utl_single_oscillationy.h" />
+    <ClInclude Include="program\dxlib_ext\gui\dxlib_ext_gui_check_box.h" />
+    <ClInclude Include="program\dxlib_ext\gui\dxlib_ext_gui_drag_box.h" />
+    <ClInclude Include="program\dxlib_ext\gui\dxlib_ext_gui_input_box.h" />
+    <ClInclude Include="program\dxlib_ext\gui\dxlib_ext_gui_menu_selector.h" />
+    <ClInclude Include="program\dxlib_ext\gui\dxlib_ext_gui_value_slider.h" />
+    <ClInclude Include="program\dxlib_ext\mesh\dxlib_ext_inst_mesh.h" />
+    <ClInclude Include="program\dxlib_ext\mesh\dxlib_ext_mesh.h" />
+    <ClInclude Include="program\dxlib_ext\mesh\dxlib_ext_mesh_base.h" />
+    <ClInclude Include="program\dxlib_ext\mesh\dxlib_ext_mesh_desc.h" />
+    <ClInclude Include="program\dxlib_ext\mesh\dxlib_ext_mesh_mtrl_gui_controller.h" />
+    <ClInclude Include="program\dxlib_ext\OBJLoader.h" />
+    <ClInclude Include="program\game\gm_main.h" />
+    <ClInclude Include="program\library\json11.hpp" />
+    <ClInclude Include="program\library\stb_image.h" />
+    <ClInclude Include="program\library\tnl_csv.h" />
+    <ClInclude Include="program\library\tnl_font_texture.h" />
+    <ClInclude Include="program\library\tnl_hierarchy_tree.h" />
+    <ClInclude Include="program\library\tnl_inclution_owner_locked.h" />
+    <ClInclude Include="program\library\tnl_input.h" />
+    <ClInclude Include="program\library\tnl_instance.h" />
+    <ClInclude Include="program\library\tnl_intersect.h" />
+    <ClInclude Include="program\library\tnl_link_linear.h" />
+    <ClInclude Include="program\library\tnl_math.h" />
+    <ClInclude Include="program\library\tnl_matrix.h" />
+    <ClInclude Include="program\library\tnl_quaternion.h" />
+    <ClInclude Include="program\library\tnl_rect.h" />
+    <ClInclude Include="program\library\tnl_seek_unit.h" />
+    <ClInclude Include="program\library\tnl_sequence.h" />
+    <ClInclude Include="program\library\tnl_shared_factory.h" />
+    <ClInclude Include="program\library\tnl_using.h" />
+    <ClInclude Include="program\library\tnl_util.h" />
+    <ClInclude Include="program\library\tnl_vector2f.h" />
+    <ClInclude Include="program\library\tnl_vector2i.h" />
+    <ClInclude Include="program\library\tnl_vector3.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
