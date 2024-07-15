@@ -2,25 +2,34 @@
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	ChangeWindowMode(TRUE);//非全画面にセット
-	SetGraphMode(640, 480, 32);//画面サイズ指定
+	ChangeWindowMode(true);
+
+	SetGraphMode(600, 500, 32);
 
 	if (DxLib_Init() == -1)	// DXLibの初期化
 	{
 		return -1;
 	}
 
-	ClearDrawScreen();
+	while (ProcessMessage() == 0)
+	{
+		auto color = GetColor(255, 255, 255);
 
-	SetDrawScreen(DX_SCREEN_BACK);
+		if (CheckHitKey(KEY_INPUT_SPACE) == 1)
+		{
+			color = GetColor(255, 255, 255);
+		}
+		else
+		{
+			color = GetColor(255, 0, 0);
+		}
 
-	LoadGraphScreen(0, 0, "DxLogo.jpg", TRUE);
+		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1)
+		{
+			DxLib_End();
+		}
 
-	ScreenFlip();
-
-	WaitKey();
-
-	DxLib_End();
-
+		DrawCircle(200, 300, 100, color);
+	}
 	return 0;
 }
