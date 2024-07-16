@@ -26,5 +26,8 @@
     <ClInclude Include="main_loop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="enhance_cpp_programing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
