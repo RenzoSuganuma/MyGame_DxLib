@@ -28,6 +28,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	{
 		ClearDrawScreen();
 
+		DrawString(0, screen_size.second - 20, "Hit ESC To Exit", GetColor(255, 255, 255));
+
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1)
 		{
 			main_loop->MainLoopExit();
