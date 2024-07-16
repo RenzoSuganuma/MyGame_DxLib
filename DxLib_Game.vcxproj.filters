@@ -29,5 +29,8 @@
     <ClInclude Include="enhance_cpp_programing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sarissa_generic_ptr_class.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

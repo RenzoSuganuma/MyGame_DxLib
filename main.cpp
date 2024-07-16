@@ -2,6 +2,7 @@
 #include "main_loop.h"
 #include "config_data.h"
 #include "enhance_cpp_programing.h"
+#include "sarissa_generic_ptr_class.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -14,7 +15,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	ChangeWindowMode(true);
 
-	if (DxLib_Init() is -1)	// DXLib‚Ì‰Šú‰»
+	if (DxLib_Init() is - 1)	// DXLib‚Ì‰Šú‰»
 	{
 		return -1;
 	}
