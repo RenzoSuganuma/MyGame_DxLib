@@ -2,6 +2,14 @@
 
 namespace ConfigData
 {
-	const unsigned int Window_Width = 1920;
-	const unsigned int Window_Height = 1080;
+	class ConfigDatas
+	{
+	private:
+		unsigned int WindowWidth = 1920;
+		unsigned int WindowHeigth = 1080;
+
+	public:
+		ConfigDatas() {}
+		~ConfigDatas() {}
+	};
 }

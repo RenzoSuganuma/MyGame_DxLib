@@ -3,6 +3,8 @@
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+	ConfigData::ConfigDatas* datas = new ConfigData::ConfigDatas;
+
 	if (DxLib_Init() == -1)	// DXLib‚Ì‰Šú‰»
 	{
 		return -1;
