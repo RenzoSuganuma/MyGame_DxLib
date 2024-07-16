@@ -1,9 +1,11 @@
 #include "DxLib.h"
+#include "main_loop.h"
 #include "config_data.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	ConfigData::ConfigDatas* datas = new ConfigData::ConfigDatas;
+	MainLoop::Main_Loop* main_loop = new MainLoop::Main_Loop;
 
 	datas->SetScreenSize( 600, 500 );
 
@@ -17,12 +19,23 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	{
 		return -1;
 	}
+	else
+	{
+		main_loop->MainLoopEntry();
+	}
 
 	while (ProcessMessage() == 0)
 	{
+		ClearDrawScreen();
+
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1)
 		{
+			main_loop->MainLoopExit();
 			DxLib_End();
+		}
+		else
+		{
+			main_loop->MainLoopUpdate();
 		}
 	}
 

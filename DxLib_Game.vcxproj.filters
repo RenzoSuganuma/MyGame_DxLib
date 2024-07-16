@@ -23,5 +23,8 @@
     <ClInclude Include="config_data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="main_loop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
