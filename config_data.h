@@ -4,30 +4,48 @@
 
 namespace ConfigData
 {
-	class ConfigDatas
+	class ConfigDatas final
 	{
 	private:
-		unsigned int WindowWidth = 1920;
-		unsigned int WindowHeigth = 1080;
+		unsigned int WindowWidth_ = 1920;
+		unsigned int WindowHeigth_ = 1080;
+		bool changeWindowMode_ = true;
 
 	public:
+		const std::pair< unsigned int, unsigned int >
+			GetFHDScreenSize() const
+		{
+			return std::make_pair(1920, 1080);
+		}
+
 		ConfigDatas() {}
 		~ConfigDatas() {}
 
 		ConfigDatas(unsigned int width, unsigned int height)
-			: WindowWidth(width), WindowHeigth(height)
+			: WindowWidth_(width), WindowHeigth_(height)
 		{}
 
-		void SetScreenSize(unsigned int width, unsigned int height)
+		void const SetScreenSize(const unsigned int width,const unsigned int height)
 		{
-			WindowWidth = width;
-			WindowHeigth = height;
+			WindowWidth_ = width;
+			WindowHeigth_ = height;
 		}
 
 		std::pair< unsigned int, unsigned int >
 			GetScreenSize()
 		{
-			return std::make_pair( WindowWidth , WindowHeigth );
+			return std::make_pair(WindowWidth_, WindowHeigth_);
+		}
+
+		void const SetChangeWindowMode(const bool cond)
+		{
+			changeWindowMode_ = cond;
+			ChangeWindowMode(changeWindowMode_);
+		}
+
+		const bool const GetChangeWindowMode()
+		{
+			return changeWindowMode_;
 		}
 	};
 }

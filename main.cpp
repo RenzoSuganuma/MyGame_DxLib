@@ -7,13 +7,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	ConfigData::ConfigDatas* datas = new ConfigData::ConfigDatas;
 	MainLoop::Main_Loop* main_loop = new MainLoop::Main_Loop;
 
-	datas->SetScreenSize( 600, 500 );
+	datas->SetScreenSize(600, 500);
 
 	auto screen_size = datas->GetScreenSize();
 
-	ChangeWindowMode( true );
+	ChangeWindowMode(true);
 
-	SetGraphMode( screen_size.first, screen_size.second, 32 );
+	SetGraphMode(screen_size.first, screen_size.second, 32);
 
 	if (DxLib_Init() == -1)	// DXLib‚Ì‰Šú‰»
 	{
@@ -31,6 +31,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1)
 		{
 			main_loop->MainLoopExit();
+
 			DxLib_End();
 		}
 		else
