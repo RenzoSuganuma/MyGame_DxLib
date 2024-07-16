@@ -14,8 +14,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	ChangeWindowMode(true);
 
-	SetGraphMode(screen_size.first, screen_size.second, 32);
-
 	if (DxLib_Init() is -1)	// DXLib‚Ì‰Šú‰»
 	{
 		return -1;

@@ -4,7 +4,7 @@
 
 namespace MainLoop
 {
-	class Main_Loop
+	class Main_Loop final
 	{
 	public:
 		Main_Loop() {}
