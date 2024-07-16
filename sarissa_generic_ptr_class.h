@@ -16,6 +16,11 @@ public:
 		delete ptr;
 	}
 
+	void const Dispose() const
+	{
+		delete ptr;
+	}
+
 	T* const Ptr() const
 	{
 		return ptr;
@@ -26,7 +31,7 @@ public:
 		*ptr = value;
 	}
 
-	const T const Value() const
+	const T const Get_Value() const
 	{
 		return *ptr;
 	}
