@@ -137,13 +137,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="SourceCodes\config_data.cpp" />
+    <ClCompile Include="SourceCodes\main.cpp" />
+    <ClCompile Include="SourceCodes\main_loop.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="config_data.h" />
-    <ClInclude Include="enhance_cpp_programing.h" />
-    <ClInclude Include="main_loop.h" />
-    <ClInclude Include="sarissa_generic_ptr_class.h" />
+    <ClInclude Include="SourceCodes\config_data.h" />
+    <ClInclude Include="SourceCodes\enhance_cpp_programing.h" />
+    <ClInclude Include="SourceCodes\main_loop.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "DxLib.h"
 #include "iostream"
 
 namespace ConfigData
@@ -14,53 +15,24 @@ namespace ConfigData
 
 	public:
 		const std::pair< unsigned int, unsigned int >
-			const GetFHDScreenSize() const
-		{
-			return std::make_pair(1920, 1080);
-		}
+			const GetFHDScreenSize() const;
 
-		ConfigDatas() {}
-		~ConfigDatas() {}
+		ConfigDatas();
+		~ConfigDatas();
 
-		ConfigDatas(unsigned int width, unsigned int height)
-			: windowWidth_(width), windowHeigth_(height)
-		{}
+		ConfigDatas(unsigned int width, unsigned int height);
 
-		void const SetScreenSize(unsigned int width, unsigned int height)
-		{
-			windowWidth_ = width;
-			windowHeigth_ = height;
-
-			SetGraphMode(windowWidth_, windowHeigth_, 32, refreshRate_);
-		}
+		void const SetScreenSize(unsigned int width, unsigned int height);
 
 		std::pair< unsigned int, unsigned int >
-			const GetScreenSize() const
-		{
-			return std::make_pair(windowWidth_, windowHeigth_);
-		}
+			const GetScreenSize() const;
 
-		void const SetChangeWindowMode(bool cond)
-		{
-			changeWindowMode_ = cond;
-			ChangeWindowMode(changeWindowMode_);
-		}
+		void const SetChangeWindowMode(bool cond);
 
-		const bool const GetChangeWindowMode() const
-		{
-			return changeWindowMode_;
-		}
+		const bool const GetChangeWindowMode() const;
 
-		const unsigned int GetRefreshRate() const
-		{
-			return refreshRate_;
-		}
+		const unsigned int GetRefreshRate() const;
 
-		void const SetRefreshRate(unsigned int rate)
-		{
-			refreshRate_ = rate;
-
-			SetGraphMode(windowWidth_, windowHeigth_, 32, refreshRate_);
-		}
+		void const SetRefreshRate(unsigned int rate);
 	};
 }

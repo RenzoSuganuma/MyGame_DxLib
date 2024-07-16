@@ -7,19 +7,13 @@ namespace MainLoop
 	class Main_Loop final
 	{
 	public:
-		Main_Loop() {}
-		~Main_Loop() {}
+		Main_Loop();
+		~Main_Loop();
 
-		void MainLoopEntry()
-		{
-		}
+		void MainLoopEntry();
 
-		void MainLoopUpdate()
-		{
-		}
+		void MainLoopUpdate();
 
-		void MainLoopExit()
-		{
-		}
+		void MainLoopExit();
 	};
 }

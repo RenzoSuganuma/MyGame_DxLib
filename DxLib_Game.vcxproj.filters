@@ -15,21 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="SourceCodes\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCodes\config_data.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceCodes\main_loop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="config_data.h">
+    <ClInclude Include="SourceCodes\config_data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main_loop.h">
+    <ClInclude Include="SourceCodes\enhance_cpp_programing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="enhance_cpp_programing.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="sarissa_generic_ptr_class.h">
+    <ClInclude Include="SourceCodes\main_loop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
