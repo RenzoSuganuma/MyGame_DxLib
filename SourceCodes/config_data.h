@@ -12,6 +12,7 @@ namespace ConfigData
 		unsigned int windowHeigth_ = 1080;
 		unsigned int refreshRate_ = 60;
 		bool changeWindowMode_ = true;
+		int quitKey_ = KEY_INPUT_ESCAPE;
 
 	public:
 		const std::pair< unsigned int, unsigned int >
@@ -34,5 +35,9 @@ namespace ConfigData
 		const unsigned int GetRefreshRate() const;
 
 		void const SetRefreshRate(unsigned int rate);
+
+		const int const GetQuitKey() const;
+
+		void const SetQuitKey(const int keyCode);
 	};
 }

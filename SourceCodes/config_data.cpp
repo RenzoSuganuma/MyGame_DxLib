@@ -51,3 +51,13 @@ void const ConfigDatas::SetRefreshRate(unsigned int rate)
 
 	SetGraphMode(windowWidth_, windowHeigth_, 32, refreshRate_);
 }
+
+const int const ConfigDatas::GetQuitKey() const
+{
+	return quitKey_;
+}
+
+void const ConfigDatas::SetQuitKey(int keyCode)
+{
+	quitKey_ = keyCode;
+}
