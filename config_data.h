@@ -13,7 +13,7 @@ namespace ConfigData
 
 	public:
 		const std::pair< unsigned int, unsigned int >
-			GetFHDScreenSize() const
+			const GetFHDScreenSize() const
 		{
 			return std::make_pair(1920, 1080);
 		}
@@ -25,14 +25,14 @@ namespace ConfigData
 			: WindowWidth_(width), WindowHeigth_(height)
 		{}
 
-		void const SetScreenSize(const unsigned int width,const unsigned int height)
+		void const SetScreenSize(const unsigned int width, const unsigned int height)
 		{
 			WindowWidth_ = width;
 			WindowHeigth_ = height;
 		}
 
 		std::pair< unsigned int, unsigned int >
-			GetScreenSize()
+			const GetScreenSize() const
 		{
 			return std::make_pair(WindowWidth_, WindowHeigth_);
 		}
@@ -43,7 +43,7 @@ namespace ConfigData
 			ChangeWindowMode(changeWindowMode_);
 		}
 
-		const bool const GetChangeWindowMode()
+		const bool const GetChangeWindowMode() const
 		{
 			return changeWindowMode_;
 		}
