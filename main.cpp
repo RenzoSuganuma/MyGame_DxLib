@@ -5,6 +5,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 {
 	ConfigData::ConfigDatas* datas = new ConfigData::ConfigDatas;
 
+	datas->SetScreenSize( 600, 500 );
+
+	auto screen_size = datas->GetScreenSize();
+
+	ChangeWindowMode( true );
+
+	SetGraphMode( screen_size.first, screen_size.second, 32 );
+
 	if (DxLib_Init() == -1)	// DXLib‚Ì‰Šú‰»
 	{
 		return -1;
