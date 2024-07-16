@@ -1,5 +1,5 @@
 #pragma once
 
-#define Is ==
-#define IsNot !=
+#define is ==
+#define isnot !=
 

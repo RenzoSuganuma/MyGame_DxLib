@@ -25,7 +25,7 @@ namespace ConfigData
 			: WindowWidth_(width), WindowHeigth_(height)
 		{}
 
-		void const SetScreenSize(const unsigned int width, const unsigned int height)
+		void const SetScreenSize(unsigned int width, unsigned int height)
 		{
 			WindowWidth_ = width;
 			WindowHeigth_ = height;
@@ -37,7 +37,7 @@ namespace ConfigData
 			return std::make_pair(WindowWidth_, WindowHeigth_);
 		}
 
-		void const SetChangeWindowMode(const bool cond)
+		void const SetChangeWindowMode(bool cond)
 		{
 			changeWindowMode_ = cond;
 			ChangeWindowMode(changeWindowMode_);

@@ -16,7 +16,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	SetGraphMode(screen_size.first, screen_size.second, 32);
 
-	if (DxLib_Init() Is -1)	// DXLib‚Ì‰Šú‰»
+	if (DxLib_Init() is -1)	// DXLib‚Ì‰Šú‰»
 	{
 		return -1;
 	}
@@ -25,13 +25,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		main_loop->MainLoopEntry();
 	}
 
-	while (ProcessMessage() Is 0)
+	while (ProcessMessage() is 0)
 	{
 		ClearDrawScreen();
 
 		DrawString(0, screen_size.second - 20, "Hit ESC To Exit", GetColor(255, 255, 255));
 
-		if (CheckHitKey(KEY_INPUT_ESCAPE) Is 1)
+		if (CheckHitKey(KEY_INPUT_ESCAPE) is 1)
 		{
 			main_loop->MainLoopExit();
 
