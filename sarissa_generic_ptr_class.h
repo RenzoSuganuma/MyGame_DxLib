@@ -15,4 +15,19 @@ public:
 	{
 		delete ptr;
 	}
+
+	T* const Ptr() const
+	{
+		return ptr;
+	}
+
+	void const Set_Value(const T& value)
+	{
+		*ptr = value;
+	}
+
+	const T const Value() const
+	{
+		return *ptr;
+	}
 };

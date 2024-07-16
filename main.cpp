@@ -6,6 +6,8 @@
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+	Generic_Ptr< int > i;
+
 	ConfigData::ConfigDatas* datas = new ConfigData::ConfigDatas;
 	MainLoop::Main_Loop* main_loop = new MainLoop::Main_Loop;
 
@@ -27,6 +29,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	while (ProcessMessage() is 0)
 	{
 		ClearDrawScreen();
+
+		i.Set_Value(100);
 
 		DrawString(0, screen_size.second - 20, "Hit ESC To Exit", GetColor(255, 255, 255));
 
