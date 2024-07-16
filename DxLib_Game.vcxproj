@@ -140,11 +140,13 @@
     <ClCompile Include="SourceCodes\config_data.cpp" />
     <ClCompile Include="SourceCodes\main.cpp" />
     <ClCompile Include="SourceCodes\main_loop.cpp" />
+    <ClCompile Include="SourceCodes\task_system.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SourceCodes\config_data.h" />
     <ClInclude Include="SourceCodes\enhance_cpp_programing.h" />
     <ClInclude Include="SourceCodes\main_loop.h" />
+    <ClInclude Include="SourceCodes\task_system.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

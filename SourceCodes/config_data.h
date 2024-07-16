@@ -5,6 +5,7 @@
 
 namespace ConfigData
 {
+	// システム周りのデータ管理クラス
 	class ConfigDatas final
 	{
 	private:

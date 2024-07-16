@@ -1,7 +1,10 @@
 #include "DxLib.h"
 #include "main_loop.h"
 #include "config_data.h"
-#include "enhance_cpp_programing.h"
+
+/* 【Layer:0】 */
+
+/* ゲームエンジン【ライブラリ】 レイヤ */
 
 /* ここではゲーム本体のコーディングをしない。あくまでもシステム面【エンジン内部】のコードのみ書くこと */
 
@@ -18,7 +21,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	datas->SetChangeWindowMode(false);
 	ChangeWindowMode(datas->GetChangeWindowMode());
 
-	if (DxLib_Init() IS(-1))	// DXLibの初期化
+	if (DxLib_Init() == -1)	// DXLibの初期化
 	{
 		return -1;
 	}
@@ -27,7 +30,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		main_loop->MainLoopEntry();
 	}
 
-	while (ProcessMessage() IS 0)
+	while (ProcessMessage() == 0)
 	{
 		ClearDrawScreen();
 
@@ -35,7 +38,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		datas->SetQuitKey(KEY_INPUT_ESCAPE);
 
-		if (CheckHitKey(datas->GetQuitKey()) IS 1)
+		if (CheckHitKey(datas->GetQuitKey()) == 1)
 		{
 			main_loop->MainLoopExit();
 
