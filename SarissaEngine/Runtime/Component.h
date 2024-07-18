@@ -8,7 +8,6 @@ namespace Framework
 	{
 	protected:
 		bool enabled_;
-		Actor* attachedActor_;
 
 	public:
 		Component();

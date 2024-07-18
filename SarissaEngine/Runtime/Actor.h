@@ -9,7 +9,6 @@ namespace Framework
 	class Actor
 	{
 	protected:
-		std::list< Framework::Component* > attachedComponents_;
 		VECTOR position_{ 0 }, rotation_{ 0 };
 		bool enabled_;
 
