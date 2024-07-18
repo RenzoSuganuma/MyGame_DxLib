@@ -30,7 +30,10 @@
     <ClCompile Include="SarissaEngine\Runtime\Actor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Component.cpp">
+    <ClCompile Include="SarissaEngine\Runtime\Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SarissaEngine\TesterClasses\ActorSub.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SarissaEngine\Runtime\Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\TesterClasses\ActorSub.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

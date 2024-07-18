@@ -22,7 +22,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	datas->SetChangeWindowMode(false);
 	ChangeWindowMode(datas->GetChangeWindowMode());
 
-	// main_loop->AddObject(new Framework::Super);
+	
 
 	if (DxLib_Init() == -1)	// DXLib‚Ì‰Šú‰»
 	{

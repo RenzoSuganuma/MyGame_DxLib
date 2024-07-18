@@ -8,7 +8,7 @@ namespace Framework
 	class Actor : private Super
 	{
 	protected:
-		VECTOR position_, rotation_;
+		VECTOR position_{ 0 }, rotation_{ 0 };
 		bool enabled_;
 
 	public:
