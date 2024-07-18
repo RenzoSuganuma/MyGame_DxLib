@@ -1,10 +1,10 @@
 #include "task_system.h"
 
-using TaskSystem::Task_System;
+using TaskSystem::Task;
 
-Task_System::Task_System() {}
-Task_System::~Task_System() {}
+Task::Task() {}
+Task::~Task() {}
 
-void Task_System::Init() {}
-void Task_System::Update() {}
-void Task_System::Finalize() {}
+void Task::Init() {}
+void Task::Update() {}
+void Task::Finalize() {}

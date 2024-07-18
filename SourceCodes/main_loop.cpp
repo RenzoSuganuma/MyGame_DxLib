@@ -38,8 +38,8 @@ void const Main_Loop::MainLoopExit()
 	}
 }
 
-const std::list< TaskSystem::Task_System* >::iterator
-const Main_Loop::AddTask(TaskSystem::Task_System* newTask)
+const std::list< TaskSystem::Task* >::iterator
+const Main_Loop::AddTask(TaskSystem::Task* newTask)
 {
 	tasks_.emplace_back(newTask);
 	auto it = tasks_.end();
@@ -48,12 +48,12 @@ const Main_Loop::AddTask(TaskSystem::Task_System* newTask)
 }
 
 
-void const Main_Loop::RemoveTask(TaskSystem::Task_System* task)
+void const Main_Loop::RemoveTask(TaskSystem::Task* task)
 {
 	tasks_.remove(task);
 }
 
-void const Main_Loop::RemoveTask(const std::list< TaskSystem::Task_System* >::iterator place)
+void const Main_Loop::RemoveTask(const std::list< TaskSystem::Task* >::iterator place)
 {
 	tasks_.erase(place);
 }

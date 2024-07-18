@@ -18,27 +18,33 @@
     <ClCompile Include="SourceCodes\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCodes\config_data.cpp">
+    <ClCompile Include="SourceCodes\Config_Data.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCodes\main_loop.cpp">
+    <ClCompile Include="SourceCodes\Main_Loop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCodes\task_system.cpp">
+    <ClCompile Include="SourceCodes\Task_System.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SourceCodes\config_data.h">
+    <ClInclude Include="SourceCodes\Config_Data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SourceCodes\enhance_cpp_programing.h">
+    <ClInclude Include="SourceCodes\Enhance_Cpp_Programing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SourceCodes\main_loop.h">
+    <ClInclude Include="SourceCodes\Main_Loop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SourceCodes\task_system.h">
+    <ClInclude Include="SourceCodes\Task_System.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

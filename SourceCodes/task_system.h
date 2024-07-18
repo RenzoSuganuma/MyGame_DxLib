@@ -3,7 +3,7 @@
 namespace TaskSystem
 {
 	// タスクシステム
-	class Task_System
+	class Task
 	{
 	protected:
 		virtual void Begin() = 0;
@@ -11,8 +11,8 @@ namespace TaskSystem
 		virtual void End() = 0;
 
 	public:
-		Task_System();
-		~Task_System();
+		Task();
+		~Task();
 
 		void Init();
 		void Update();

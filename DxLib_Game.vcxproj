@@ -137,16 +137,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SourceCodes\config_data.cpp" />
+    <ClCompile Include="SourceCodes\Config_Data.cpp" />
     <ClCompile Include="SourceCodes\main.cpp" />
-    <ClCompile Include="SourceCodes\main_loop.cpp" />
-    <ClCompile Include="SourceCodes\task_system.cpp" />
+    <ClCompile Include="SourceCodes\Main_Loop.cpp" />
+    <ClCompile Include="SourceCodes\Task_System.cpp" />
+    <ClCompile Include="Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SourceCodes\config_data.h" />
-    <ClInclude Include="SourceCodes\enhance_cpp_programing.h" />
-    <ClInclude Include="SourceCodes\main_loop.h" />
-    <ClInclude Include="SourceCodes\task_system.h" />
+    <ClInclude Include="SourceCodes\Config_Data.h" />
+    <ClInclude Include="SourceCodes\Enhance_Cpp_Programing.h" />
+    <ClInclude Include="SourceCodes\Main_Loop.h" />
+    <ClInclude Include="SourceCodes\Task_System.h" />
+    <ClInclude Include="Vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
