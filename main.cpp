@@ -1,6 +1,7 @@
 #include "DxLib.h"
-#include "main_loop.h"
-#include "config_data.h"
+#include "SarissaEngine\Runtime\Super.h"
+#include "SarissaEngine\Runtime\Main_Loop.h"
+#include "SarissaEngine\Engine\Config_Data.h"
 
 /* yLayer:0z */
 
@@ -20,6 +21,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	datas->SetChangeWindowMode(false);
 	ChangeWindowMode(datas->GetChangeWindowMode());
+
+	// main_loop->AddObject(new Framework::Super);
 
 	if (DxLib_Init() == -1)	// DXLib‚Ì‰Šú‰»
 	{
@@ -49,8 +52,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			main_loop->MainLoopUpdate();
 		}
 	}
-
-	DxLib_End();
 
 	return 0;
 }

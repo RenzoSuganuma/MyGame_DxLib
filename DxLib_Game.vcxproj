@@ -18,6 +18,22 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="SarissaEngine\Engine\Config_Data.cpp" />
+    <ClCompile Include="SarissaEngine\Runtime\Actor.cpp" />
+    <ClCompile Include="SarissaEngine\Runtime\Main_Loop.cpp" />
+    <ClCompile Include="SarissaEngine\Runtime\Super.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SarissaEngine\Engine\Config_Data.h" />
+    <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.h" />
+    <ClInclude Include="SarissaEngine\Runtime\Actor.h" />
+    <ClInclude Include="SarissaEngine\Runtime\Component.h" />
+    <ClInclude Include="SarissaEngine\Runtime\Main_Loop.h" />
+    <ClInclude Include="SarissaEngine\Runtime\Super.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -136,20 +152,6 @@
       <AdditionalLibraryDirectories>C:\Users\sugan\OneDrive\デスクトップ\DxLib_Game\DxLib_VC;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="SourceCodes\Config_Data.cpp" />
-    <ClCompile Include="SourceCodes\main.cpp" />
-    <ClCompile Include="SourceCodes\Main_Loop.cpp" />
-    <ClCompile Include="SourceCodes\Task_System.cpp" />
-    <ClCompile Include="Vector.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="SourceCodes\Config_Data.h" />
-    <ClInclude Include="SourceCodes\Enhance_Cpp_Programing.h" />
-    <ClInclude Include="SourceCodes\Main_Loop.h" />
-    <ClInclude Include="SourceCodes\Task_System.h" />
-    <ClInclude Include="Vector.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
