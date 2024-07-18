@@ -11,7 +11,7 @@ void const Main_Loop::MainLoopEntry()
 
 	while (itr != objects_.end())
 	{
-		(*itr)->Init();
+		(*itr)->Begin();
 		itr++;
 	}
 }
@@ -22,7 +22,7 @@ void const Main_Loop::MainLoopUpdate()
 
 	while (itr != objects_.end())
 	{
-		(*itr)->Update();
+		(*itr)->Tick();
 		itr++;
 	}
 }
@@ -33,13 +33,13 @@ void const Main_Loop::MainLoopExit()
 
 	while (itr != objects_.end())
 	{
-		(*itr)->Finalize();
+		(*itr)->End();
 		itr++;
 	}
 }
 
-const std::list< Framework::Super* >::iterator
-const Main_Loop::AddObject(Framework::Super* newObj)
+const std::list< Framework::Actor* >::iterator
+const Main_Loop::AddObject(Framework::Actor* newObj)
 {
 	objects_.emplace_back(newObj);
 	auto it = objects_.end();
@@ -47,12 +47,12 @@ const Main_Loop::AddObject(Framework::Super* newObj)
 	return it;
 }
 
-void const Main_Loop::RemoveObject(Framework::Super* obj)
+void const Main_Loop::RemoveObject(Framework::Actor* obj)
 {
 	objects_.remove(obj);
 }
 
-void const Main_Loop::RemoveObject(const std::list< Framework::Super* >::iterator place)
+void const Main_Loop::RemoveObject(const std::list< Framework::Actor* >::iterator place)
 {
 	objects_.erase(place);
 }

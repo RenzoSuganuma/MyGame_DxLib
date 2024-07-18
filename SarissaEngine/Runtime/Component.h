@@ -1,10 +1,8 @@
 #pragma once
 
-#include "Super.h"
-
 namespace Framework
 {
-	class Component : private Super
+	class Component
 	{
 	protected:
 		bool enabled_;

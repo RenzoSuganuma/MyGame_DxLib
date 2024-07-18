@@ -21,9 +21,6 @@
     <ClCompile Include="SarissaEngine\Engine\Config_Data.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SarissaEngine\Runtime\Super.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SarissaEngine\Runtime\Main_Loop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -38,9 +35,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SarissaEngine\Runtime\Super.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SarissaEngine\Engine\Config_Data.h">
       <Filter>Header Files</Filter>
     </ClInclude>

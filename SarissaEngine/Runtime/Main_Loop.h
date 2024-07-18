@@ -2,7 +2,7 @@
 
 #include "list"
 #include "DxLib.h"
-#include "Super.h"
+#include "Actor.h"
 	 
 /* ÅyLayer:1Åz */
 
@@ -14,7 +14,7 @@ namespace MainLoop
 	class Main_Loop final
 	{
 	private:
-		std::list< Framework::Super* > objects_;
+		std::list< Framework::Actor* > objects_;
 
 	public:
 		Main_Loop();
@@ -26,11 +26,11 @@ namespace MainLoop
 
 		void const MainLoopExit();
 
-		const std::list< Framework::Super* >::iterator
-			const AddObject(Framework::Super* newTask);
+		const std::list< Framework::Actor* >::iterator
+			const AddObject(Framework::Actor* newObject);
 
-		void const RemoveObject(Framework::Super* task);
+		void const RemoveObject(Framework::Actor* obj);
 
-		void const RemoveObject(const std::list< Framework::Super* >::iterator place);
+		void const RemoveObject(const std::list< Framework::Actor* >::iterator place);
 	};
 }

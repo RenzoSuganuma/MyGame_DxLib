@@ -24,7 +24,6 @@
     <ClCompile Include="SarissaEngine\Runtime\Actor.cpp" />
     <ClCompile Include="SarissaEngine\Runtime\Component.cpp" />
     <ClCompile Include="SarissaEngine\Runtime\Main_Loop.cpp" />
-    <ClCompile Include="SarissaEngine\Runtime\Super.cpp" />
     <ClCompile Include="SarissaEngine\TesterClasses\ActorSub.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -33,7 +32,6 @@
     <ClInclude Include="SarissaEngine\Runtime\Actor.h" />
     <ClInclude Include="SarissaEngine\Runtime\Component.h" />
     <ClInclude Include="SarissaEngine\Runtime\Main_Loop.h" />
-    <ClInclude Include="SarissaEngine\Runtime\Super.h" />
     <ClInclude Include="SarissaEngine\TesterClasses\ActorSub.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
