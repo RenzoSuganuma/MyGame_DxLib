@@ -141,14 +141,14 @@
     <ClCompile Include="SourceCodes\main.cpp" />
     <ClCompile Include="SourceCodes\Main_Loop.cpp" />
     <ClCompile Include="SourceCodes\Task_System.cpp" />
-    <ClCompile Include="Vector3.cpp" />
+    <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SourceCodes\Config_Data.h" />
     <ClInclude Include="SourceCodes\Enhance_Cpp_Programing.h" />
     <ClInclude Include="SourceCodes\Main_Loop.h" />
     <ClInclude Include="SourceCodes\Task_System.h" />
-    <ClInclude Include="Vector3.h" />
+    <ClInclude Include="Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

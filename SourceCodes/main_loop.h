@@ -2,7 +2,7 @@
 
 #include "list"
 #include "DxLib.h"
-#include "task_system.h"
+#include "Task_System.h"
 
 /* ÅyLayer:1Åz */
 
