@@ -1,7 +1,5 @@
 #include "Actor.h"
 
-using Framework::Actor;
-
 Actor::Actor() {}
 Actor::~Actor() {}
 

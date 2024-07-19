@@ -1,7 +1,5 @@
 #include "Config_Data.h"
 
-using ConfigData::ConfigDatas;
-
 const std::pair< unsigned int, unsigned int >
 const ConfigDatas::GetFHDScreenSize() const
 {

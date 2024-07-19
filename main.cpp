@@ -11,8 +11,8 @@
 // エントリーポイントを提供
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	ConfigData::ConfigDatas* datas = new ConfigData::ConfigDatas;
-	MainLoop::Main_Loop* main_loop = new MainLoop::Main_Loop;
+	ConfigDatas* datas = new ConfigDatas;
+	Main_Loop* main_loop = new Main_Loop;
 
 
 Initialize:

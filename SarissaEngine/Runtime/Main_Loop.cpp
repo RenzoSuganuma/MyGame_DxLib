@@ -1,7 +1,5 @@
 #include "Main_Loop.h"
 
-using MainLoop::Main_Loop;
-
 Main_Loop::Main_Loop() {}
 Main_Loop::~Main_Loop() {}
 
@@ -38,8 +36,8 @@ void const Main_Loop::MainLoopExit()
 	}
 }
 
-const std::list< Framework::Actor* >::iterator
-const Main_Loop::AddObject(Framework::Actor* newObj)
+const std::list< Actor* >::iterator
+const Main_Loop::AddObject(Actor* newObj)
 {
 	objects_.emplace_back(newObj);
 	auto it = objects_.end();
@@ -47,12 +45,12 @@ const Main_Loop::AddObject(Framework::Actor* newObj)
 	return it;
 }
 
-void const Main_Loop::RemoveObject(Framework::Actor* obj)
+void const Main_Loop::RemoveObject(Actor* obj)
 {
 	objects_.remove(obj);
 }
 
-void const Main_Loop::RemoveObject(const std::list< Framework::Actor* >::iterator place)
+void const Main_Loop::RemoveObject(const std::list< Actor* >::iterator place)
 {
 	objects_.erase(place);
 }

@@ -1,7 +1,5 @@
 #include "Component.h"
 
-using Framework::Component;
-
 Component::Component()
 {}
 Component::~Component()

@@ -4,21 +4,18 @@
 #include "DxLib.h"
 #include "Component.h"
 
-namespace Framework
+class Actor
 {
-	class Actor
-	{
-	protected:
-		VECTOR position_{ 0 }, rotation_{ 0 };
-		bool enabled_;
+protected:
+	VECTOR position_{ 0 }, rotation_{ 0 };
+	bool enabled_;
 
-	public:
-		Actor();
-		~Actor();
+public:
+	Actor();
+	~Actor();
 
-		virtual void Begin();
-		virtual void Tick();
-		virtual void End();
-	};
-}
+	virtual void Begin();
+	virtual void Tick();
+	virtual void End();
+};
 

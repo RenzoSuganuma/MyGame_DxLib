@@ -3,34 +3,32 @@
 #include "list"
 #include "DxLib.h"
 #include "Actor.h"
-	 
+
 /* 【Layer:1】 */
 
 /* ゲームループ レイヤ */
 
-namespace MainLoop
+// メインループ : Unityでいうシーン
+class Main_Loop final
 {
-	// メインループ : Unityでいうシーン
-	class Main_Loop final
-	{
-	private:
-		std::list< Framework::Actor* > objects_;
+private:
+	std::list< Actor* > objects_;
 
-	public:
-		Main_Loop();
-		~Main_Loop();
+public:
+	Main_Loop();
+	~Main_Loop();
 
-		void const MainLoopEntry();
+	void const MainLoopEntry();
 
-		void const MainLoopUpdate();
+	void const MainLoopUpdate();
 
-		void const MainLoopExit();
+	void const MainLoopExit();
 
-		const std::list< Framework::Actor* >::iterator
-			const AddObject(Framework::Actor* newObject);
+	const std::list< Actor* >::iterator
+		const AddObject(Actor* newObject);
 
-		void const RemoveObject(Framework::Actor* obj);
+	void const RemoveObject(Actor* obj);
 
-		void const RemoveObject(const std::list< Framework::Actor* >::iterator place);
-	};
-}
+	void const RemoveObject(const std::list< Actor* >::iterator place);
+};
+
