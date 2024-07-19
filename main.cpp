@@ -15,7 +15,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	Main_Loop* main_loop = new Main_Loop;
 
 
-Initialize:
+// Initialize:
 
 
 	// DXLib‚Ì‰Šú‰»
@@ -34,7 +34,7 @@ Initialize:
 	datas->SetQuitKey(KEY_INPUT_ESCAPE);
 
 
-MainLoop:
+// MainLoop:
 
 
 	ClearDrawScreen();

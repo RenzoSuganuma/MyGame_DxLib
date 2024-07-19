@@ -2,12 +2,16 @@
 
 #include "list"
 #include "DxLib.h"
-#include "Component.h"
+
+class Component;
+
+#define ACTOR_DEBUG true;
 
 class Actor
 {
 protected:
 	VECTOR position_{ 0 }, rotation_{ 0 };
+	std::list< Component > attachedComponents_;
 	bool enabled_;
 
 public:
