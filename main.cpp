@@ -1,4 +1,6 @@
 #include "DxLib.h"
+#include "SarissaEngine\Runtime\Actor.h"
+#include "SarissaEngine\Runtime\Component.h"
 #include "SarissaEngine\Runtime\Main_Loop.h"
 #include "SarissaEngine\Engine\Config_Data.h"
 
@@ -32,6 +34,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	ChangeWindowMode(datas->GetChangeWindowMode());
 
 	datas->SetQuitKey(KEY_INPUT_ESCAPE);
+
+	auto a = new Actor;
+	Component c;
+	a->AddComponent(c);
+
+	main_loop->AddObject(a);
 
 
 // MainLoop:
