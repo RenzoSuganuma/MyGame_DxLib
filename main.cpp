@@ -1,7 +1,6 @@
 #include "DxLib.h"
 #include "SarissaEngine\Runtime\Main_Loop.h"
 #include "SarissaEngine\Engine\Config_Data.h"
-#include "SarissaEngine\TesterClasses\ActorSub.h"
 
 /* yLayer:0z */
 
@@ -31,10 +30,6 @@ Initialize:
 
 	datas->SetChangeWindowMode(false);
 	ChangeWindowMode(datas->GetChangeWindowMode());
-
-	Framework::Actor* a_sub = static_cast<Framework::Actor*>(new ActorSub);
-
-	main_loop->AddObject(a_sub);
 
 	datas->SetQuitKey(KEY_INPUT_ESCAPE);
 
