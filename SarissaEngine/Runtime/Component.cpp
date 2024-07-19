@@ -3,9 +3,15 @@
 #include "Component.h"
 
 Component::Component()
-{}
+{
+	enabled_ = true;
+}
+
 Component::~Component()
-{}
+{
+	attachedActor_ = nullptr;
+	enabled_ = false;
+}
 
 void Component::Begin()
 {

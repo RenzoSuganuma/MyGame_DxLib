@@ -1,9 +1,16 @@
+#include "Actor.h"
 #include "Main_Loop.h"
 
-Main_Loop::Main_Loop() {}
-Main_Loop::~Main_Loop() {}
+MainLoop::MainLoop()
+{
+}
 
-void const Main_Loop::MainLoopEntry()
+MainLoop::~MainLoop() 
+{
+	objects_.clear();
+}
+
+void const MainLoop::MainLoopEntry()
 {
 	auto itr = objects_.begin();
 
@@ -14,7 +21,7 @@ void const Main_Loop::MainLoopEntry()
 	}
 }
 
-void const Main_Loop::MainLoopUpdate()
+void const MainLoop::MainLoopUpdate()
 {
 	auto itr = objects_.begin();
 
@@ -25,7 +32,7 @@ void const Main_Loop::MainLoopUpdate()
 	}
 }
 
-void const Main_Loop::MainLoopExit()
+void const MainLoop::MainLoopExit()
 {
 	auto itr = objects_.begin();
 
@@ -37,7 +44,7 @@ void const Main_Loop::MainLoopExit()
 }
 
 const std::list< Actor* >::iterator
-const Main_Loop::AddObject(Actor* newObj)
+const MainLoop::AddObject(Actor* newObj)
 {
 	objects_.emplace_back(newObj);
 	auto it = objects_.end();
@@ -45,12 +52,12 @@ const Main_Loop::AddObject(Actor* newObj)
 	return it;
 }
 
-void const Main_Loop::RemoveObject(Actor* obj)
+void const MainLoop::RemoveObject(Actor* obj)
 {
 	objects_.remove(obj);
 }
 
-void const Main_Loop::RemoveObject(const std::list< Actor* >::iterator place)
+void const MainLoop::RemoveObject(const std::list< Actor* >::iterator place)
 {
 	objects_.erase(place);
 }

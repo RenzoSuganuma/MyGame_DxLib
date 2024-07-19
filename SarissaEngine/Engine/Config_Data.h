@@ -4,7 +4,7 @@
 #include "iostream"
 
 // システム周りのデータ管理クラス
-class ConfigDatas final
+class ConfigData final
 {
 private:
 	unsigned int windowWidth_ = 1920;
@@ -17,10 +17,10 @@ public:
 	const std::pair< unsigned int, unsigned int >
 		const GetFHDScreenSize() const;
 
-	ConfigDatas();
-	~ConfigDatas();
+	ConfigData();
+	~ConfigData();
 
-	ConfigDatas(unsigned int width, unsigned int height);
+	ConfigData(unsigned int width, unsigned int height);
 
 	void const SetScreenSize(unsigned int width, unsigned int height);
 

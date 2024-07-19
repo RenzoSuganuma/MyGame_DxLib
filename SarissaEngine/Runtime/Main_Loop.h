@@ -2,21 +2,22 @@
 
 #include "list"
 #include "DxLib.h"
-#include "Actor.h"
 
 /* 【Layer:1】 */
 
 /* ゲームループ レイヤ */
 
+class Actor;
+
 // メインループ : Unityでいうシーン
-class Main_Loop final
+class MainLoop final
 {
 private:
 	std::list< Actor* > objects_;
 
 public:
-	Main_Loop();
-	~Main_Loop();
+	MainLoop();
+	~MainLoop();
 
 	void const MainLoopEntry();
 

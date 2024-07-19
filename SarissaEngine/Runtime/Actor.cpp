@@ -2,8 +2,16 @@
 #include "DxLib.h"
 #include "Component.h"
 
-Actor::Actor() {}
-Actor::~Actor() {}
+Actor::Actor() 
+{
+	enabled_ = true;
+}
+
+Actor::~Actor() 
+{
+	enabled_ = false;
+	attachedComponents_.clear();
+}
 
 void Actor::Begin()
 {
