@@ -7,6 +7,7 @@
 
 #pragma comment (lib , "winmm.lib")
 
+
 /* 【Layer:0】 */
 
 /* ゲームエンジン【ライブラリ】 レイヤ */
@@ -16,6 +17,7 @@
 // エントリーポイントを提供
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+
 	// System:
 	// 構成データ
 	ConfigData* datas = new ConfigData;
@@ -68,6 +70,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	while (ProcessMessage() == 0)
 	{
+
 		// System:
 		currentTime = timeGetTime();	// 現在時間の取得
 
@@ -83,7 +86,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		prevTime = currentTime;
 
 		ClearDrawScreen();
-		DrawFormatStringF(0, screen_size.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit  :  FrameCount %d", frame_count);
+		DrawFormatStringF(0, screen_size.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit  :  FrameCount %2d", frame_count);
 
 		main_loop->MainLoopUpdate();
 
@@ -106,5 +109,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 	return 0;
+
 }
 
