@@ -19,18 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="SarissaEngine\Engine\Config_Data.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="SarissaEngine\Engine\ConfigData.cpp" />
     <ClCompile Include="SarissaEngine\Runtime\Actor.cpp" />
     <ClCompile Include="SarissaEngine\Runtime\Component.cpp" />
-    <ClCompile Include="SarissaEngine\Runtime\Main_Loop.cpp" />
+    <ClCompile Include="SarissaEngine\Runtime\MainLoop.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SarissaEngine\Engine\Config_Data.h" />
+    <ClInclude Include="SarissaEngine\Engine\ConfigData.h" />
     <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.h" />
     <ClInclude Include="SarissaEngine\Runtime\Actor.h" />
     <ClInclude Include="SarissaEngine\Runtime\Component.h" />
-    <ClInclude Include="SarissaEngine\Runtime\Main_Loop.h" />
+    <ClInclude Include="SarissaEngine\Runtime\MainLoop.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

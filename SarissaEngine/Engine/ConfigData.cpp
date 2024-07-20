@@ -1,4 +1,4 @@
-#include "Config_Data.h"
+#include "ConfigData.h"
 
 const std::pair< unsigned int, unsigned int >
 const ConfigData::GetFHDScreenSize() const

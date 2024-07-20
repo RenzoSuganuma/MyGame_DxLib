@@ -1,8 +1,8 @@
 #include "DxLib.h"
 #include "SarissaEngine\Runtime\Actor.h"
 #include "SarissaEngine\Runtime\Component.h"
-#include "SarissaEngine\Runtime\Main_Loop.h"
-#include "SarissaEngine\Engine\Config_Data.h"
+#include "SarissaEngine\Runtime\MainLoop.h"
+#include "SarissaEngine\Engine\ConfigData.h"
 
 /* ÅyLayer:0Åz */
 

@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SarissaEngine\Engine\Config_Data.cpp">
+    <ClCompile Include="SarissaEngine\Engine\ConfigData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SarissaEngine\Runtime\Main_Loop.cpp">
+    <ClCompile Include="SarissaEngine\Runtime\MainLoop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SarissaEngine\Runtime\Actor.cpp">
@@ -30,27 +30,21 @@
     <ClCompile Include="SarissaEngine\Runtime\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SarissaEngine\TesterClasses\ActorSub.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SarissaEngine\Engine\Config_Data.h">
+    <ClInclude Include="SarissaEngine\Engine\ConfigData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\Main_Loop.h">
+    <ClInclude Include="SarissaEngine\Runtime\MainLoop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SarissaEngine\Runtime\Actor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SarissaEngine\Runtime\Component.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SarissaEngine\TesterClasses\ActorSub.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
