@@ -1,41 +1,44 @@
 #pragma once
 
 #include "list"
-#include "DxLib.h"
+#include "SarissaEngine_RuntimeClasses.h"
 
 /* 【Layer:1】 */
 
 /* ゲームループ レイヤ */
 
-class Actor;
-
-// メインループ : Unityでいうシーン
-class MainLoop final
+namespace SarissaEngine::Runtime::System
 {
-private:
-	std::list< Actor* > objects_;
 
-public:
-	MainLoop();
-	~MainLoop();
+	// メインループ : Unityでいうシーン
+	class MainLoop final
+	{
+	private:
+		std::list< SarissaEngine::Runtime::Framework::Actor* > objects_;
 
-	void const
-		MainLoopEntry();
+	public:
+		MainLoop();
+		~MainLoop();
 
-	void const
-		MainLoopUpdate();
+		void const
+			MainLoopEntry();
 
-	void const
-		MainLoopExit();
+		void const
+			MainLoopUpdate();
 
-	const std::list< Actor* >::iterator
-		const
-		AddObject(Actor* newObject);
+		void const
+			MainLoopExit();
 
-	void const
-		RemoveObject(Actor* obj);
+		const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator
+			const
+			AddObject(SarissaEngine::Runtime::Framework::Actor* newObject);
 
-	void const
-		RemoveObject(const std::list< Actor* >::iterator place);
-};
+		void const
+			RemoveObject(SarissaEngine::Runtime::Framework::Actor* obj);
+
+		void const
+			RemoveObject(const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator place);
+	};
+
+}
 

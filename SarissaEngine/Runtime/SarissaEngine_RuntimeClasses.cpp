@@ -1,9 +1,9 @@
+#include "DxLib.h"
 #include "SarissaEngine_RuntimeClasses.h"
-#include "Actor.h"
-#include "Component.h"
 
-using SarissaEngine::Actor;
-using SarissaEngine::Component;
+
+using SarissaEngine::Runtime::Framework::Actor;
+using SarissaEngine::Runtime::Framework::Component;
 
 Actor::Actor()
 {

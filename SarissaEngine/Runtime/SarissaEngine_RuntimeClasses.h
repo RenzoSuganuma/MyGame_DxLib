@@ -6,7 +6,7 @@
 
 // SarissaEngine
 
-namespace SarissaEngine
+namespace SarissaEngine::Runtime::Framework
 {
 
 	class Component;
@@ -39,7 +39,7 @@ namespace SarissaEngine
 
 }
 
-namespace SarissaEngine
+namespace SarissaEngine::Runtime::Framework
 {
 
 	constexpr bool comp_debug = true;

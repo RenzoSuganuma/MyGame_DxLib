@@ -1,9 +1,8 @@
 #include "DxLib.h"
 #include "Windows.h"
-#include "SarissaEngine\Runtime\Actor.h"
-#include "SarissaEngine\Runtime\Component.h"
 #include "SarissaEngine\Runtime\MainLoop.h"
 #include "SarissaEngine\Engine\ConfigData.h"
+#include "SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.h"
 
 #pragma comment (lib , "winmm.lib")
 
@@ -35,6 +34,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	// Initialize:
 
+	using SarissaEngine::Runtime::System::MainLoop;
 
 	MainLoop* main_loop = new MainLoop;
 	int frame_count = 0;
@@ -55,8 +55,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	datas->SetQuitKey(KEY_INPUT_ESCAPE);
 
-	auto a = new Actor;
-	Component c;
+	auto a = new SarissaEngine::Runtime::Framework::Actor;
+	SarissaEngine::Runtime::Framework::Component c;
 	a->AddComponent(c);
 
 	main_loop->AddObject(a);

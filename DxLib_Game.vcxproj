@@ -21,16 +21,14 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SarissaEngine\Engine\ConfigData.cpp" />
-    <ClCompile Include="SarissaEngine\Runtime\Actor.cpp" />
-    <ClCompile Include="SarissaEngine\Runtime\Component.cpp" />
     <ClCompile Include="SarissaEngine\Runtime\MainLoop.cpp" />
+    <ClCompile Include="SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SarissaEngine\Engine\ConfigData.h" />
     <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.h" />
-    <ClInclude Include="SarissaEngine\Runtime\Actor.h" />
-    <ClInclude Include="SarissaEngine\Runtime\Component.h" />
     <ClInclude Include="SarissaEngine\Runtime\MainLoop.h" />
+    <ClInclude Include="SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -91,6 +89,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\sugan\OneDrive\デスクトップ\DxLib_Game\DxLib_VC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -108,6 +107,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\sugan\OneDrive\デスクトップ\DxLib_Game\DxLib_VC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -124,6 +124,7 @@
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\sugan\OneDrive\デスクトップ\DxLib_Game\DxLib_VC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -141,6 +142,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\sugan\OneDrive\デスクトップ\DxLib_Game\DxLib_VC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

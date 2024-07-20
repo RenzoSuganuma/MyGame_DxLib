@@ -1,5 +1,6 @@
-#include "Actor.h"
 #include "MainLoop.h"
+
+using SarissaEngine::Runtime::System::MainLoop;
 
 MainLoop::MainLoop()
 {
@@ -43,8 +44,8 @@ void const MainLoop::MainLoopExit()
 	}
 }
 
-const std::list< Actor* >::iterator
-const MainLoop::AddObject(Actor* newObj)
+const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator
+const MainLoop::AddObject(SarissaEngine::Runtime::Framework::Actor* newObj)
 {
 	objects_.emplace_back(newObj);
 	auto it = objects_.end();
@@ -52,12 +53,12 @@ const MainLoop::AddObject(Actor* newObj)
 	return it;
 }
 
-void const MainLoop::RemoveObject(Actor* obj)
+void const MainLoop::RemoveObject(SarissaEngine::Runtime::Framework::Actor* obj)
 {
 	objects_.remove(obj);
 }
 
-void const MainLoop::RemoveObject(const std::list< Actor* >::iterator place)
+void const MainLoop::RemoveObject(const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator place)
 {
 	objects_.erase(place);
 }

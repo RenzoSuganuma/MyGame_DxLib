@@ -24,10 +24,7 @@
     <ClCompile Include="SarissaEngine\Runtime\MainLoop.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SarissaEngine\Runtime\Actor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SarissaEngine\Runtime\Component.cpp">
+    <ClCompile Include="SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,10 +38,7 @@
     <ClInclude Include="SarissaEngine\Runtime\MainLoop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\Actor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\Component.h">
+    <ClInclude Include="SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
