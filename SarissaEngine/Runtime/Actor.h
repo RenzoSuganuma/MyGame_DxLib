@@ -1,6 +1,7 @@
 #pragma once
 
 #include "list"
+#include "string"
 #include "DxLib.h"
 
 class Component;
@@ -14,6 +15,7 @@ protected:
 	std::list< Component > attachedComponents_;
 
 public:
+	std::string name_ = " Actor_ ";
 	bool enabled_ = true;
 
 	Actor();

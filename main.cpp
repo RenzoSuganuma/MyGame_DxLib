@@ -1,8 +1,11 @@
 #include "DxLib.h"
+#include "Windows.h"
 #include "SarissaEngine\Runtime\Actor.h"
 #include "SarissaEngine\Runtime\Component.h"
 #include "SarissaEngine\Runtime\MainLoop.h"
 #include "SarissaEngine\Engine\ConfigData.h"
+
+#pragma comment (lib , "winmm.lib")
 
 /* 【Layer:0】 */
 
@@ -13,11 +16,26 @@
 // エントリーポイントを提供
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+	// System:
+	// 構成データ
 	ConfigData* datas = new ConfigData;
+	// １フレーム当たりの時間
+	DWORD frameTime = 1000 / datas->GetRefreshRate();
+	// 現在時間
+	DWORD currentTime = 0;
+	// 過去時間
+	DWORD prevTime = 0;
+	// システム時間の制度を1msに変更
+	timeBeginPeriod(1);
+	// 現在時間を過去時間に設定
+	prevTime = timeGetTime();
+
+
+	// Initialize:
+
+
 	MainLoop* main_loop = new MainLoop;
-
-
-// Initialize:
+	int frame_count = 0;
 
 
 	// DXLibの初期化
@@ -42,7 +60,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	main_loop->AddObject(a);
 
 
-// MainLoop:
+	// MainLoop:
 
 
 	ClearDrawScreen();
@@ -50,10 +68,29 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	while (ProcessMessage() == 0)
 	{
+		// System:
+		currentTime = timeGetTime();	// 現在時間の取得
+
+		frame_count++;
+
+		if (currentTime - prevTime >= frameTime)	// フレーム時間経過したら
+		{
+			Sleep(1);
+
+			currentTime = timeGetTime();
+		}
+
+		prevTime = currentTime;
+
 		ClearDrawScreen();
-		DrawFormatStringF(0, screen_size.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit");
+		DrawFormatStringF(0, screen_size.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit  :  FrameCount %d", frame_count);
 
 		main_loop->MainLoopUpdate();
+
+		if (frame_count >= 60)
+		{
+			frame_count = 0;
+		}
 
 		if (CheckHitKey(datas->GetQuitKey()) == 1)
 		{
@@ -61,8 +98,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 			DxLib_End();
 
+			timeEndPeriod(1);
+
 			break;
 		}
+
 	}
 
 	return 0;

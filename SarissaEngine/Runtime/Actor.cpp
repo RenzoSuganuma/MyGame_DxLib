@@ -15,9 +15,6 @@ Actor::~Actor()
 
 void Actor::Begin()
 {
-	if(actor_debug)
-	DrawString(0, 10, " Abegin ", GetColor(255, 255, 255));
-
 	auto it = attachedComponents_.begin();
 	while (it != attachedComponents_.end())
 	{
@@ -43,9 +40,6 @@ void Actor::Tick()
 
 void Actor::End()
 {
-	if(actor_debug)
-	DrawString(0, 10, " Aend ", GetColor(255, 255, 255));
-
 	auto it = attachedComponents_.begin();
 	while (it != attachedComponents_.end())
 	{

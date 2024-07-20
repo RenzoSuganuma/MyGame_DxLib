@@ -15,8 +15,6 @@ Component::~Component()
 
 void Component::Begin()
 {
-	if (comp_debug)
-		DrawString(0, 50, " Cbegin ", GetColor(255, 255, 255));
 }
 
 void Component::Tick()
@@ -27,8 +25,6 @@ void Component::Tick()
 
 void Component::End()
 {
-	if (comp_debug)
-		DrawString(0, 50, " Cend ", GetColor(255, 255, 255));
 }
 
 const Actor* const Component::GetActor() const
