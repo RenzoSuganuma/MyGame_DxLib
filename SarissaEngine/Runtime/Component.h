@@ -19,7 +19,7 @@ public:
 	virtual void Tick();
 	virtual void End();
 
-	const Actor* const GetActor() const ;
-	void const SetActor(const Actor* actor);
+	const Actor* const GetActor( ) const ;
+	void const		   SetActor(const Actor* actor);
 };
 

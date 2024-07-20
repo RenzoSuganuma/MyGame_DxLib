@@ -19,17 +19,23 @@ public:
 	MainLoop();
 	~MainLoop();
 
-	void const MainLoopEntry();
+	void const
+		MainLoopEntry();
 
-	void const MainLoopUpdate();
+	void const
+		MainLoopUpdate();
 
-	void const MainLoopExit();
+	void const
+		MainLoopExit();
 
 	const std::list< Actor* >::iterator
-		const AddObject(Actor* newObject);
+		const
+		AddObject(Actor* newObject);
 
-	void const RemoveObject(Actor* obj);
+	void const
+		RemoveObject(Actor* obj);
 
-	void const RemoveObject(const std::list< Actor* >::iterator place);
+	void const
+		RemoveObject(const std::list< Actor* >::iterator place);
 };
 

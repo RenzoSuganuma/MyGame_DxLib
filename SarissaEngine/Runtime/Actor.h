@@ -24,8 +24,9 @@ public:
 	virtual void End();
 
 	std::list< Component >::iterator
-		const AddComponent(Component component);
-
-	void const RemoveComponent(std::list< Component >::iterator place);
+		const
+		AddComponent(Component component);
+	void const
+		RemoveComponent(std::list< Component >::iterator place);
 };
 

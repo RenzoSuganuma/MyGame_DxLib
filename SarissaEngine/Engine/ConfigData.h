@@ -14,29 +14,37 @@ private:
 	int quitKey_ = KEY_INPUT_ESCAPE;
 
 public:
-	const std::pair< unsigned int, unsigned int >
-		const GetFHDScreenSize() const;
-
 	ConfigData();
+	ConfigData(unsigned int width, unsigned int height);
 	~ConfigData();
 
-	ConfigData(unsigned int width, unsigned int height);
-
-	void const SetScreenSize(unsigned int width, unsigned int height);
+	void const
+		SetScreenSize(unsigned int width, unsigned int height);
 
 	std::pair< unsigned int, unsigned int >
-		const GetScreenSize() const;
+		const
+		GetScreenSize() const;
 
-	void const SetChangeWindowMode(bool cond);
+	void const
+		SetChangeWindowMode(bool cond);
 
-	const bool const GetChangeWindowMode() const;
+	const bool const
+		GetChangeWindowMode() const;
 
-	const unsigned int GetRefreshRate() const;
+	const unsigned int
+		GetRefreshRate() const;
 
-	void const SetRefreshRate(unsigned int rate);
+	void const
+		SetRefreshRate(unsigned int rate);
 
-	const int const GetQuitKey() const;
+	const int const
+		GetQuitKey() const;
 
-	void const SetQuitKey(const int keyCode);
+	void const
+		SetQuitKey(const int keyCode);
+
+	const std::pair< unsigned int, unsigned int >
+		const
+		GetFHDScreenSize() const;
 };
 
