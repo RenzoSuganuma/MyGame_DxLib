@@ -4,14 +4,10 @@
 #include "string"
 #include "DxLib.h"
 
-// SarissaEngine
-
 namespace SarissaEngine::Runtime::Framework
 {
 
 	class Component;
-
-	constexpr bool actor_debug = true;
 
 	class Actor
 	{
@@ -27,7 +23,7 @@ namespace SarissaEngine::Runtime::Framework
 		~Actor();
 
 		virtual void Begin();
-		virtual void Tick();
+		virtual void Tick(float deltaTime);
 		virtual void End();
 
 		std::list< Component >::iterator
@@ -41,8 +37,6 @@ namespace SarissaEngine::Runtime::Framework
 
 namespace SarissaEngine::Runtime::Framework
 {
-
-	constexpr bool comp_debug = true;
 
 	class Actor;
 
@@ -58,11 +52,15 @@ namespace SarissaEngine::Runtime::Framework
 		~Component();
 
 		virtual void Begin();
-		virtual void Tick();
+		virtual void Tick(float deltaTime);
 		virtual void End();
 
-		const Actor* const GetActor() const;
-		void const		   SetActor(const Actor* actor);
+		const Actor*
+			const
+			GetActor() const;
+		void
+			const
+			SetActor(const Actor* actor);
 	};
 
 }

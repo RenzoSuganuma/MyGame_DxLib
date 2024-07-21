@@ -1,5 +1,7 @@
 #include "ConfigData.h"
 
+using SarissaEngine::Runtime::System::ConfigData;
+
 const std::pair< unsigned int, unsigned int >
 const ConfigData::GetFHDScreenSize() const
 {
@@ -58,4 +60,9 @@ const int const ConfigData::GetQuitKey() const
 void const ConfigData::SetQuitKey(int keyCode)
 {
 	quitKey_ = keyCode;
+}
+
+const DWORD const ConfigData::GetCurrentSystemTime() const
+{
+	return	timeGetTime();
 }

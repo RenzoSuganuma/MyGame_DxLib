@@ -17,10 +17,12 @@
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 
+	using SarissaEngine::Runtime::System::ConfigData;
+
 	// System:
 	// 構成データ
 	ConfigData* datas = new ConfigData;
-	// １フレーム当たりの時間
+	// １フレーム当たりの時間[ms]
 	DWORD frameTime = 1000 / datas->GetRefreshRate();
 	// 現在時間
 	DWORD currentTime = 0;
@@ -30,6 +32,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	timeBeginPeriod(1);
 	// 現在時間を過去時間に設定
 	prevTime = timeGetTime();
+	// 経過時間
+	float elapsedTime = 0;
 
 
 	// Initialize:
@@ -86,9 +90,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		prevTime = currentTime;
 
 		ClearDrawScreen();
-		DrawFormatStringF(0, screen_size.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit  :  FrameCount %2d", frame_count);
+		DrawFormatStringF(0, screen_size.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit  :  FrameCount %2d : CurrentTime = %d : Elapsed = %f", frame_count, currentTime , elapsedTime);
 
-		main_loop->MainLoopUpdate();
+		main_loop->MainLoopUpdate(frameTime / 1000.0f);
+
+		elapsedTime += frameTime / 1000.0f;
 
 		if (frame_count >= 60)
 		{

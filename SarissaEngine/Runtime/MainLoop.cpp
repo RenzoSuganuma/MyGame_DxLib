@@ -22,13 +22,13 @@ void const MainLoop::MainLoopEntry()
 	}
 }
 
-void const MainLoop::MainLoopUpdate()
+void const MainLoop::MainLoopUpdate(float deltaTime)
 {
 	auto itr = objects_.begin();
 
 	while (itr != objects_.end())
 	{
-		(*itr)->Tick();
+		(*itr)->Tick(deltaTime);
 		itr++;
 	}
 }

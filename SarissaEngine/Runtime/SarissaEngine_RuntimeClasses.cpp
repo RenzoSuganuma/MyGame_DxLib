@@ -27,15 +27,15 @@ void Actor::Begin()
 
 }
 
-void Actor::Tick()
+void Actor::Tick(float deltaTime)
 {
-	if (actor_debug)
-		DrawString(0, 10, " Atick ", GetColor(255, 255, 255));
+	if (0)
+		DrawFormatString(0, 10, GetColor(255, 255, 255), " Atick");
 
 	auto it = attachedComponents_.begin();
 	while (it != attachedComponents_.end())
 	{
-		it->Tick();
+		it->Tick(deltaTime);
 		it++;
 	}
 
@@ -82,9 +82,9 @@ void Component::Begin()
 {
 }
 
-void Component::Tick()
+void Component::Tick(float deltaTime)
 {
-	if (comp_debug)
+	if (0)
 		DrawString(0, 50, " Ctick ", GetColor(255, 255, 255));
 }
 

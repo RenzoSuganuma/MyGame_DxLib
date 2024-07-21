@@ -2,49 +2,69 @@
 
 #include "DxLib.h"
 #include "iostream"
+#include "Windows.h"
 
-// システム周りのデータ管理クラス
-class ConfigData final
+#pragma comment (lib , "winmm.lib")
+
+namespace SarissaEngine::Runtime::System
 {
-private:
-	unsigned int windowWidth_ = 1920;
-	unsigned int windowHeigth_ = 1080;
-	unsigned int refreshRate_ = 60;
-	bool changeWindowMode_ = true;
-	int quitKey_ = KEY_INPUT_ESCAPE;
 
-public:
-	ConfigData();
-	ConfigData(unsigned int width, unsigned int height);
-	~ConfigData();
+	// システム周りのデータ管理クラス
+	class ConfigData final
+	{
+	private:
+		unsigned int windowWidth_ = 1920;
+		unsigned int windowHeigth_ = 1080;
+		unsigned int refreshRate_ = 60;
+		bool changeWindowMode_ = true;
+		int quitKey_ = KEY_INPUT_ESCAPE;
+		DWORD currentTime = 0;
 
-	void const
-		SetScreenSize(unsigned int width, unsigned int height);
+	public:
+		ConfigData();
+		ConfigData(unsigned int width, unsigned int height);
+		~ConfigData();
 
-	std::pair< unsigned int, unsigned int >
-		const
-		GetScreenSize() const;
+		void
+			const
+			SetScreenSize(unsigned int width, unsigned int height);
 
-	void const
-		SetChangeWindowMode(bool cond);
+		std::pair< unsigned int, unsigned int >
+			const
+			GetScreenSize() const;
 
-	const bool const
-		GetChangeWindowMode() const;
+		void
+			const
+			SetChangeWindowMode(bool cond);
 
-	const unsigned int
-		GetRefreshRate() const;
+		const bool
+			const
+			GetChangeWindowMode() const;
 
-	void const
-		SetRefreshRate(unsigned int rate);
+		const unsigned int
+			const
+			GetRefreshRate() const;
 
-	const int const
-		GetQuitKey() const;
+		void
+			const
+			SetRefreshRate(unsigned int rate);
 
-	void const
-		SetQuitKey(const int keyCode);
+		const int
+			const
+			GetQuitKey() const;
 
-	const std::pair< unsigned int, unsigned int >
-		const
-		GetFHDScreenSize() const;
-};
+		void
+			const
+			SetQuitKey(const int keyCode);
+
+		const std::pair< unsigned int, unsigned int >
+			const
+			GetFHDScreenSize() const;
+
+		const DWORD
+			const
+			GetCurrentSystemTime() const;
+	};
+
+}
 

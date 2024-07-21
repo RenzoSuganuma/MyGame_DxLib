@@ -20,23 +20,28 @@ namespace SarissaEngine::Runtime::System
 		MainLoop();
 		~MainLoop();
 
-		void const
+		void
+			const
 			MainLoopEntry();
 
-		void const
-			MainLoopUpdate();
+		void
+			const
+			MainLoopUpdate(float deltaTime);
 
-		void const
+		void
+			const
 			MainLoopExit();
 
 		const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator
 			const
 			AddObject(SarissaEngine::Runtime::Framework::Actor* newObject);
 
-		void const
+		void
+			const
 			RemoveObject(SarissaEngine::Runtime::Framework::Actor* obj);
 
-		void const
+		void
+			const
 			RemoveObject(const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator place);
 	};
 
