@@ -33,7 +33,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	std::chrono::system_clock::time_point clockEnded;
 	// ƒÂ•b
 	float deltaTime = frameTime / 1000.0f;
-
+	// Œo‰ßŽžŠÔ
+	float elapsedTime = 0;
 
 	// Initialize:
 
@@ -82,6 +83,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		DrawFormatStringF(0, screenSize.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit");
 
 		mainLoop->MainLoopUpdate(deltaTime);
+		elapsedTime += deltaTime;
 
 		if (CheckHitKey(datas->GetQuitKey()) == 1)
 		{
@@ -95,14 +97,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ScreenFlip();
 
 		clockEnded = std::chrono::system_clock::now();
-		double delta_mil_sec = (static_cast<double>
+		double deltaMilSec = (static_cast<double>
 			(std::chrono::duration_cast<std::chrono::microseconds>
 				(clockEnded - clockStarted).count())) / 1000.0;
-		deltaTime = delta_mil_sec / 100.0f;
-		if (frameTime > delta_mil_sec)
+		deltaTime = deltaMilSec / 100.0f;
+		if (frameTime > deltaMilSec)
 		{
 			timeBeginPeriod(1);
-			Sleep((DWORD)(frameTime - delta_mil_sec));
+			Sleep((DWORD)(frameTime - deltaMilSec));
 			timeEndPeriod(1);
 		}
 	}
