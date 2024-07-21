@@ -20,7 +20,7 @@ void const ConfigData::SetScreenSize(unsigned int width, unsigned int height)
 	windowWidth_ = width;
 	windowHeigth_ = height;
 
-	SetGraphMode(windowWidth_, windowHeigth_, 32, refreshRate_);
+	SetGraphMode(windowWidth_, windowHeigth_, 32);
 }
 
 std::pair< unsigned int, unsigned int >

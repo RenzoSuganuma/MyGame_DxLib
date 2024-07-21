@@ -1,3 +1,4 @@
+#include "chrono"
 #include "DxLib.h"
 #include "Windows.h"
 #include "SarissaEngine\Runtime\MainLoop.h"
@@ -23,15 +24,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// 構成データ
 	ConfigData* datas = new ConfigData;
 	// １フレーム当たりの時間[ms]
-	DWORD frameTime = 1000 / datas->GetRefreshRate();
-	// 現在時間
-	DWORD currentTime = 0;
+	double frameTime = (1000.0 / (datas->GetRefreshRate() + 0.5));
 	// 過去時間
-	DWORD prevTime = 0;
-	// システム時間の制度を1msに変更
-	timeBeginPeriod(1);
-	// 現在時間を過去時間に設定
-	prevTime = timeGetTime();
+	std::chrono::system_clock::time_point clockStarted;
+	// 現在時間
+	std::chrono::system_clock::time_point clockEnded;
+	// δ秒
+	float deltaTime = frameTime / 1000.0f;
 	// 経過時間
 	float elapsedTime = 0;
 
@@ -39,10 +38,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// Initialize:
 
 	using SarissaEngine::Runtime::System::MainLoop;
-
 	MainLoop* main_loop = new MainLoop;
-	int frame_count = 0;
 
+	int frame_count = 0;
 
 	// DXLibの初期化
 	if (DxLib_Init() == -1)
@@ -50,53 +48,46 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;
 	}
 
-	datas->SetScreenSize(1920, 1080);
-
+	// ウィンドウのセットアップ
+	datas->SetScreenSize(1000, 600);
 	auto screen_size = datas->GetScreenSize();
-
-	datas->SetChangeWindowMode(false);
+	datas->SetChangeWindowMode(true);
 	ChangeWindowMode(datas->GetChangeWindowMode());
-
 	datas->SetQuitKey(KEY_INPUT_ESCAPE);
 
+	// テスト用のシーン内セットアップ
 	auto a = new SarissaEngine::Runtime::Framework::Actor;
 	SarissaEngine::Runtime::Framework::Component c;
 	a->AddComponent(c);
-
 	main_loop->AddObject(a);
 
 
 	// MainLoop:
 
+	int sh = LoadSoundMem(".\\Resources\\se_sound.mp3");
 
 	ClearDrawScreen();
 	main_loop->MainLoopEntry();
 
-	while (ProcessMessage() == 0)
+	while (1)
 	{
-
-		// System:
-		currentTime = timeGetTime();	// 現在時間の取得
-
-		frame_count++;
-
-		if (currentTime - prevTime >= frameTime)	// フレーム時間経過したら
+		if (ProcessMessage() == -1)
 		{
-			Sleep(1);
-
-			currentTime = timeGetTime();
+			break;
 		}
 
-		prevTime = currentTime;
+		// 計測開始
+		clockStarted = std::chrono::system_clock::now();
 
 		ClearDrawScreen();
-		DrawFormatStringF(0, screen_size.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit  :  FrameCount %2d : CurrentTime = %d : Elapsed = %f", frame_count, currentTime , elapsedTime);
+		DrawFormatStringF(0, screen_size.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit  :  FrameCount %2d : Elapsed = %f", frame_count, elapsedTime);
 
-		main_loop->MainLoopUpdate(frameTime / 1000.0f);
+		main_loop->MainLoopUpdate(deltaTime);
 
-		elapsedTime += frameTime / 1000.0f;
+		frame_count++;
+		elapsedTime += deltaTime;
 
-		if (frame_count >= 60)
+		if (frame_count >= datas->GetRefreshRate())
 		{
 			frame_count = 0;
 		}
@@ -107,11 +98,22 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 			DxLib_End();
 
-			timeEndPeriod(1);
-
 			break;
 		}
 
+		ScreenFlip();
+
+		clockEnded = std::chrono::system_clock::now();
+		double mil_sec = static_cast<double>
+			(std::chrono::duration_cast<std::chrono::milliseconds>
+				(clockEnded - clockStarted).count());
+		deltaTime = mil_sec / 1000.0f;
+		if (frameTime > mil_sec)
+		{
+			timeBeginPeriod(1);
+			Sleep(DWORD(frameTime - mil_sec));
+			timeEndPeriod(1);
+		}
 	}
 
 	return 0;

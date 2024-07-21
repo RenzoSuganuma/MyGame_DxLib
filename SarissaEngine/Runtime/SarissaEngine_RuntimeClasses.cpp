@@ -1,7 +1,6 @@
 #include "DxLib.h"
 #include "SarissaEngine_RuntimeClasses.h"
 
-
 using SarissaEngine::Runtime::Framework::Actor;
 using SarissaEngine::Runtime::Framework::Component;
 
@@ -24,21 +23,16 @@ void Actor::Begin()
 		it->Begin();
 		it++;
 	}
-
 }
 
 void Actor::Tick(float deltaTime)
 {
-	if (0)
-		DrawFormatString(0, 10, GetColor(255, 255, 255), " Atick");
-
 	auto it = attachedComponents_.begin();
 	while (it != attachedComponents_.end())
 	{
 		it->Tick(deltaTime);
 		it++;
 	}
-
 }
 
 void Actor::End()
@@ -49,7 +43,6 @@ void Actor::End()
 		it->End();
 		it++;
 	}
-
 }
 
 std::list< Component >::iterator
@@ -84,8 +77,6 @@ void Component::Begin()
 
 void Component::Tick(float deltaTime)
 {
-	if (0)
-		DrawString(0, 50, " Ctick ", GetColor(255, 255, 255));
 }
 
 void Component::End()
