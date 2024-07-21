@@ -24,7 +24,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// 構成データ
 	ConfigData* datas = new ConfigData;
 	// １フレーム当たりの時間[ms]
-	double frameTime = (1000.0 / (datas->GetRefreshRate() + 0.5));
+	float frameTime = (1000.0f / (datas->GetRefreshRate() + 0.5f));
 	// 過去時間
 	std::chrono::system_clock::time_point clockStarted;
 	// 現在時間
@@ -104,10 +104,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ScreenFlip();
 
 		clockEnded = std::chrono::system_clock::now();
-		double mil_sec = static_cast<double>
-			(std::chrono::duration_cast<std::chrono::milliseconds>
+		double mic_sec = static_cast<double>
+			(std::chrono::duration_cast<std::chrono::microseconds>
 				(clockEnded - clockStarted).count());
-		deltaTime = mil_sec / 1000.0f;
+		float mil_sec = static_cast<float>(mic_sec / 1000.0);
+		deltaTime = mil_sec / 100.0f;
 		if (frameTime > mil_sec)
 		{
 			timeBeginPeriod(1);
