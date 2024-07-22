@@ -26,7 +26,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	// フレームレート制限のための変数群
 	// １フレーム当たりの時間[ms]
-	float frameTime = (1000.0f / (datas->GetRefreshRate()));
+	float frameTime = 0;
 	// 過去時間
 	std::chrono::system_clock::time_point clockStarted;
 	// 現在時間
@@ -52,7 +52,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	auto screenSize = datas->GetScreenSize();
 	datas->SetChangeWindowMode(true);
 	ChangeWindowMode(datas->GetChangeWindowMode());
-	datas->SetRefreshRate(144);
+	datas->SetRefreshRate(60);
+	frameTime = (1000.0f / (datas->GetRefreshRate()) + 0.5f);
 	datas->SetQuitKey(KEY_INPUT_ESCAPE);
 
 	// テスト用のシーン内セットアップ
@@ -80,7 +81,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		clockStarted = std::chrono::system_clock::now();
 
 		ClearDrawScreen();
-		DrawFormatStringF(0, screenSize.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit");
+		DrawFormatStringF(0, screenSize.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit : %f", elapsedTime);
 
 		mainLoop->MainLoopUpdate(deltaTime);
 		elapsedTime += deltaTime;
@@ -99,8 +100,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		clockEnded = std::chrono::system_clock::now();
 		double deltaMilSec = (static_cast<double>
 			(std::chrono::duration_cast<std::chrono::microseconds>
-				(clockEnded - clockStarted).count())) / 1000.0;
-		deltaTime = deltaMilSec / 100.0f;
+				(clockEnded - clockStarted).count()));
+		deltaTime = deltaMilSec / 1000.0 / 1000.0;
 		if (frameTime > deltaMilSec)
 		{
 			timeBeginPeriod(1);
