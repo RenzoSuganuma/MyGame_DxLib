@@ -6,12 +6,14 @@
 void Player::Begin_()
 {
 	name_ = "Player";
+	position_.x = windowWidth_ / 2;
+	position_.y = windowHeigth_ / 2;
 }
 
 void Player::Tick_(float deltaTime)
 {
 	elapsedTime += deltaTime;
-	DrawCircle(windowWidth_ / 2, windowHeigth_ / 2, 100, color_);
+	DrawCircle(position_.x, position_.y, 100, color_);
 	if (elapsedTime > 1.0f)
 	{
 		PlaySoundMem(pigeon_se, DX_PLAYTYPE_BACK);
@@ -25,7 +27,10 @@ void Player::Tick_(float deltaTime)
 
 	auto input = static_cast<InputHandler*>(*(attachedComponents_.begin()));
 
-	DrawFormatString(0, 0, -1, "%d", input->moveVec_.x);
+	position_.x += input->moveVec_.x;
+	position_.y += input->moveVec_.y;
+
+	DrawFormatString(0, 0, -1, "%.1f, %.1f", input->moveVec_.x, input->moveVec_.y);
 }
 
 void Player::End_()
