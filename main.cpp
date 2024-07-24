@@ -38,8 +38,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	// Initialize:
 
-	using SarissaEngine::Runtime::System::MainLoop;
-	MainLoop* mainLoop = new MainLoop;
+	using SarissaEngine::Runtime::System::Level;
+	Level* mainLoop = new Level;
 
 	// DXLib‚Ì‰Šú‰»
 	if (DxLib_Init() == -1)

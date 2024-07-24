@@ -1,17 +1,17 @@
 #include "MainLoop.h"
 
-using SarissaEngine::Runtime::System::MainLoop;
+using SarissaEngine::Runtime::System::Level;
 
-MainLoop::MainLoop()
+Level::Level()
 {
 }
 
-MainLoop::~MainLoop() 
+Level::~Level() 
 {
 	objects_.clear();
 }
 
-void const MainLoop::MainLoopEntry()
+void const Level::MainLoopEntry()
 {
 	auto itr = objects_.begin();
 
@@ -22,7 +22,7 @@ void const MainLoop::MainLoopEntry()
 	}
 }
 
-void const MainLoop::MainLoopUpdate(float deltaTime)
+void const Level::MainLoopUpdate(float deltaTime)
 {
 	auto itr = objects_.begin();
 
@@ -33,7 +33,7 @@ void const MainLoop::MainLoopUpdate(float deltaTime)
 	}
 }
 
-void const MainLoop::MainLoopExit()
+void const Level::MainLoopExit()
 {
 	auto itr = objects_.begin();
 
@@ -45,7 +45,7 @@ void const MainLoop::MainLoopExit()
 }
 
 const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator
-const MainLoop::AddObject(SarissaEngine::Runtime::Framework::Actor* newObj)
+const Level::AddObject(SarissaEngine::Runtime::Framework::Actor* newObj)
 {
 	objects_.emplace_back(newObj);
 	auto it = objects_.end();
@@ -53,12 +53,12 @@ const MainLoop::AddObject(SarissaEngine::Runtime::Framework::Actor* newObj)
 	return it;
 }
 
-void const MainLoop::RemoveObject(SarissaEngine::Runtime::Framework::Actor* obj)
+void const Level::RemoveObject(SarissaEngine::Runtime::Framework::Actor* obj)
 {
 	objects_.remove(obj);
 }
 
-void const MainLoop::RemoveObject(const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator place)
+void const Level::RemoveObject(const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator place)
 {
 	objects_.erase(place);
 }
