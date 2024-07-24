@@ -13,7 +13,7 @@ namespace SarissaEngine::Runtime::Framework
 	{
 	protected:
 		VECTOR position_{ 0 }, rotation_{ 0 };
-		std::list< Component > attachedComponents_;
+		std::list< Component* > attachedComponents_;
 
 	public:
 		std::string name_ = " Actor_ ";
@@ -22,16 +22,20 @@ namespace SarissaEngine::Runtime::Framework
 		Actor();
 		~Actor();
 
-		virtual void Begin();
-		virtual void Tick(float deltaTime);
-		virtual void End();
+		void Begin();
+		void Tick(float deltaTime);
+		void End();
 
-		std::list< Component >::iterator
+		virtual void Begin_();
+		virtual void Tick_(float deltaTime);
+		virtual void End_();
+
+		std::list< Component* >::iterator
 			const
-			AddComponent(Component component);
+			AddComponent(Component* component);
 
 		void const
-			RemoveComponent(std::list< Component >::iterator place);
+			RemoveComponent(std::list< Component* >::iterator place);
 
 		void const SetPosition(VECTOR newPos);
 		const VECTOR const GetPosition();
@@ -58,9 +62,13 @@ namespace SarissaEngine::Runtime::Framework
 		Component();
 		~Component();
 
-		virtual void Begin();
-		virtual void Tick(float deltaTime);
-		virtual void End();
+		void Begin();
+		void Tick(float deltaTime);
+		void End();
+
+		virtual void Begin_();
+		virtual void Tick_(float deltaTime);
+		virtual void End_();
 
 		const Actor*
 			const

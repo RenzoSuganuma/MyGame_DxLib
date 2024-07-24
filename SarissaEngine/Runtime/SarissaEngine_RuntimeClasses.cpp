@@ -15,14 +15,31 @@ Actor::~Actor()
 	attachedComponents_.clear();
 }
 
+void Actor::Begin_()
+{
+
+}
+
+void Actor::Tick_(float deltaTime)
+{
+
+}
+
+void Actor::End_()
+{
+
+}
+
 void Actor::Begin()
 {
 	auto it = attachedComponents_.begin();
 	while (it != attachedComponents_.end())
 	{
-		it->Begin();
+		(*it)->Begin();
 		it++;
 	}
+
+	Begin_();
 }
 
 void Actor::Tick(float deltaTime)
@@ -30,11 +47,11 @@ void Actor::Tick(float deltaTime)
 	auto it = attachedComponents_.begin();
 	while (it != attachedComponents_.end())
 	{
-		it->Tick(deltaTime);
+		(*it)->Tick(deltaTime);
 		it++;
 	}
 
-	DrawCircle(100 , 50, GetColor(255, 255, 0), 1, 10);
+	Tick_(deltaTime);
 }
 
 void Actor::End()
@@ -42,22 +59,24 @@ void Actor::End()
 	auto it = attachedComponents_.begin();
 	while (it != attachedComponents_.end())
 	{
-		it->End();
+		(*it)->End();
 		it++;
 	}
+
+	End_();
 }
 
-std::list< Component >::iterator
-const Actor::AddComponent(Component component)
+std::list< Component* >::iterator
+const Actor::AddComponent(Component* component)
 {
-	component.SetActor(this);
+	component->SetActor(this);
 	attachedComponents_.emplace_back(component);
 	auto it = attachedComponents_.end();
 	it--;
 	return it;
 }
 
-void const Actor::RemoveComponent(std::list< Component >::iterator place)
+void const Actor::RemoveComponent(std::list< Component* >::iterator place)
 {
 	attachedComponents_.erase(place);
 }
@@ -93,16 +112,34 @@ Component::~Component()
 	enabled_ = false;
 }
 
+void Component::Begin_()
+{
+
+}
+
+void Component::Tick_(float deltaTime)
+{
+
+}
+
+void Component::End_()
+{
+
+}
+
 void Component::Begin()
 {
+	Begin_();
 }
 
 void Component::Tick(float deltaTime)
 {
+	Tick_(deltaTime);
 }
 
 void Component::End()
 {
+	End_();
 }
 
 const Actor* const Component::GetActor() const

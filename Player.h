@@ -4,8 +4,12 @@
 
 class Player : public SarissaEngine::Runtime::Framework::Actor
 {
-	void Begin() override;
-	void Tick(float deltaTime) override;
-	void End() override;
+private:
+	unsigned int color_ = GetColor(255, 0, 0);
+	float elapsedTime = 0;
+public:
+	void Begin_() override;
+	void Tick_(float deltaTime) override;
+	void End_() override;
 };
 

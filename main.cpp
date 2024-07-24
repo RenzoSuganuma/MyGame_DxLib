@@ -6,6 +6,7 @@
 #include "SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.h"
 
 #include "Player.h"
+#include "InputHandler.h"
 
 #pragma comment (lib , "winmm.lib")
 
@@ -54,8 +55,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SetQuitKey(KEY_INPUT_ESCAPE);
 
 	// テスト用のシーン内セットアップ
-	//level->AddObject(new SarissaEngine::Runtime::Framework::Actor);
-	level->AddObject(new Player);
+	auto player = new Player;
+	InputHandler* input = new InputHandler;
+	player->AddComponent(input);
+	level->AddObject(player);
 
 
 	// MainLoop:

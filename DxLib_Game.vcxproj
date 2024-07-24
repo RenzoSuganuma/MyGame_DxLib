@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SarissaEngine\Globals.cpp" />
@@ -26,6 +27,7 @@
     <ClCompile Include="SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="InputHandler.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.h" />
     <ClInclude Include="SarissaEngine\Globals.h" />
