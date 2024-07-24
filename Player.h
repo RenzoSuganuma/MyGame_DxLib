@@ -4,8 +4,8 @@
 
 class Player : public SarissaEngine::Runtime::Framework::Actor
 {
-	void Begin() override ;
-	void Tick(float deltaTime) override ;
-	void End() override ;
+	void Begin() override;
+	void Tick(float deltaTime) override;
+	void End() override;
 };
 

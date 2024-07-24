@@ -1,65 +1,13 @@
 #include "chrono"
 #include "DxLib.h"
 #include "Windows.h"
+#include "SarissaEngine\Globals.h"
 #include "SarissaEngine\Runtime\Level.h"
 #include "SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.h"
 
+#include "Player.h"
+
 #pragma comment (lib , "winmm.lib")
-
-int pigeon_se = -1;
-unsigned int windowWidth_ = 1920;
-unsigned int windowHeigth_ = 1080;
-unsigned int refreshRate_ = 60;
-bool changeWindowMode_ = true;
-int quitKey_ = KEY_INPUT_ESCAPE;
-DWORD currentTime = 0;
-
-void const SetScreenSize(unsigned int width, unsigned int height)
-{
-	windowWidth_ = width;
-	windowHeigth_ = height;
-
-	SetGraphMode(windowWidth_, windowHeigth_, 32);
-}
-
-std::pair< unsigned int, unsigned int >
-const GetScreenSize()
-{
-	return std::make_pair(windowWidth_, windowHeigth_);
-}
-
-void const SetChangeWindowMode(bool cond)
-{
-	changeWindowMode_ = cond;
-	ChangeWindowMode(changeWindowMode_);
-}
-
-const bool const GetChangeWindowMode()
-{
-	return changeWindowMode_;
-}
-
-void const SetRefreshRate(unsigned int rate)
-{
-	refreshRate_ = rate;
-
-	SetGraphMode(windowWidth_, windowHeigth_, 32, refreshRate_);
-}
-
-const int const GetQuitKey()
-{
-	return quitKey_;
-}
-
-void const SetQuitKey(int keyCode)
-{
-	quitKey_ = keyCode;
-}
-
-const DWORD const GetCurrentSystemTime()
-{
-	return	timeGetTime();
-}
 
 /* 【Layer:0】 */
 
@@ -106,10 +54,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SetQuitKey(KEY_INPUT_ESCAPE);
 
 	// テスト用のシーン内セットアップ
-	auto a = new SarissaEngine::Runtime::Framework::Actor;
-	SarissaEngine::Runtime::Framework::Component c;
-	a->AddComponent(c);
-	level->AddObject(a);
+	//level->AddObject(new SarissaEngine::Runtime::Framework::Actor);
+	level->AddObject(new Player);
 
 
 	// MainLoop:

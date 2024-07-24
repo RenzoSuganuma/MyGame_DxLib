@@ -33,6 +33,8 @@ void Actor::Tick(float deltaTime)
 		it->Tick(deltaTime);
 		it++;
 	}
+
+	DrawCircle(100 , 50, GetColor(255, 255, 0), 1, 10);
 }
 
 void Actor::End()
