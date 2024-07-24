@@ -11,14 +11,14 @@ namespace SarissaEngine::Runtime::System
 {
 
 	// メインループ : Unityでいうシーン
-	class MainLoop final
+	class Level final
 	{
 	private:
 		std::list< SarissaEngine::Runtime::Framework::Actor* > objects_;
 
 	public:
-		MainLoop();
-		~MainLoop();
+		Level();
+		~Level();
 
 		void
 			const

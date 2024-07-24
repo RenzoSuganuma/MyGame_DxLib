@@ -60,6 +60,26 @@ void const Actor::RemoveComponent(std::list< Component >::iterator place)
 	attachedComponents_.erase(place);
 }
 
+void const Actor::SetPosition(VECTOR newPos)
+{
+	position_ = newPos;
+}
+
+const VECTOR const Actor::GetPosition()
+{
+	return position_;
+}
+
+void const Actor::SetRotaton(VECTOR newRot)
+{
+	rotation_ = newRot;
+}
+
+const VECTOR const Actor::GetRotaton()
+{
+	return rotation_;
+}
+
 Component::Component()
 {
 	enabled_ = true;

@@ -18,27 +18,27 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SarissaEngine\Engine\ConfigData.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SarissaEngine\Runtime\MainLoop.cpp">
+    <ClCompile Include="SarissaEngine\Runtime\Level.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SarissaEngine\Engine\ConfigData.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\MainLoop.h">
+    <ClInclude Include="SarissaEngine\Runtime\Level.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

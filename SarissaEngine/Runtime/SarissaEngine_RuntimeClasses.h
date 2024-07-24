@@ -29,8 +29,15 @@ namespace SarissaEngine::Runtime::Framework
 		std::list< Component >::iterator
 			const
 			AddComponent(Component component);
+
 		void const
 			RemoveComponent(std::list< Component >::iterator place);
+
+		void const SetPosition(VECTOR newPos);
+		const VECTOR const GetPosition();
+
+		void const SetRotaton(VECTOR newRot);
+		const VECTOR const GetRotaton();
 	};
 
 }

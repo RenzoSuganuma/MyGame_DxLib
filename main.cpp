@@ -1,12 +1,65 @@
 #include "chrono"
 #include "DxLib.h"
 #include "Windows.h"
-#include "SarissaEngine\Runtime\MainLoop.h"
-#include "SarissaEngine\Engine\ConfigData.h"
+#include "SarissaEngine\Runtime\Level.h"
 #include "SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.h"
 
 #pragma comment (lib , "winmm.lib")
 
+int pigeon_se = -1;
+unsigned int windowWidth_ = 1920;
+unsigned int windowHeigth_ = 1080;
+unsigned int refreshRate_ = 60;
+bool changeWindowMode_ = true;
+int quitKey_ = KEY_INPUT_ESCAPE;
+DWORD currentTime = 0;
+
+void const SetScreenSize(unsigned int width, unsigned int height)
+{
+	windowWidth_ = width;
+	windowHeigth_ = height;
+
+	SetGraphMode(windowWidth_, windowHeigth_, 32);
+}
+
+std::pair< unsigned int, unsigned int >
+const GetScreenSize()
+{
+	return std::make_pair(windowWidth_, windowHeigth_);
+}
+
+void const SetChangeWindowMode(bool cond)
+{
+	changeWindowMode_ = cond;
+	ChangeWindowMode(changeWindowMode_);
+}
+
+const bool const GetChangeWindowMode()
+{
+	return changeWindowMode_;
+}
+
+void const SetRefreshRate(unsigned int rate)
+{
+	refreshRate_ = rate;
+
+	SetGraphMode(windowWidth_, windowHeigth_, 32, refreshRate_);
+}
+
+const int const GetQuitKey()
+{
+	return quitKey_;
+}
+
+void const SetQuitKey(int keyCode)
+{
+	quitKey_ = keyCode;
+}
+
+const DWORD const GetCurrentSystemTime()
+{
+	return	timeGetTime();
+}
 
 /* 【Layer:0】 */
 
@@ -17,12 +70,7 @@
 // エントリーポイントを提供
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-
-	using SarissaEngine::Runtime::System::ConfigData;
-
 	// System:
-	// 構成データ
-	ConfigData* datas = new ConfigData;
 
 	// フレームレート制限のための変数群
 	// １フレーム当たりの時間[ms]
@@ -39,7 +87,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// Initialize:
 
 	using SarissaEngine::Runtime::System::Level;
-	Level* mainLoop = new Level;
+	Level* level = new Level;
 
 	// DXLibの初期化
 	if (DxLib_Init() == -1)
@@ -48,27 +96,29 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 	// ウィンドウのセットアップ
-	datas->SetScreenSize(1000, 600);
-	auto screenSize = datas->GetScreenSize();
-	datas->SetChangeWindowMode(true);
-	ChangeWindowMode(datas->GetChangeWindowMode());
-	datas->SetRefreshRate(60);
-	frameTime = (1000.0f / (datas->GetRefreshRate()) + 0.5f);
-	datas->SetQuitKey(KEY_INPUT_ESCAPE);
+	SetScreenSize(1000, 600);
+	auto screenSize = GetScreenSize();
+	SetChangeWindowMode(true);
+	ChangeWindowMode(GetChangeWindowMode());
+	SetRefreshRate(60);
+	/* GetRefreshRate関数がほかの名前空間の関数と名前だけだと被るので完全修飾 */
+	frameTime = (1000.0f / (GetRefreshRate()) + 0.5f);
+	SetQuitKey(KEY_INPUT_ESCAPE);
 
 	// テスト用のシーン内セットアップ
 	auto a = new SarissaEngine::Runtime::Framework::Actor;
 	SarissaEngine::Runtime::Framework::Component c;
 	a->AddComponent(c);
-	mainLoop->AddObject(a);
+	level->AddObject(a);
 
 
 	// MainLoop:
 
-	int sh = LoadSoundMem(".\\Resources\\se_sound.mp3");
+	// 効果音読み込み
+	pigeon_se = LoadSoundMem(".\\Resources\\pigeon_se_.mp3");
 
 	ClearDrawScreen();
-	mainLoop->MainLoopEntry();
+	level->MainLoopEntry();
 
 	while (1)
 	{
@@ -83,12 +133,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ClearDrawScreen();
 		DrawFormatStringF(0, screenSize.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit : %f", elapsedTime);
 
-		mainLoop->MainLoopUpdate(deltaTime);
+		level->MainLoopUpdate(deltaTime);
 		elapsedTime += deltaTime;
 
-		if (CheckHitKey(datas->GetQuitKey()) == 1)
+		if (CheckHitKey(GetQuitKey()) == 1)
 		{
-			mainLoop->MainLoopExit();
+			level->MainLoopExit();
 
 			DxLib_End();
 
