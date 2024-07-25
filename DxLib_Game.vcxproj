@@ -36,6 +36,9 @@
     <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.h" />
     <ClInclude Include="SarissaEngine\Engine\SrssEngn_SoundHandler.h" />
     <ClInclude Include="SarissaEngine\Engine\SrssEngn_WindowHandler.h" />
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Actor.h" />
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Component.h" />
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.h" />
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_RuntimeClasses.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
