@@ -65,5 +65,14 @@
     <ClInclude Include="MovingCircle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Actor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
