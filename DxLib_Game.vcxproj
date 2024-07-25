@@ -33,13 +33,13 @@
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="MovingCircle.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.h" />
-    <ClInclude Include="SarissaEngine\Engine\SrssEngn_SoundHandler.h" />
-    <ClInclude Include="SarissaEngine\Engine\SrssEngn_WindowHandler.h" />
-    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Actor.h" />
-    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Component.h" />
-    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.h" />
-    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_RuntimeClasses.h" />
+    <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.hpp" />
+    <ClInclude Include="SarissaEngine\Engine\SrssEngn_SoundHandler.hpp" />
+    <ClInclude Include="SarissaEngine\Engine\SrssEngn_WindowHandler.hpp" />
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Actor.hpp" />
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Component.hpp" />
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.hpp" />
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_RuntimeClasses.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

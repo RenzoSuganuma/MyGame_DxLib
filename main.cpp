@@ -1,9 +1,9 @@
 #include "chrono"
 #include "DxLib.h"
 #include "Windows.h"
-#include "SarissaEngine\Engine\SrssEngn_SoundHandler.h"
-#include "SarissaEngine\Engine\SrssEngn_WindowHandler.h"
-#include "SarissaEngine\Runtime\SrssEngn_RuntimeClasses.h"
+#include "SarissaEngine\Engine\SrssEngn_SoundHandler.hpp"
+#include "SarissaEngine\Engine\SrssEngn_WindowHandler.hpp"
+#include "SarissaEngine\Runtime\SrssEngn_RuntimeClasses.hpp"
 
 #include "Player.h"
 #include "InputHandler.h"

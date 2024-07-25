@@ -1,5 +1,5 @@
 #include "DxLib.h"
-#include "SrssEngn_SoundHandler.h"
+#include "SrssEngn_SoundHandler.hpp"
 
 namespace SarissaEngine::Runtime::System
 {

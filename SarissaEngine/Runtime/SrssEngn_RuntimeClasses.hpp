@@ -11,9 +11,9 @@ namespace SarissaEngine::Runtime::Framework
 	class Actor;
 	class Component;
 
-#include "SrssEngn_Level.h"
-#include "SrssEngn_Actor.h"
-#include "SrssEngn_Component.h"
+#include "SrssEngn_Level.hpp"
+#include "SrssEngn_Actor.hpp"
+#include "SrssEngn_Component.hpp"
 
 }
 

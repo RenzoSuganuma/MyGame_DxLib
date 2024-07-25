@@ -44,34 +44,34 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_RuntimeClasses.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="InputHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SarissaEngine\Engine\SrssEngn_SoundHandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SarissaEngine\Engine\SrssEngn_WindowHandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MovingCircle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Actor.h">
+    <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Component.h">
+    <ClInclude Include="SarissaEngine\Engine\SrssEngn_SoundHandler.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.h">
+    <ClInclude Include="SarissaEngine\Engine\SrssEngn_WindowHandler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Actor.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Component.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_RuntimeClasses.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

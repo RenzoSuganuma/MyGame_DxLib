@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SarissaEngine\Runtime\SrssEngn_RuntimeClasses.h"
+#include "SarissaEngine\Runtime\SrssEngn_RuntimeClasses.hpp"
 
 class InputHandler : public SarissaEngine::Runtime::Framework::Component
 {

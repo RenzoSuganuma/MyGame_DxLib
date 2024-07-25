@@ -5,6 +5,7 @@
 #include "DxLib.h"
 
 class Level;
+class Component;
 
 class Actor
 {
