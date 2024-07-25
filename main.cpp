@@ -92,6 +92,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		{
 			level->MainLoopExit();
 
+			delete level;
+
 			DxLib_End();
 
 			break;

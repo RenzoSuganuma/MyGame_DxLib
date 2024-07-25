@@ -13,7 +13,7 @@ void InputHandler::Tick_(float deltaTime)
 	{
 		moveVec_.x = -1;
 	}
-	else if(moveVec_.x == -1)
+	else if (moveVec_.x == -1)
 	{
 		moveVec_.x = 0;
 	}
@@ -44,6 +44,8 @@ void InputHandler::Tick_(float deltaTime)
 	{
 		moveVec_.y = 0;
 	}
+
+	mouseLClick = GetMouseInput() == MOUSE_INPUT_LEFT;
 }
 
 void InputHandler::End_()

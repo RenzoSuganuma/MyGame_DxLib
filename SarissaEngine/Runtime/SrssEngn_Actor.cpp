@@ -13,6 +13,7 @@ Actor::~Actor()
 {
 	enabled_ = false;
 	attachedComponents_.clear();
+	placedLevel_ = nullptr;
 }
 
 void Actor::Begin_()
