@@ -18,19 +18,22 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SarissaEngine\Runtime\Level.cpp">
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Level.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.cpp">
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_RuntimeClasses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SarissaEngine\Globals.cpp">
+    <ClCompile Include="InputHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InputHandler.cpp">
+    <ClCompile Include="SarissaEngine\Engine\SrssEngn_SoundHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SarissaEngine\Engine\SrssEngn_WindowHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,19 +41,22 @@
     <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\Level.h">
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.h">
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_RuntimeClasses.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SarissaEngine\Globals.h">
+    <ClInclude Include="InputHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InputHandler.h">
+    <ClInclude Include="SarissaEngine\Engine\SrssEngn_SoundHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Engine\SrssEngn_WindowHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

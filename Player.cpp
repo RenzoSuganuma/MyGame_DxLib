@@ -1,10 +1,11 @@
-#include "SarissaEngine\Globals.h"
+#include "SarissaEngine\Engine\SrssEngn_WindowHandler.h"
 #include "InputHandler.h"
 #include "Player.h"
 #include "DxLib.h"
 
 void Player::Begin_()
 {
+	using namespace SarissaEngine::Runtime::System;
 	name_ = "Player";
 	position_.x = windowWidth_ / 2;
 	position_.y = windowHeigth_ / 2;
@@ -16,7 +17,7 @@ void Player::Tick_(float deltaTime)
 	DrawCircle(position_.x, position_.y, 100, color_);
 	if (elapsedTime > 1.0f)
 	{
-		PlaySoundMem(pigeon_se, DX_PLAYTYPE_BACK);
+		// PlaySoundMem(pigeon_se, DX_PLAYTYPE_BACK);
 		color_ = GetColor(0, 255, 0);
 		elapsedTime = 0;
 	}

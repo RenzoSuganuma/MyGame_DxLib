@@ -1,9 +1,10 @@
 #include "chrono"
 #include "DxLib.h"
 #include "Windows.h"
-#include "SarissaEngine\Globals.h"
-#include "SarissaEngine\Runtime\Level.h"
-#include "SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.h"
+#include "SarissaEngine\Runtime\SrssEngn_Level.h"
+#include "SarissaEngine\Engine\SrssEngn_SoundHandler.h"
+#include "SarissaEngine\Engine\SrssEngn_WindowHandler.h"
+#include "SarissaEngine\Runtime\SrssEngn_RuntimeClasses.h"
 
 #include "Player.h"
 #include "InputHandler.h"
@@ -19,6 +20,8 @@
 // エントリーポイントを提供
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+	using namespace SarissaEngine::Runtime::System;
+
 	// System:
 
 	// フレームレート制限のための変数群
@@ -45,9 +48,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 	// ウィンドウのセットアップ
-	SetScreenSize(1000, 600);
+	SetScreenSize(1920	, 1080);
 	auto screenSize = GetScreenSize();
-	SetChangeWindowMode(true);
+	SetChangeWindowMode(false);
 	ChangeWindowMode(GetChangeWindowMode());
 	SetRefreshRate(60);
 	/* GetRefreshRate関数がほかの名前空間の関数と名前だけだと被るので完全修飾 */
@@ -64,7 +67,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// MainLoop:
 
 	// 効果音読み込み
-	pigeon_se = LoadSoundMem(".\\Resources\\pigeon_se_.mp3");
+	int se = LoadSoundMemory(".\\Resources\\pigeon_se_.mp3");
 
 	ClearDrawScreen();
 	level->MainLoopEntry();

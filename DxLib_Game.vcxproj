@@ -22,17 +22,19 @@
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="SarissaEngine\Globals.cpp" />
-    <ClCompile Include="SarissaEngine\Runtime\Level.cpp" />
-    <ClCompile Include="SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.cpp" />
+    <ClCompile Include="SarissaEngine\Engine\SrssEngn_SoundHandler.cpp" />
+    <ClCompile Include="SarissaEngine\Engine\SrssEngn_WindowHandler.cpp" />
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Level.cpp" />
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_RuntimeClasses.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.h" />
-    <ClInclude Include="SarissaEngine\Globals.h" />
-    <ClInclude Include="SarissaEngine\Runtime\Level.h" />
-    <ClInclude Include="SarissaEngine\Runtime\SarissaEngine_RuntimeClasses.h" />
+    <ClInclude Include="SarissaEngine\Engine\SrssEngn_SoundHandler.h" />
+    <ClInclude Include="SarissaEngine\Engine\SrssEngn_WindowHandler.h" />
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.h" />
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_RuntimeClasses.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

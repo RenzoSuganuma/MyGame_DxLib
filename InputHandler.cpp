@@ -1,4 +1,4 @@
-#include "SarissaEngine\Globals.h"
+#include "SarissaEngine\Engine\SrssEngn_WindowHandler.h"
 #include "InputHandler.h"
 #include "DxLib.h"
 
