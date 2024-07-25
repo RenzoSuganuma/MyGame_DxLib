@@ -21,9 +21,6 @@
     <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Level.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_RuntimeClasses.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -36,12 +33,18 @@
     <ClCompile Include="SarissaEngine\Engine\SrssEngn_WindowHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MovingCircle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Actor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_RuntimeClasses.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SarissaEngine\Engine\SrssEngn_WindowHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingCircle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

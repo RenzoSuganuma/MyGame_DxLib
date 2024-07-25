@@ -1,7 +1,6 @@
 #include "chrono"
 #include "DxLib.h"
 #include "Windows.h"
-#include "SarissaEngine\Runtime\SrssEngn_Level.h"
 #include "SarissaEngine\Engine\SrssEngn_SoundHandler.h"
 #include "SarissaEngine\Engine\SrssEngn_WindowHandler.h"
 #include "SarissaEngine\Runtime\SrssEngn_RuntimeClasses.h"
@@ -22,8 +21,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 {
 	using namespace SarissaEngine::Runtime::System;
 
-	// System:
-
 	// フレームレート制限のための変数群
 	// １フレーム当たりの時間[ms]
 	float frameTime = 0;
@@ -38,7 +35,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	// Initialize:
 
-	using SarissaEngine::Runtime::System::Level;
+	using SarissaEngine::Runtime::Framework::Level;
 	Level* level = new Level;
 
 	// DXLibの初期化
@@ -48,7 +45,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 	// ウィンドウのセットアップ
-	SetScreenSize(1920	, 1080);
+	SetScreenSize(1920, 1080);
 	auto screenSize = GetScreenSize();
 	SetChangeWindowMode(false);
 	ChangeWindowMode(GetChangeWindowMode());
@@ -59,7 +56,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	// テスト用のシーン内セットアップ
 	auto player = new Player;
+	player->SetPlacedLevel(level);
+
 	InputHandler* input = new InputHandler;
+
 	player->AddComponent(input);
 	level->AddObject(player);
 
@@ -83,7 +83,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		clockStarted = std::chrono::system_clock::now();
 
 		ClearDrawScreen();
-		DrawFormatStringF(0, screenSize.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit : %f", elapsedTime);
+		DrawFormatStringF(0, screenSize.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit : ElapsedTime = %f", elapsedTime);
 
 		level->MainLoopUpdate(deltaTime);
 		elapsedTime += deltaTime;

@@ -8,12 +8,14 @@ namespace SarissaEngine::Runtime::Framework
 {
 
 	class Component;
+	class Level;
 
 	class Actor
 	{
 	protected:
 		VECTOR position_{ 0 }, rotation_{ 0 };
 		std::list< Component* > attachedComponents_;
+		Level* placedLevel_;
 
 	public:
 		std::string name_ = " Actor_ ";
@@ -42,12 +44,44 @@ namespace SarissaEngine::Runtime::Framework
 
 		void const SetRotaton(VECTOR newRot);
 		const VECTOR const GetRotaton();
+
+		void const SetPlacedLevel(SarissaEngine::Runtime::Framework::Level* level);
 	};
 
-}
+	// メインループ : Unityでいうシーン
+	class Level final
+	{
+	private:
+		std::list< SarissaEngine::Runtime::Framework::Actor* > objects_;
 
-namespace SarissaEngine::Runtime::Framework
-{
+	public:
+		Level();
+		~Level();
+
+		void
+			const
+			MainLoopEntry();
+
+		void
+			const
+			MainLoopUpdate(float deltaTime);
+
+		void
+			const
+			MainLoopExit();
+
+		const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator
+			const
+			AddObject(SarissaEngine::Runtime::Framework::Actor* newObject);
+
+		void
+			const
+			RemoveObject(SarissaEngine::Runtime::Framework::Actor* obj);
+
+		void
+			const
+			RemoveObject(const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator place);
+	};
 
 	class Actor;
 

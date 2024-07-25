@@ -2,7 +2,7 @@
 
 #include "SarissaEngine\Runtime\SrssEngn_RuntimeClasses.h"
 
-class Player : public SarissaEngine::Runtime::Framework::Actor
+class Player final : public SarissaEngine::Runtime::Framework::Actor
 {
 private:
 	unsigned int color_ = GetColor(255, 0, 0);

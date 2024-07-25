@@ -1,6 +1,6 @@
-#include "SrssEngn_Level.h"
+#include "SrssEngn_RuntimeClasses.h"
 
-using SarissaEngine::Runtime::System::Level;
+using SarissaEngine::Runtime::Framework::Level;
 
 Level::Level()
 {

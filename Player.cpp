@@ -3,12 +3,16 @@
 #include "Player.h"
 #include "DxLib.h"
 
+#include "MovingCircle.h"
+
 void Player::Begin_()
 {
 	using namespace SarissaEngine::Runtime::System;
 	name_ = "Player";
 	position_.x = windowWidth_ / 2;
 	position_.y = windowHeigth_ / 2;
+
+	placedLevel_->AddObject(new MovingCircle);
 }
 
 void Player::Tick_(float deltaTime)
@@ -17,7 +21,6 @@ void Player::Tick_(float deltaTime)
 	DrawCircle(position_.x, position_.y, 100, color_);
 	if (elapsedTime > 1.0f)
 	{
-		// PlaySoundMem(pigeon_se, DX_PLAYTYPE_BACK);
 		color_ = GetColor(0, 255, 0);
 		elapsedTime = 0;
 	}
@@ -28,10 +31,10 @@ void Player::Tick_(float deltaTime)
 
 	auto input = static_cast<InputHandler*>(*(attachedComponents_.begin()));
 
-	position_.x += input->moveVec_.x;
-	position_.y += input->moveVec_.y;
+	position_.x += input->moveVec_.x * 1000 * deltaTime;
+	position_.y += input->moveVec_.y * 1000 * deltaTime;
 
-	DrawFormatString(0, 0, -1, "%.1f, %.1f", input->moveVec_.x, input->moveVec_.y);
+	DrawFormatString(position_.x, position_.y, -1, "%s", name_.c_str());
 }
 
 void Player::End_()
