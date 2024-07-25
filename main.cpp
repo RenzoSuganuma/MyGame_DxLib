@@ -7,6 +7,7 @@
 
 #include "Player.h"
 #include "InputHandler.h"
+#include "MovingCircle.h"
 
 #pragma comment (lib , "winmm.lib")
 
@@ -50,7 +51,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	SetChangeWindowMode(false);
 	ChangeWindowMode(GetChangeWindowMode());
 	SetRefreshRate(60);
-	/* GetRefreshRateŠÖ”‚ª‚Ù‚©‚Ì–¼‘O‹óŠÔ‚ÌŠÖ”‚Æ–¼‘O‚¾‚¯‚¾‚Æ”í‚é‚Ì‚ÅŠ®‘SCü */
 	frameTime = (1000.0f / (GetRefreshRate()) + 0.5f);
 	SetQuitKey(KEY_INPUT_ESCAPE);
 
@@ -59,8 +59,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	player->SetPlacedLevel(level);
 
 	InputHandler* input = new InputHandler;
-
 	player->AddComponent(input);
+
 	level->AddObject(player);
 
 
