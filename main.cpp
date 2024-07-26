@@ -46,9 +46,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 	// ウィンドウのセットアップ
-	SetScreenSize(1920, 1080);
+	SetScreenSize(1000, 800);
 	auto screenSize = GetScreenSize();
-	SetChangeWindowMode(false);
+	SetChangeWindowMode(true);
 	ChangeWindowMode(GetChangeWindowMode());
 	SetRefreshRate(60);
 	frameTime = (1000.0f / (GetRefreshRate()) + 0.5f);

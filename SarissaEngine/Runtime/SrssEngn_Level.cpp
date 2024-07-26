@@ -8,6 +8,14 @@ Level::Level()
 
 Level::~Level() 
 {
+	auto it = objects_.begin();
+
+	while (it != objects_.end())
+	{
+		delete (*it);
+		++it;
+	}
+
 	objects_.clear();
 }
 
