@@ -12,6 +12,15 @@ Actor::Actor()
 Actor::~Actor()
 {
 	enabled_ = false;
+
+	auto it = attachedComponents_.begin();
+
+	while (it != attachedComponents_.end())
+	{
+		delete (*it);
+		++it;
+	}
+
 	attachedComponents_.clear();
 	placedLevel_ = nullptr;
 }
