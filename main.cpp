@@ -4,9 +4,9 @@
 #include "SarissaEngine\Engine\SrssEngn_SoundHandler.hpp"
 #include "SarissaEngine\Engine\SrssEngn_WindowHandler.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_RuntimeClasses.hpp"
+#include "SarissaEngine\Runtime\SrssEngn_InputHandler.hpp"
 
 #include "Player.h"
-#include "InputHandler.h"
 #include "MovingCircle.h"
 
 #pragma comment (lib , "winmm.lib")

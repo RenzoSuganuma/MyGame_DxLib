@@ -1,6 +1,10 @@
-#include "SarissaEngine\Engine\SrssEngn_WindowHandler.hpp"
-#include "InputHandler.h"
 #include "DxLib.h"
+#include "SrssEngn_InputHandler.hpp"
+
+const bool InputHandler::GetMouseLTrigger()
+{
+	return mouse_l_trigger;
+}
 
 void InputHandler::Begin_()
 {
@@ -50,18 +54,18 @@ void InputHandler::Tick_(float deltaTime)
 		mouse_L_pressing_frame_count++;
 		if (mouse_L_pressing_frame_count < 2)
 		{
-			mouseLClick = true;
+			mouse_l_trigger = true;
 		}
 		else
 		{
-			mouseLClick = false;
+			mouse_l_trigger = false;
 		}
 	}
 	else
 	{
 		mouse_L_pressing_frame_count = 0;
 
-		mouseLClick = false;
+		mouse_l_trigger = false;
 	}
 }
 

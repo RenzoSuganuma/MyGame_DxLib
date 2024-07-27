@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MovingCircle.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -27,10 +26,10 @@
     <ClCompile Include="SarissaEngine\Engine\SrssEngn_WindowHandler.cpp" />
     <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Actor.cpp" />
     <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Component.cpp" />
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_InputHandler.cpp" />
     <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Level.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="InputHandler.h" />
     <ClInclude Include="MovingCircle.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SarissaEngine\Engine\Enhance_Cpp_Programing.hpp" />
@@ -38,6 +37,7 @@
     <ClInclude Include="SarissaEngine\Engine\SrssEngn_WindowHandler.hpp" />
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Actor.hpp" />
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Component.hpp" />
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_InputHandler.hpp" />
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.hpp" />
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_RuntimeClasses.hpp" />
   </ItemGroup>
