@@ -6,14 +6,14 @@ namespace SarissaEngine::Runtime::System
 
 	std::list< int > soundHandlers;
 
-	const int LoadSoundMemory(const std::string filePath)
+	const int LoadSoundToMemory(const std::string filePath)
 	{
 		int sh = LoadSoundMem(filePath.c_str());
 		soundHandlers.emplace_back(sh);
 		return sh;
 	}
 
-	void PlaySoundMemory(const int soundHandler, const SoundPlayMode soundPlayMode)
+	void PlaySoundFromMemory(const int soundHandler, const SoundPlayMode soundPlayMode)
 	{
 		int mode;
 		switch (soundPlayMode)

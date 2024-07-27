@@ -67,7 +67,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// MainLoop:
 
 	// Œø‰Ê‰¹“Ç‚Ýž‚Ý
-	int se = LoadSoundMemory(".\\Resources\\pigeon_se_.mp3");
+	int se = LoadSoundToMemory(".\\Resources\\pigeon_se_.mp3");
 
 	ClearDrawScreen();
 	level->MainLoopEntry();

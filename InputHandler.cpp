@@ -45,7 +45,24 @@ void InputHandler::Tick_(float deltaTime)
 		moveVec_.y = 0;
 	}
 
-	mouseLClick = GetMouseInput() == MOUSE_INPUT_LEFT;
+	if (GetMouseInput() == MOUSE_INPUT_LEFT)
+	{
+		mouse_L_pressing_frame_count++;
+		if (mouse_L_pressing_frame_count < 2)
+		{
+			mouseLClick = true;
+		}
+		else
+		{
+			mouseLClick = false;
+		}
+	}
+	else
+	{
+		mouse_L_pressing_frame_count = 0;
+
+		mouseLClick = false;
+	}
 }
 
 void InputHandler::End_()

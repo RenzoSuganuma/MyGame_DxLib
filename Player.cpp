@@ -24,7 +24,7 @@ void Player::Tick_(float deltaTime)
 	{
 		color_ = GetColor(0, 255, 0);
 		using namespace SarissaEngine::Runtime::System;
-		PlaySoundMemory(*soundHandlers.begin(), SoundPlayMode::BackGround);
+		PlaySoundFromMemory(*soundHandlers.begin(), SoundPlayMode::BackGround);
 		elapsedTime = 0;
 	}
 	else

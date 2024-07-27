@@ -15,9 +15,9 @@ namespace SarissaEngine::Runtime::System
 
 	extern std::list< int > soundHandlers;
 
-	extern const int LoadSoundMemory(const std::string filePath);
+	extern const int LoadSoundToMemory(const std::string filePath);
 
-	extern void PlaySoundMemory(const int soundHandler, const SoundPlayMode soundPlayMode);
+	extern void PlaySoundFromMemory(const int soundHandler, const SoundPlayMode soundPlayMode);
 
 }
 
