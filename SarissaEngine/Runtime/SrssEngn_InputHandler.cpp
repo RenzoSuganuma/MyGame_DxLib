@@ -1,9 +1,25 @@
+#include "string"
 #include "DxLib.h"
 #include "SrssEngn_InputHandler.hpp"
 
-const bool InputHandler::GetMouseLTrigger()
+const bool const InputHandler::GetInput(int inputAction, InputDeviceType inputType)
 {
-	return mouse_l_trigger;
+	bool ret = 0;
+	switch (inputType)
+	{
+	case InputDeviceType::Mouse:
+		ret = GetMouseInput() == inputAction;
+		break;
+	case InputDeviceType::KeyBoard:
+		ret = CheckHitKey(inputAction);
+		break;
+	case InputDeviceType::GamePad:
+		break;
+	case InputDeviceType::XInput:
+		break;
+	}
+
+	return ret;
 }
 
 void InputHandler::Begin_()
@@ -47,25 +63,6 @@ void InputHandler::Tick_(float deltaTime)
 	else if (moveVec_.y == 1)
 	{
 		moveVec_.y = 0;
-	}
-
-	if (GetMouseInput() == MOUSE_INPUT_LEFT)
-	{
-		mouse_L_pressing_frame_count++;
-		if (mouse_L_pressing_frame_count < 2)
-		{
-			mouse_l_trigger = true;
-		}
-		else
-		{
-			mouse_l_trigger = false;
-		}
-	}
-	else
-	{
-		mouse_L_pressing_frame_count = 0;
-
-		mouse_l_trigger = false;
 	}
 }
 

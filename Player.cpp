@@ -22,7 +22,7 @@ void Player::Tick_(float deltaTime)
 	{
 		color_ = GetColor(0, 255, 0);
 		using namespace SarissaEngine::Runtime::System;
-		PlaySoundFromMemory(*soundHandlers.begin(), SoundPlayMode::BackGround);
+		//PlaySoundFromMemory(*soundHandlers.begin(), SoundPlayMode::BackGround);
 		elapsedTime = 0;
 	}
 	else
@@ -35,12 +35,11 @@ void Player::Tick_(float deltaTime)
 	position_.x += input->moveVec_.x * 1000 * deltaTime;
 	position_.y += input->moveVec_.y * 1000 * deltaTime;
 
-	if (input->GetMouseLTrigger())
-	{
-		auto c = new MovingCircle;
-		c->SetPosition(position_);
-		placedLevel_->AddObject(c);
-	}
+	auto condition = input->GetInput(KEY_INPUT_SPACE, InputDeviceType::KeyBoard);
+
+	using namespace SarissaEngine::Runtime::System;
+	if(condition)
+		PlaySoundFromMemory(*soundHandlers.begin(), SoundPlayMode::BackGround);
 
 	DrawFormatString(position_.x, position_.y, -1, "%s", name_.c_str());
 }
