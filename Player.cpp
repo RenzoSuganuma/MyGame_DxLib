@@ -35,13 +35,13 @@ void Player::Tick_(float deltaTime)
 	position_.x += input->moveVec_.x * 1000 * deltaTime;
 	position_.y += input->moveVec_.y * 1000 * deltaTime;
 
-	auto condition = input->GetInput(KEY_INPUT_SPACE, InputDeviceType::KeyBoard);
+	auto condition = input->GetInputCanceled(KeyboardKey::W);
 
 	using namespace SarissaEngine::Runtime::System;
 	if(condition)
 		PlaySoundFromMemory(*soundHandlers.begin(), SoundPlayMode::BackGround);
 
-	DrawFormatString(position_.x, position_.y, -1, "%s", name_.c_str());
+	DrawFormatString(position_.x, position_.y, -1, "%s %d", name_.c_str(), condition);
 }
 
 void Player::End_()

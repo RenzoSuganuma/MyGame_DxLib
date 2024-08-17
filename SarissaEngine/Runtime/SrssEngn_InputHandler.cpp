@@ -22,6 +22,21 @@ const bool const InputHandler::GetInput(int inputAction, InputDeviceType inputTy
 	return ret;
 }
 
+const bool const InputHandler::GetInputStarted(const KeyboardKey key)
+{
+	return started_[key];
+}
+
+const bool const InputHandler::GetInputPerformed(const KeyboardKey key)
+{
+	return performed_[key];
+}
+
+const bool const InputHandler::GetInputCanceled(const KeyboardKey key)
+{
+	return canceled_[key];
+}
+
 void InputHandler::Begin_()
 {
 #pragma region -キーボード入力（立ち上がり）-
@@ -186,7 +201,7 @@ void InputHandler::Begin_()
 	performedFrames_.insert_or_assign(KeyboardKey::X, 0);
 	performedFrames_.insert_or_assign(KeyboardKey::Y, 0);
 	performedFrames_.insert_or_assign(KeyboardKey::Z, 0);
-	
+
 	performedFrames_.insert_or_assign(KeyboardKey::Num_1, 0);
 	performedFrames_.insert_or_assign(KeyboardKey::Num_2, 0);
 	performedFrames_.insert_or_assign(KeyboardKey::Num_3, 0);
@@ -197,12 +212,14 @@ void InputHandler::Begin_()
 	performedFrames_.insert_or_assign(KeyboardKey::Num_8, 0);
 	performedFrames_.insert_or_assign(KeyboardKey::Num_9, 0);
 	performedFrames_.insert_or_assign(KeyboardKey::Num_0, 0);
-	
+
 	performedFrames_.insert_or_assign(KeyboardKey::Tab, 0);
 	performedFrames_.insert_or_assign(KeyboardKey::Shift, 0);
 	performedFrames_.insert_or_assign(KeyboardKey::Ctrl, 0);
 	performedFrames_.insert_or_assign(KeyboardKey::Alt, 0);
 #pragma endregion
+
+	performedConditionPastFrame_ = performed_;
 }
 
 void InputHandler::Tick_(float deltaTime)
@@ -245,8 +262,10 @@ void InputHandler::Tick_(float deltaTime)
 	}
 #pragma endregion
 
-	GetKeyboardInput();
-
+	CheckKeyboardInput();
+	CheckInputStarted();
+	CheckInputCanceled();
+	UpdatePastInputValues();
 }
 
 void InputHandler::End_()

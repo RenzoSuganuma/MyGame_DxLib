@@ -2,6 +2,7 @@
 
 #include "SrssEngn_RuntimeClasses.hpp"
 #include "DxLib.h"
+#include "string"
 #include "list"
 #include "map"
 
@@ -32,12 +33,14 @@ private:
 	std::map< const KeyboardKey, bool > performed_;
 	// 入力立下り
 	std::map< const KeyboardKey, bool > canceled_;
+	// 前フレームの入力の状態を保持する
+	std::map< const KeyboardKey, bool > performedConditionPastFrame_;
 	// 入力が入っているフレーム数
 	std::map< const KeyboardKey, int > performedFrames_;
 
 #pragma region -ながーーーーーい処理の関数-
 	// キーボード入力受付処理
-	void const GetKeyboardInput()
+	void const CheckKeyboardInput()
 	{
 		performed_[KeyboardKey::A] = CheckHitKey(KEY_INPUT_A);
 		performed_[KeyboardKey::B] = CheckHitKey(KEY_INPUT_B);
@@ -82,12 +85,52 @@ private:
 		performed_[KeyboardKey::Ctrl] = CheckHitKey(KEY_INPUT_LCONTROL) || CheckHitKey(KEY_INPUT_RCONTROL);
 		performed_[KeyboardKey::Alt] = CheckHitKey(KEY_INPUT_LALT) || CheckHitKey(KEY_INPUT_RALT);
 	}
+	// 入力の 立ち上がり、立下りの入力を更新する
+	void const CheckInputStarted() {
+		for (auto item : performed_) {
+			if (item.second) {
+				performedFrames_[item.first]++;
+
+				if (performedFrames_[item.first] < 2) {
+					started_[item.first] = true;
+				}	// 入力フレーム数を調べる
+				else {
+					started_[item.first] = false;
+				}
+			}
+		}	// 入力中の情報をすべてなめる
+	}
+	// 入力の立下りを調べて状態の更新をする	
+	void const CheckInputCanceled() {
+		auto past_it = performedConditionPastFrame_.begin(); // 前フレーム
+		auto current_it = performed_.begin();				 // 現在のフレーム
+		while (current_it != performed_.end()) {
+			if ((*current_it).second == false && (*past_it).second == true) {
+				canceled_[(*current_it).first] = true;
+
+				performedFrames_[(*current_it).first] = 0;
+			}
+			else {
+				canceled_[(*current_it).first] = false;
+			}
+
+			past_it++;
+			current_it++;
+		}
+	}
+	// 前フレームの入力値を更新
+	void const UpdatePastInputValues() {
+		performedConditionPastFrame_ = performed_;	// 値をコピー
+	}
 #pragma endregion
 #pragma endregion
 
 public:
 	VECTOR moveVec_{ 0 };
 	const bool const GetInput(int inputAction, InputDeviceType inputType);
+	const bool const GetInputStarted(const KeyboardKey key);
+	const bool const GetInputPerformed(const KeyboardKey key);
+	const bool const GetInputCanceled(const KeyboardKey key);
 	void Begin_() override;
 	void Tick_(float deltaTime)  override;
 	void End_()override;
