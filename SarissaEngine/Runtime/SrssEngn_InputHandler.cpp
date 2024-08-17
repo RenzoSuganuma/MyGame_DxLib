@@ -82,6 +82,7 @@ void InputHandler::Begin_()
 	started_.insert_or_assign(KeyboardKey::Shift, 0);
 	started_.insert_or_assign(KeyboardKey::Ctrl, 0);
 	started_.insert_or_assign(KeyboardKey::Alt, 0);
+	started_.insert_or_assign(KeyboardKey::Space, 0);
 #pragma endregion
 
 #pragma region -キーボード入力（入力中）-
@@ -127,6 +128,7 @@ void InputHandler::Begin_()
 	performed_.insert_or_assign(KeyboardKey::Shift, 0);
 	performed_.insert_or_assign(KeyboardKey::Ctrl, 0);
 	performed_.insert_or_assign(KeyboardKey::Alt, 0);
+	performed_.insert_or_assign(KeyboardKey::Space, 0);
 #pragma endregion
 
 #pragma region -キーボード入力（立下り）-
@@ -172,6 +174,7 @@ void InputHandler::Begin_()
 	canceled_.insert_or_assign(KeyboardKey::Shift, 0);
 	canceled_.insert_or_assign(KeyboardKey::Ctrl, 0);
 	canceled_.insert_or_assign(KeyboardKey::Alt, 0);
+	canceled_.insert_or_assign(KeyboardKey::Space, 0);
 #pragma endregion
 
 #pragma region -キーボード入力（入力フレームカウント）-
@@ -217,6 +220,7 @@ void InputHandler::Begin_()
 	performedFrames_.insert_or_assign(KeyboardKey::Shift, 0);
 	performedFrames_.insert_or_assign(KeyboardKey::Ctrl, 0);
 	performedFrames_.insert_or_assign(KeyboardKey::Alt, 0);
+	performedFrames_.insert_or_assign(KeyboardKey::Space, 0);
 #pragma endregion
 
 	performedConditionPastFrame_ = performed_;

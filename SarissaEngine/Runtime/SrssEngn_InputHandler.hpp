@@ -20,7 +20,7 @@ enum class KeyboardKey : int
 {
 	A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
 	Num_1, Num_2, Num_3, Num_4, Num_5, Num_6, Num_7, Num_8, Num_9, Num_0,
-	Tab, Shift, Ctrl, Alt,
+	Tab, Shift, Ctrl, Alt, Space,
 };
 
 class InputHandler final : public SarissaEngine::Runtime::Framework::Component
@@ -84,6 +84,7 @@ private:
 		performed_[KeyboardKey::Tab] = CheckHitKey(KEY_INPUT_TAB);
 		performed_[KeyboardKey::Ctrl] = CheckHitKey(KEY_INPUT_LCONTROL) || CheckHitKey(KEY_INPUT_RCONTROL);
 		performed_[KeyboardKey::Alt] = CheckHitKey(KEY_INPUT_LALT) || CheckHitKey(KEY_INPUT_RALT);
+		performed_[KeyboardKey::Space] = CheckHitKey(KEY_INPUT_SPACE);
 	}
 	// “ü—Í‚Ì —§‚¿ã‚ª‚èA—§‰º‚è‚Ì“ü—Í‚ğXV‚·‚é
 	void const CheckInputStarted() {
