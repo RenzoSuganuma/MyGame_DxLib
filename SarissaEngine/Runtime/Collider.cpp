@@ -2,7 +2,7 @@
 
 const bool const Collider::IsOverlapping(const Collider& other)
 {
-
+	return false;
 }
 
 void const Collider::OnBeginOverlap(const Collider& other)
