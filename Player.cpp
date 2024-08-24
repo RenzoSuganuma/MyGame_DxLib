@@ -1,6 +1,7 @@
 #include "SarissaEngine\Engine\SrssEngn_WindowHandler.hpp"
 #include "SarissaEngine\Engine\SrssEngn_SoundHandler.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_InputHandler.hpp"
+#include "SarissaEngine\Runtime\ActorUtilities.hpp"
 #include "typeinfo"
 #include "Player.h"
 #include "DxLib.h"
@@ -31,20 +32,7 @@ void Player::Tick_(float deltaTime)
 		color_ = GetColor(255, 0, 0);
 	}
 
-	InputHandler* input = new InputHandler;
-
-	auto it = attachedComponents_.begin();
-
-	while (it != attachedComponents_.end())
-	{
-		auto tmp = static_cast<InputHandler*>(*it);
-		if (tmp != nullptr)
-		{
-			input = tmp;
-			break;
-		}
-		it++;
-	}
+	auto input = dynamic_cast<InputHandler*>( ActorUtilities::GetComponent<InputHandler*>(this));
 
 	position_.x += input->moveVec_.x * 1000 * deltaTime;
 	position_.y += input->moveVec_.y * 1000 * deltaTime;
