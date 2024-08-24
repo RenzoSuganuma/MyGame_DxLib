@@ -1,4 +1,5 @@
 #include "DxLib.h"
+#include "typeinfo"
 #include "SrssEngn_RuntimeClasses.hpp"
 
 using SarissaEngine::Runtime::Framework::Actor;

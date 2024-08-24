@@ -6,7 +6,6 @@
 
 namespace SarissaEngine::Runtime::Framework
 {
-
 	class Level;
 	class Actor;
 	class Component;
@@ -16,3 +15,7 @@ namespace SarissaEngine::Runtime::Framework
 #include "SrssEngn_Component.hpp"
 }
 
+namespace SarissaEngine::Runtime
+{
+
+}
