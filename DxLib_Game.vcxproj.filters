@@ -42,7 +42,7 @@
     <ClCompile Include="SarissaEngine\Runtime\SrssEngn_InputHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SarissaEngine\Runtime\Collider.cpp">
+    <ClCompile Include="SarissaEngine\Runtime\ActorUtilities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SarissaEngine\Runtime\CircleCollider.cpp">
@@ -74,13 +74,10 @@
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_RuntimeClasses.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_InputHandler.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\Collider.h">
+    <ClInclude Include="SarissaEngine\Runtime\ActorUtilities.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SarissaEngine\Runtime\CircleCollider.h">
