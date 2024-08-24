@@ -1,8 +1,8 @@
 #pragma once
 
-#include "SarissaEngine/Runtime/SrssEngn_RuntimeClasses.hpp"
+#include "SarissaEngine\Runtime\SrssEngn_Actor.hpp"
 
-class MovingCircle final : public SarissaEngine::Runtime::Framework::Actor
+class MovingCircle final : public Actor
 {
 public:
 	void Begin_() override;

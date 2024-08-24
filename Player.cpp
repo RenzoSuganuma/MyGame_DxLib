@@ -31,7 +31,20 @@ void Player::Tick_(float deltaTime)
 		color_ = GetColor(255, 0, 0);
 	}
 
-	auto input = static_cast<InputHandler*>(*(attachedComponents_.begin()));
+	InputHandler* input = new InputHandler;
+
+	auto it = attachedComponents_.begin();
+
+	while (it != attachedComponents_.end())
+	{
+		auto tmp = static_cast<InputHandler*>(*it);
+		if (tmp != nullptr)
+		{
+			input = tmp;
+			break;
+		}
+		it++;
+	}
 
 	position_.x += input->moveVec_.x * 1000 * deltaTime;
 	position_.y += input->moveVec_.y * 1000 * deltaTime;

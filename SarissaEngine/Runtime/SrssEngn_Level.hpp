@@ -8,7 +8,7 @@ class Actor;
 class Level final
 {
 private:
-	std::list< SarissaEngine::Runtime::Framework::Actor* > objects_;
+	std::list< Actor* > objects_;
 
 public:
 	Level();
@@ -26,15 +26,15 @@ public:
 		const
 		MainLoopExit();
 
-	const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator
+	const std::list< Actor* >::iterator
 		const
-		AddObject(SarissaEngine::Runtime::Framework::Actor* newObject);
+		AddObject(Actor* newObject);
 
 	void
 		const
-		RemoveObject(SarissaEngine::Runtime::Framework::Actor* obj);
+		RemoveObject(Actor* obj);
 
 	void
 		const
-		RemoveObject(const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator place);
+		RemoveObject(const std::list< Actor* >::iterator place);
 };

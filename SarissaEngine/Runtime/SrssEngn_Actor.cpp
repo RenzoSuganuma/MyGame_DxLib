@@ -1,9 +1,8 @@
 #include "DxLib.h"
 #include "typeinfo"
-#include "SrssEngn_RuntimeClasses.hpp"
-
-using SarissaEngine::Runtime::Framework::Actor;
-using SarissaEngine::Runtime::Framework::Component;
+#include "SrssEngn_Actor.hpp"
+#include "SrssEngn_Component.hpp"
+#include "SrssEngn_Level.hpp"
 
 Actor::Actor()
 {
@@ -112,7 +111,7 @@ const VECTOR const Actor::GetRotaton()
 	return rotation_;
 }
 
-void const Actor::SetPlacedLevel(SarissaEngine::Runtime::Framework::Level* level)
+void const Actor::SetPlacedLevel(Level* level)
 {
 	placedLevel_ = level;
 }

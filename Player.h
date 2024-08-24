@@ -1,8 +1,8 @@
 #pragma once
 
-#include "SarissaEngine\Runtime\SrssEngn_RuntimeClasses.hpp"
+#include "SarissaEngine\Runtime\SrssEngn_Actor.hpp"
 
-class Player final : public SarissaEngine::Runtime::Framework::Actor
+class Player final : public Actor
 {
 private:
 	unsigned int color_ = GetColor(255, 0, 0);

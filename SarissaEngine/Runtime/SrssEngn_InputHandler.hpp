@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SrssEngn_RuntimeClasses.hpp"
+#include "SrssEngn_Component.hpp"
 #include "DxLib.h"
 #include "string"
 #include "list"
@@ -23,7 +23,7 @@ enum class KeyboardKey : int
 	Tab, Shift, Ctrl, Alt, Space,
 };
 
-class InputHandler final : public SarissaEngine::Runtime::Framework::Component
+class InputHandler final : public Component
 {
 private:
 #pragma region -キーボード入力まわり-

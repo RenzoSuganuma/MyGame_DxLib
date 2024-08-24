@@ -3,7 +3,10 @@
 #include "Windows.h"
 #include "SarissaEngine\Engine\SrssEngn_SoundHandler.hpp"
 #include "SarissaEngine\Engine\SrssEngn_WindowHandler.hpp"
-#include "SarissaEngine\Runtime\SrssEngn_RuntimeClasses.hpp"
+#include "SarissaEngine\Runtime\SrssEngn_InputHandler.hpp"
+#include "SarissaEngine\Runtime\SrssEngn_Level.hpp"
+#include "SarissaEngine\Runtime\SrssEngn_Actor.hpp"
+#include "SarissaEngine\Runtime\SrssEngn_Component.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_InputHandler.hpp"
 
 #include "Player.h"
@@ -36,7 +39,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	// Initialize:
 
-	using SarissaEngine::Runtime::Framework::Level;
 	Level* level = new Level;
 
 	// DXLibÇÃèâä˙âª

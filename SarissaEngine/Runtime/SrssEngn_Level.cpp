@@ -1,6 +1,5 @@
-#include "SrssEngn_RuntimeClasses.hpp"
-
-using SarissaEngine::Runtime::Framework::Level;
+#include "SrssEngn_Actor.hpp"
+#include "SrssEngn_Level.hpp"
 
 Level::Level()
 {
@@ -52,8 +51,8 @@ void const Level::MainLoopExit()
 	}
 }
 
-const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator
-const Level::AddObject(SarissaEngine::Runtime::Framework::Actor* newObj)
+const std::list< Actor* >::iterator
+const Level::AddObject(Actor* newObj)
 {
 	objects_.emplace_back(newObj);
 	auto it = objects_.end();
@@ -61,12 +60,12 @@ const Level::AddObject(SarissaEngine::Runtime::Framework::Actor* newObj)
 	return it;
 }
 
-void const Level::RemoveObject(SarissaEngine::Runtime::Framework::Actor* obj)
+void const Level::RemoveObject(Actor* obj)
 {
 	objects_.remove(obj);
 }
 
-void const Level::RemoveObject(const std::list< SarissaEngine::Runtime::Framework::Actor* >::iterator place)
+void const Level::RemoveObject(const std::list< Actor* >::iterator place)
 {
 	objects_.erase(place);
 }

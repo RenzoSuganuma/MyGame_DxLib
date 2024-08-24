@@ -11,10 +11,10 @@ class Actor
 {
 protected:
 	VECTOR position_{ 0 }, rotation_{ 0 };
-	std::list< Component* > attachedComponents_;
 	Level* placedLevel_;
 
 public:
+	std::list< Component* > attachedComponents_;
 	std::string name_ = " Actor_ ";
 	bool enabled_ = true;
 
@@ -42,5 +42,5 @@ public:
 	void const SetRotaton(VECTOR newRot);
 	const VECTOR const GetRotaton();
 
-	void const SetPlacedLevel(SarissaEngine::Runtime::Framework::Level* level);
+	void const SetPlacedLevel(Level* level);
 };
