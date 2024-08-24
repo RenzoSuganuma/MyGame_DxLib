@@ -45,6 +45,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Engine Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Collider.cpp">
+      <Filter>Engine Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SarissaEngine\Engine\SrssEngn_SoundHandler.hpp">
@@ -73,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="MovingCircle.h">
       <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Collider.hpp">
+      <Filter>Engine Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

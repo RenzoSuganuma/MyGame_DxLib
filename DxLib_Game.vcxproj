@@ -25,6 +25,7 @@
     <ClCompile Include="SarissaEngine\Engine\SrssEngn_SoundHandler.cpp" />
     <ClCompile Include="SarissaEngine\Engine\SrssEngn_WindowHandler.cpp" />
     <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Actor.cpp" />
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Collider.cpp" />
     <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Component.cpp" />
     <ClCompile Include="SarissaEngine\Runtime\SrssEngn_InputHandler.cpp" />
     <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Level.cpp" />
@@ -36,6 +37,7 @@
     <ClInclude Include="SarissaEngine\Engine\SrssEngn_WindowHandler.hpp" />
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_ActorUtilities.hpp" />
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Actor.hpp" />
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Collider.hpp" />
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Component.hpp" />
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_InputHandler.hpp" />
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.hpp" />
