@@ -3,6 +3,7 @@
 #include "list"
 #include "string"
 #include "DxLib.h"
+#include "SrssEngn_Collider.hpp"
 
 // ‘O•û’è‹`
 class Level;
@@ -30,6 +31,14 @@ public:
 	virtual void Begin_();
 	virtual void Tick_(float deltaTime);
 	virtual void End_();
+
+	void OnBeginOverlap(const Collider* other);
+	void OnStillOverlap(const Collider* other);
+	void OnEndOverlap(const Collider* other);
+
+	virtual void OnBeginOverlap_(const Collider* other);
+	virtual void OnStillOverlap_(const Collider* other);
+	virtual void OnEndOverlap_(const Collider* other);
 
 	std::list< Component* >::iterator
 		const AddComponent(Component* component);

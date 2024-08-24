@@ -25,20 +25,9 @@ Actor::~Actor()
 	placedLevel_ = nullptr;
 }
 
-void Actor::Begin_()
-{
-
-}
-
-void Actor::Tick_(float deltaTime)
-{
-
-}
-
-void Actor::End_()
-{
-
-}
+void Actor::Begin_() {}
+void Actor::Tick_(float deltaTime) {}
+void Actor::End_() {}
 
 void Actor::Begin()
 {
@@ -74,6 +63,25 @@ void Actor::End()
 	}
 
 	End_();
+}
+
+void Actor::OnBeginOverlap_(const Collider* other) {}
+void Actor::OnStillOverlap_(const Collider* other) {}
+void Actor::OnEndOverlap_(const Collider* other) {}
+
+void Actor::OnBeginOverlap(const Collider* other)
+{
+	OnBeginOverlap_(other);
+}
+
+void Actor::OnStillOverlap(const Collider* other)
+{
+	OnStillOverlap_(other);
+}
+
+void Actor::OnEndOverlap(const Collider* other)
+{
+	OnEndOverlap_(other);
 }
 
 std::list< Component* >::iterator
