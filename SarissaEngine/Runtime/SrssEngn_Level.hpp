@@ -14,27 +14,16 @@ public:
 	Level();
 	~Level();
 
-	void
-		const
-		MainLoopEntry();
+	void const MainLoopEntry();
 
-	void
-		const
-		MainLoopUpdate(float deltaTime);
+	void const MainLoopUpdate(float deltaTime);
 
-	void
-		const
-		MainLoopExit();
+	void const MainLoopExit();
 
 	const std::list< Actor* >::iterator
-		const
-		AddObject(Actor* newObject);
+		const AddObject(Actor* newObject);
 
-	void
-		const
-		RemoveObject(Actor* obj);
+	void const RemoveObject(Actor* obj);
 
-	void
-		const
-		RemoveObject(const std::list< Actor* >::iterator place);
+	void const RemoveObject(const std::list< Actor* >::iterator place);
 };

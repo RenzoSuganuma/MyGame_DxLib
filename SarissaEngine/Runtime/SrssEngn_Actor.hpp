@@ -4,9 +4,11 @@
 #include "string"
 #include "DxLib.h"
 
+// 前方定義
 class Level;
 class Component;
 
+// アクタークラス
 class Actor
 {
 protected:
@@ -30,16 +32,16 @@ public:
 	virtual void End_();
 
 	std::list< Component* >::iterator
-		const
-		AddComponent(Component* component);
+		const AddComponent(Component* component);
 
-	void const
-		RemoveComponent(std::list< Component* >::iterator place);
+	void const RemoveComponent(std::list< Component* >::iterator place);
 
 	void const SetPosition(VECTOR newPos);
+
 	const VECTOR const GetPosition();
 
 	void const SetRotaton(VECTOR newRot);
+
 	const VECTOR const GetRotaton();
 
 	void const SetPlacedLevel(Level* level);

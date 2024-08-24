@@ -3,6 +3,7 @@
 #include "SrssEngn_Component.hpp"
 #include "SrssEngn_Actor.hpp"
 
+// アクタークラスのユーティリティクラス
 class ActorUtilities final
 {
 public:

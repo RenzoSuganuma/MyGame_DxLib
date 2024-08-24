@@ -65,9 +65,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	level->AddObject(player);
 
-
-	// MainLoop:
-
 	// Œø‰Ê‰¹“Ç‚İ‚İ
 	int se = LoadSoundToMemory(".\\Resources\\pigeon_se_.mp3");
 

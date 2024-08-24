@@ -6,6 +6,7 @@
 namespace SarissaEngine::Runtime::System
 {
 
+	// サウンド再生モード
 	extern enum class SoundPlayMode
 	{
 		Normal,

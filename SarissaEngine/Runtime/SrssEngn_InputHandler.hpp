@@ -23,6 +23,7 @@ enum class KeyboardKey : int
 	Tab, Shift, Ctrl, Alt, Space,
 };
 
+// “ü—Íƒnƒ“ƒhƒ‰[
 class InputHandler final : public Component
 {
 private:

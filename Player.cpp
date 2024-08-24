@@ -1,7 +1,7 @@
 #include "SarissaEngine\Engine\SrssEngn_WindowHandler.hpp"
 #include "SarissaEngine\Engine\SrssEngn_SoundHandler.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_InputHandler.hpp"
-#include "SarissaEngine\Runtime\ActorUtilities.hpp"
+#include "SarissaEngine\Runtime\SrssEngn_ActorUtilities.hpp"
 #include "typeinfo"
 #include "Player.h"
 #include "DxLib.h"

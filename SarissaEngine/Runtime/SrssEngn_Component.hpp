@@ -2,6 +2,7 @@
 
 class Actor;
 
+// コンポーネントクラス
 class Component
 {
 protected:
@@ -21,10 +22,7 @@ public:
 	virtual void Tick_(float deltaTime);
 	virtual void End_();
 
-	const Actor*
-		const
-		GetActor() const;
-	void
-		const
-		SetActor(const Actor* actor);
+	const Actor* const GetActor() const;
+
+	void const SetActor(const Actor* actor);
 };
