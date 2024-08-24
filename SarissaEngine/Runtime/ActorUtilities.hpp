@@ -7,7 +7,7 @@ class ActorUtilities final
 {
 public:
 	template<typename T>
-	static Component* GetComponent(Actor* getComponentFrom)
+	static T GetComponent(Actor* getComponentFrom)
 	{
 		auto it = getComponentFrom->attachedComponents_.begin();
 
@@ -16,7 +16,7 @@ public:
 			auto r = static_cast<T>(*it);
 			if (r != nullptr)
 			{
-				return (*it);
+				return r;
 				break;
 			}
 			it++;

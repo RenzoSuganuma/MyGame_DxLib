@@ -32,7 +32,7 @@ void Player::Tick_(float deltaTime)
 		color_ = GetColor(255, 0, 0);
 	}
 
-	auto input = dynamic_cast<InputHandler*>( ActorUtilities::GetComponent<InputHandler*>(this));
+	auto input = ActorUtilities::GetComponent<InputHandler*>(this);
 
 	position_.x += input->moveVec_.x * 1000 * deltaTime;
 	position_.y += input->moveVec_.y * 1000 * deltaTime;
