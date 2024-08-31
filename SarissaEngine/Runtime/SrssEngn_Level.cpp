@@ -48,7 +48,7 @@ void const Level::CollisionUpdate()
 
 	while (itr != objects_.end())
 	{
-		// auto c = ActorUtilities::GetComponent< CircleCollider >((*itr));
+		auto c = ActorUtilities::GetComponent< CircleCollider* >((*itr));
 
 		itr++;
 	}

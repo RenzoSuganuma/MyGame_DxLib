@@ -3,6 +3,7 @@
 #include "SrssEngn_Actor.hpp"
 #include "SrssEngn_Component.hpp"
 #include "SrssEngn_Level.hpp"
+#include "SrssEngn_CircleCollider.hpp"
 
 Actor::Actor()
 {
@@ -65,21 +66,24 @@ void Actor::End()
 	End_();
 }
 
-void Actor::OnBeginOverlap_(const Collider* other) {}
-void Actor::OnStillOverlap_(const Collider* other) {}
-void Actor::OnEndOverlap_(const Collider* other) {}
+void Actor::OnBeginOverlap_(const CircleCollider* other)
+{}
+void Actor::OnStillOverlap_(const CircleCollider* other)
+{}
+void Actor::OnEndOverlap_(const CircleCollider* other)
+{}
 
-void Actor::OnBeginOverlap(const Collider* other)
+void Actor::OnBeginOverlap(const CircleCollider* other)
 {
 	OnBeginOverlap_(other);
 }
 
-void Actor::OnStillOverlap(const Collider* other)
+void Actor::OnStillOverlap(const CircleCollider* other)
 {
 	OnStillOverlap_(other);
 }
 
-void Actor::OnEndOverlap(const Collider* other)
+void Actor::OnEndOverlap(const CircleCollider* other)
 {
 	OnEndOverlap_(other);
 }

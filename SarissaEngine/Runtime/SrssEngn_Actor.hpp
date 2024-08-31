@@ -3,11 +3,11 @@
 #include "list"
 #include "string"
 #include "DxLib.h"
-#include "SrssEngn_Collider.hpp"
 
 // 前方定義
 class Level;
 class Component;
+class CircleCollider;
 
 // アクタークラス
 class Actor
@@ -32,13 +32,13 @@ public:
 	virtual void Tick_(float deltaTime);
 	virtual void End_();
 
-	void OnBeginOverlap(const Collider* other);
-	void OnStillOverlap(const Collider* other);
-	void OnEndOverlap(const Collider* other);
+	void OnBeginOverlap(const CircleCollider* other);
+	void OnStillOverlap(const CircleCollider* other);
+	void OnEndOverlap(const CircleCollider* other);
 
-	virtual void OnBeginOverlap_(const Collider* other);
-	virtual void OnStillOverlap_(const Collider* other);
-	virtual void OnEndOverlap_(const Collider* other);
+	virtual void OnBeginOverlap_(const CircleCollider* other);
+	virtual void OnStillOverlap_(const CircleCollider* other);
+	virtual void OnEndOverlap_(const CircleCollider* other);
 
 	std::list< Component* >::iterator
 		const AddComponent(Component* component);

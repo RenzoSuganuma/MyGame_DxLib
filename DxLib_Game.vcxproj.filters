@@ -45,9 +45,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Engine Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Collider.cpp">
-      <Filter>Engine Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SarissaEngine\Runtime\SrssEngn_CircleCollider.cpp">
       <Filter>Engine Source Files</Filter>
     </ClCompile>
@@ -79,9 +76,6 @@
     </ClInclude>
     <ClInclude Include="MovingCircle.h">
       <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Collider.hpp">
-      <Filter>Engine Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_CircleCollider.hpp">
       <Filter>Engine Header Files</Filter>
