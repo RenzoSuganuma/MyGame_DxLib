@@ -1,9 +1,9 @@
 #pragma once
 
-#include "SrssEngn_Collider.hpp"
+#include "SrssEngn_Component.hpp"
 
 // 円形コライダー
-class CircleCollider final : public Collider
+class CircleCollider final : public Component
 {
 public:
 	void Begin_() override;

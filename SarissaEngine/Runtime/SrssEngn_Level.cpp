@@ -1,3 +1,5 @@
+#include "SrssEngn_ActorUtilities.hpp"
+#include "SrssEngn_CircleCollider.hpp"
 #include "SrssEngn_Actor.hpp"
 #include "SrssEngn_Level.hpp"
 
@@ -5,7 +7,7 @@ Level::Level()
 {
 }
 
-Level::~Level() 
+Level::~Level()
 {
 	auto it = objects_.begin();
 
@@ -36,6 +38,18 @@ void const Level::MainLoopUpdate(float deltaTime)
 	while (itr != objects_.end())
 	{
 		(*itr)->Tick(deltaTime);
+		itr++;
+	}
+}
+
+void const Level::CollisionUpdate()
+{
+	auto itr = objects_.begin();
+
+	while (itr != objects_.end())
+	{
+		// auto c = ActorUtilities::GetComponent< CircleCollider >((*itr));
+
 		itr++;
 	}
 }

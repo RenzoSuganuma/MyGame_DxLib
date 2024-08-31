@@ -18,6 +18,8 @@ public:
 
 	void const MainLoopUpdate(float deltaTime);
 
+	void const CollisionUpdate();
+
 	void const MainLoopExit();
 
 	const std::list< Actor* >::iterator

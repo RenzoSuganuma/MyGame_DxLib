@@ -8,6 +8,7 @@
 #include "SarissaEngine\Runtime\SrssEngn_Actor.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_Component.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_InputHandler.hpp"
+#include "SarissaEngine\Runtime\SrssEngn_CircleCollider.hpp"
 
 #include "Player.h"
 #include "MovingCircle.h"
@@ -62,6 +63,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	InputHandler* input = new InputHandler;
 	player->AddComponent(input);
+
+	CircleCollider* cCollider = new CircleCollider;
+	player->AddComponent(cCollider);
 
 	level->AddObject(player);
 
