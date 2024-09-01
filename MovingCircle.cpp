@@ -7,8 +7,7 @@
 void MovingCircle::Begin_()
 {
 	name_ = "_OBTSACLE_";
-	auto c = ActorUtilities::GetComponent< CircleCollider* >(this);
-	c->SetRadius(r);
+	ActorUtilities::GetComponent< CircleCollider* >(this)->SetRadius(100);
 
 	using namespace SarissaEngine::Runtime::System;
 	position_.x = windowWidth_ * (3.0f / 4.0f);

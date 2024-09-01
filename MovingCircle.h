@@ -5,7 +5,6 @@
 class MovingCircle final : public Actor
 {
 private:
-	float r = 200;
 public:
 	void Begin_() override;
 	void Tick_(float deltaTime) override;

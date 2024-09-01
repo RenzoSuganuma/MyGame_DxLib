@@ -11,8 +11,7 @@
 
 void Player::Begin_()
 {
-	auto c = ActorUtilities::GetComponent< CircleCollider* >(this);
-	c->SetRadius(r);
+	ActorUtilities::GetComponent< CircleCollider* >(this)->SetRadius(200);
 
 	using namespace SarissaEngine::Runtime::System;
 	name_ = "Player";
@@ -60,6 +59,8 @@ void Player::OnBeginOverlap_(const CircleCollider* other)
 void Player::OnStillOverlap_(const CircleCollider* other)
 {
 	DrawFormatString(position_.x, position_.y + 10, -1, "OverLapping");
+	position_.x -= 10;
+	position_.y -= 10;
 }
 
 void Player::OnEndOverlap_(const CircleCollider* other)
