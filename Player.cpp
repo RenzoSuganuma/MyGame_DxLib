@@ -10,8 +10,6 @@
 
 void Player::Begin_()
 {
-	ActorUtilities::GetComponent< CircleCollider* >(this)->SetRadius(200);
-
 	using namespace SarissaEngine::Runtime::System;
 	name_ = "Player";
 	position_.x = windowWidth_ * .5f;
@@ -20,6 +18,8 @@ void Player::Begin_()
 
 void Player::Tick_(float deltaTime)
 {
+	ActorUtilities::GetComponent< CircleCollider* >(this)->SetRadius(100);
+
 	elapsedTime += deltaTime;
 	if (elapsedTime > 1.0f)
 	{

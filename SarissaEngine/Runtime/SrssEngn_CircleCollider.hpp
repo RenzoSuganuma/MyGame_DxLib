@@ -10,8 +10,8 @@ protected:
 public:
 
 	const bool IsIntersectedWith(const CircleCollider* other);
-	inline const float GetRadius() { return radius_; }
-	inline void const SetRadius(const float r) { radius_ = r; }
+	inline float GetRadius() { return radius_; }
+	inline void const SetRadius(float r) { radius_ = r; }
 
 	void Begin_() override;
 	void Tick_(float deltaTime) override;

@@ -33,7 +33,6 @@ void CircleCollider::End_()
 {}
 void CircleCollider::Draw_()
 {
-	auto actor = const_cast<Actor*>(attachedActor_);
-	auto pos = actor->GetPosition();
+	auto pos = const_cast<Actor*>(attachedActor_)->GetPosition();
 	DrawCircle(pos.x, pos.y, radius_, GetColor(0, 255, 0), true, 5);
 }
