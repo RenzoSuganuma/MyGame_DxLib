@@ -16,8 +16,8 @@ void Player::Begin_()
 
 	using namespace SarissaEngine::Runtime::System;
 	name_ = "Player";
-	position_.x = windowWidth_ / 2;
-	position_.y = windowHeigth_ / 2;
+	position_.x = windowWidth_ * .5f;
+	position_.y = windowHeigth_ * .5f;
 }
 
 void Player::Tick_(float deltaTime)
@@ -26,8 +26,6 @@ void Player::Tick_(float deltaTime)
 	if (elapsedTime > 1.0f)
 	{
 		color_ = GetColor(0, 255, 0);
-		using namespace SarissaEngine::Runtime::System;
-		//PlaySoundFromMemory(*soundHandlers.begin(), SoundPlayMode::BackGround);
 		elapsedTime = 0;
 	}
 	else

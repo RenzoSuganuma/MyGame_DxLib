@@ -1,4 +1,4 @@
-#include "string"
+Ôªø#include "string"
 #include "DxLib.h"
 #include "SrssEngn_InputHandler.hpp"
 
@@ -24,295 +24,105 @@ const bool const InputHandler::GetInput(int inputAction, InputDeviceType inputTy
 
 void const InputHandler::CheckKeyboardInput()
 {
-	performed_.insert_or_assign(KeyboardKey::A, CheckHitKey(KEY_INPUT_A));
-	performed_.insert_or_assign(KeyboardKey::B, CheckHitKey(KEY_INPUT_B));
-	performed_.insert_or_assign(KeyboardKey::C, CheckHitKey(KEY_INPUT_C));
-	performed_.insert_or_assign(KeyboardKey::D, CheckHitKey(KEY_INPUT_D));
-	performed_.insert_or_assign(KeyboardKey::E, CheckHitKey(KEY_INPUT_E));
-	performed_.insert_or_assign(KeyboardKey::F, CheckHitKey(KEY_INPUT_F));
-	performed_.insert_or_assign(KeyboardKey::G, CheckHitKey(KEY_INPUT_G));
-	performed_.insert_or_assign(KeyboardKey::H, CheckHitKey(KEY_INPUT_H));
-	performed_.insert_or_assign(KeyboardKey::I, CheckHitKey(KEY_INPUT_I));
-	performed_.insert_or_assign(KeyboardKey::J, CheckHitKey(KEY_INPUT_J));
-	performed_.insert_or_assign(KeyboardKey::K, CheckHitKey(KEY_INPUT_K));
-	performed_.insert_or_assign(KeyboardKey::L, CheckHitKey(KEY_INPUT_L));
-	performed_.insert_or_assign(KeyboardKey::M, CheckHitKey(KEY_INPUT_M));
-	performed_.insert_or_assign(KeyboardKey::N, CheckHitKey(KEY_INPUT_N));
-	performed_.insert_or_assign(KeyboardKey::O, CheckHitKey(KEY_INPUT_O));
-	performed_.insert_or_assign(KeyboardKey::P, CheckHitKey(KEY_INPUT_P));
-	performed_.insert_or_assign(KeyboardKey::Q, CheckHitKey(KEY_INPUT_Q));
-	performed_.insert_or_assign(KeyboardKey::R, CheckHitKey(KEY_INPUT_R));
-	performed_.insert_or_assign(KeyboardKey::S, CheckHitKey(KEY_INPUT_S));
-	performed_.insert_or_assign(KeyboardKey::T, CheckHitKey(KEY_INPUT_T));
-	performed_.insert_or_assign(KeyboardKey::U, CheckHitKey(KEY_INPUT_U));
-	performed_.insert_or_assign(KeyboardKey::V, CheckHitKey(KEY_INPUT_V));
-	performed_.insert_or_assign(KeyboardKey::W, CheckHitKey(KEY_INPUT_W));
-	performed_.insert_or_assign(KeyboardKey::X, CheckHitKey(KEY_INPUT_X));
-	performed_.insert_or_assign(KeyboardKey::Y, CheckHitKey(KEY_INPUT_Y));
-	performed_.insert_or_assign(KeyboardKey::Z, CheckHitKey(KEY_INPUT_Z));
+	performed_[static_cast<int>(KeyboardKey::A)] = CheckHitKey(KEY_INPUT_A) == 1;
+	performed_[static_cast<int>(KeyboardKey::B)] = CheckHitKey(KEY_INPUT_B) == 1;
+	performed_[static_cast<int>(KeyboardKey::C)] = CheckHitKey(KEY_INPUT_C) == 1;
+	performed_[static_cast<int>(KeyboardKey::D)] = CheckHitKey(KEY_INPUT_D) == 1;
+	performed_[static_cast<int>(KeyboardKey::E)] = CheckHitKey(KEY_INPUT_E) == 1;
+	performed_[static_cast<int>(KeyboardKey::F)] = CheckHitKey(KEY_INPUT_F) == 1;
+	performed_[static_cast<int>(KeyboardKey::G)] = CheckHitKey(KEY_INPUT_G) == 1;
+	performed_[static_cast<int>(KeyboardKey::H)] = CheckHitKey(KEY_INPUT_H) == 1;
+	performed_[static_cast<int>(KeyboardKey::I)] = CheckHitKey(KEY_INPUT_I) == 1;
+	performed_[static_cast<int>(KeyboardKey::J)] = CheckHitKey(KEY_INPUT_J) == 1;
+	performed_[static_cast<int>(KeyboardKey::K)] = CheckHitKey(KEY_INPUT_K) == 1;
+	performed_[static_cast<int>(KeyboardKey::L)] = CheckHitKey(KEY_INPUT_L) == 1;
+	performed_[static_cast<int>(KeyboardKey::M)] = CheckHitKey(KEY_INPUT_M) == 1;
+	performed_[static_cast<int>(KeyboardKey::N)] = CheckHitKey(KEY_INPUT_N) == 1;
+	performed_[static_cast<int>(KeyboardKey::O)] = CheckHitKey(KEY_INPUT_O) == 1;
+	performed_[static_cast<int>(KeyboardKey::P)] = CheckHitKey(KEY_INPUT_P) == 1;
+	performed_[static_cast<int>(KeyboardKey::Q)] = CheckHitKey(KEY_INPUT_Q) == 1;
+	performed_[static_cast<int>(KeyboardKey::R)] = CheckHitKey(KEY_INPUT_R) == 1;
+	performed_[static_cast<int>(KeyboardKey::S)] = CheckHitKey(KEY_INPUT_S) == 1;
+	performed_[static_cast<int>(KeyboardKey::T)] = CheckHitKey(KEY_INPUT_T) == 1;
+	performed_[static_cast<int>(KeyboardKey::U)] = CheckHitKey(KEY_INPUT_U) == 1;
+	performed_[static_cast<int>(KeyboardKey::V)] = CheckHitKey(KEY_INPUT_V) == 1;
+	performed_[static_cast<int>(KeyboardKey::W)] = CheckHitKey(KEY_INPUT_W) == 1;
+	performed_[static_cast<int>(KeyboardKey::X)] = CheckHitKey(KEY_INPUT_X) == 1;
+	performed_[static_cast<int>(KeyboardKey::Y)] = CheckHitKey(KEY_INPUT_Y) == 1;
+	performed_[static_cast<int>(KeyboardKey::Z)] = CheckHitKey(KEY_INPUT_Z) == 1;
 
-	performed_.insert_or_assign(KeyboardKey::Num_1, CheckHitKey(KEY_INPUT_1));
-	performed_.insert_or_assign(KeyboardKey::Num_2, CheckHitKey(KEY_INPUT_2));
-	performed_.insert_or_assign(KeyboardKey::Num_3, CheckHitKey(KEY_INPUT_3));
-	performed_.insert_or_assign(KeyboardKey::Num_4, CheckHitKey(KEY_INPUT_4));
-	performed_.insert_or_assign(KeyboardKey::Num_5, CheckHitKey(KEY_INPUT_5));
-	performed_.insert_or_assign(KeyboardKey::Num_6, CheckHitKey(KEY_INPUT_6));
-	performed_.insert_or_assign(KeyboardKey::Num_7, CheckHitKey(KEY_INPUT_7));
-	performed_.insert_or_assign(KeyboardKey::Num_8, CheckHitKey(KEY_INPUT_8));
-	performed_.insert_or_assign(KeyboardKey::Num_9, CheckHitKey(KEY_INPUT_9));
-	performed_.insert_or_assign(KeyboardKey::Num_0, CheckHitKey(KEY_INPUT_0));
+	performed_[static_cast<int>(KeyboardKey::Num_1)] = CheckHitKey(KEY_INPUT_1) == 1;
+	performed_[static_cast<int>(KeyboardKey::Num_2)] = CheckHitKey(KEY_INPUT_2) == 1;
+	performed_[static_cast<int>(KeyboardKey::Num_3)] = CheckHitKey(KEY_INPUT_3) == 1;
+	performed_[static_cast<int>(KeyboardKey::Num_4)] = CheckHitKey(KEY_INPUT_4) == 1;
+	performed_[static_cast<int>(KeyboardKey::Num_5)] = CheckHitKey(KEY_INPUT_5) == 1;
+	performed_[static_cast<int>(KeyboardKey::Num_6)] = CheckHitKey(KEY_INPUT_6) == 1;
+	performed_[static_cast<int>(KeyboardKey::Num_7)] = CheckHitKey(KEY_INPUT_7) == 1;
+	performed_[static_cast<int>(KeyboardKey::Num_8)] = CheckHitKey(KEY_INPUT_8) == 1;
+	performed_[static_cast<int>(KeyboardKey::Num_9)] = CheckHitKey(KEY_INPUT_9) == 1;
+	performed_[static_cast<int>(KeyboardKey::Num_0)] = CheckHitKey(KEY_INPUT_0) == 1;
 
-	performed_.insert_or_assign(KeyboardKey::Shift, CheckHitKey(KEY_INPUT_LSHIFT) || CheckHitKey(KEY_INPUT_RSHIFT));
-	performed_.insert_or_assign(KeyboardKey::Tab, CheckHitKey(KEY_INPUT_TAB));
-	performed_.insert_or_assign(KeyboardKey::Ctrl, CheckHitKey(KEY_INPUT_LCONTROL) || CheckHitKey(KEY_INPUT_RCONTROL));
-	performed_.insert_or_assign(KeyboardKey::Alt, CheckHitKey(KEY_INPUT_LALT) || CheckHitKey(KEY_INPUT_RALT));
-	performed_.insert_or_assign(KeyboardKey::Space, CheckHitKey(KEY_INPUT_SPACE));
+	performed_[static_cast<int>(KeyboardKey::Shift)] = CheckHitKey(KEY_INPUT_LSHIFT) || CheckHitKey(KEY_INPUT_RSHIFT) == 1;
+	performed_[static_cast<int>(KeyboardKey::Tab)] = CheckHitKey(KEY_INPUT_TAB);
+	performed_[static_cast<int>(KeyboardKey::Ctrl)] = CheckHitKey(KEY_INPUT_LCONTROL) || CheckHitKey(KEY_INPUT_RCONTROL) == 1;
+	performed_[static_cast<int>(KeyboardKey::Alt)] = CheckHitKey(KEY_INPUT_LALT) || CheckHitKey(KEY_INPUT_RALT) == 1;
+	performed_[static_cast<int>(KeyboardKey::Space)] = CheckHitKey(KEY_INPUT_SPACE) == 1;
 }
-// ì¸óÕÇÃ óßÇøè„Ç™ÇËÅAóßâ∫ÇËÇÃì¸óÕÇçXêVÇ∑ÇÈ
+// ÂÖ•Âäõ„ÅÆ Á´ã„Å°‰∏ä„Åå„Çä„ÄÅÁ´ã‰∏ã„Çä„ÅÆÂÖ•Âäõ„ÇíÊõ¥Êñ∞„Åô„Çã  
 void const InputHandler::CheckInputStarted() {
-	for (auto item : performed_) {
-		if (item.second) {
-			performedFrames_[item.first]++;
+	size_t lim = sizeof(performed_) / sizeof(bool);
+	for (size_t i = 0; i < lim; i++)
+	{
+		if (performed_[i]) {
+			performedFrames_[i]++;
 
-			if (performedFrames_[item.first] < 2) {
-				started_[item.first] = true;
-			}	// ì¸óÕÉtÉåÅ[ÉÄêîÇí≤Ç◊ÇÈ
+			if (performedFrames_[i] < 2) {
+				started_[i] = 1;
+			}
 			else {
-				started_[item.first] = false;
+				started_[i] = 0;
 			}
 		}
-	}	// ì¸óÕíÜÇÃèÓïÒÇÇ∑Ç◊ÇƒÇ»ÇﬂÇÈ
-}
-// ì¸óÕÇÃóßâ∫ÇËÇí≤Ç◊ÇƒèÛë‘ÇÃçXêVÇÇ∑ÇÈ	
-void const InputHandler::CheckInputCanceled() {
-	auto past_it = performedConditionPastFrame_.begin(); // ëOÉtÉåÅ[ÉÄ
-	auto current_it = performed_.begin();				 // åªç›ÇÃÉtÉåÅ[ÉÄ
-	while (current_it != performed_.end()) {
-		if ((*current_it).second == false && (*past_it).second == true) {
-			canceled_[(*current_it).first] = true;
-
-			performedFrames_[(*current_it).first] = 0;
-		}
-		else {
-			canceled_[(*current_it).first] = false;
-		}
-
-		past_it++;
-		current_it++;
 	}
 }
-// ëOÉtÉåÅ[ÉÄÇÃì¸óÕílÇçXêV
-void const InputHandler::UpdatePastInputValues() {
-	performedConditionPastFrame_ = performed_;	// ílÇÉRÉsÅ[
+// ÂÖ•Âäõ„ÅÆÁ´ã‰∏ã„Çä„ÇíË™ø„Åπ„Å¶Áä∂ÊÖã„ÅÆÊõ¥Êñ∞„Çí„Åô„Çã	
+void const InputHandler::CheckInputCanceled() {
+	size_t lim = sizeof(performed_) / sizeof(bool);
+	for (size_t i = 0; i < lim; i++)
+	{
+		if (performed_[i] == false && performedFrames_[i] > 2) {
+			canceled_[i] = true;
+
+			performedFrames_[i] = 0;
+		}
+		else {
+			canceled_[i] = false;
+		}
+	}
 }
 
 const bool const InputHandler::GetInputStarted(const KeyboardKey key)
 {
-	return started_[key];
+	return started_[static_cast<int>(key)];
 }
 
 const bool const InputHandler::GetInputPerformed(const KeyboardKey key)
 {
-	return performed_[key];
+	return performed_[static_cast<int>(key)];
 }
 
 const bool const InputHandler::GetInputCanceled(const KeyboardKey key)
 {
-	return canceled_[key];
+	return canceled_[static_cast<int>(key)];
 }
 
 void InputHandler::Begin_()
 {
-#pragma region -ÉLÅ[É{Å[Éhì¸óÕÅióßÇøè„Ç™ÇËÅj-
-	started_.insert_or_assign(KeyboardKey::A, 0);
-	started_.insert_or_assign(KeyboardKey::B, 0);
-	started_.insert_or_assign(KeyboardKey::C, 0);
-	started_.insert_or_assign(KeyboardKey::D, 0);
-	started_.insert_or_assign(KeyboardKey::E, 0);
-	started_.insert_or_assign(KeyboardKey::F, 0);
-	started_.insert_or_assign(KeyboardKey::G, 0);
-	started_.insert_or_assign(KeyboardKey::H, 0);
-	started_.insert_or_assign(KeyboardKey::I, 0);
-	started_.insert_or_assign(KeyboardKey::J, 0);
-	started_.insert_or_assign(KeyboardKey::K, 0);
-	started_.insert_or_assign(KeyboardKey::L, 0);
-	started_.insert_or_assign(KeyboardKey::M, 0);
-	started_.insert_or_assign(KeyboardKey::N, 0);
-	started_.insert_or_assign(KeyboardKey::O, 0);
-	started_.insert_or_assign(KeyboardKey::P, 0);
-	started_.insert_or_assign(KeyboardKey::Q, 0);
-	started_.insert_or_assign(KeyboardKey::R, 0);
-	started_.insert_or_assign(KeyboardKey::S, 0);
-	started_.insert_or_assign(KeyboardKey::T, 0);
-	started_.insert_or_assign(KeyboardKey::U, 0);
-	started_.insert_or_assign(KeyboardKey::V, 0);
-	started_.insert_or_assign(KeyboardKey::W, 0);
-	started_.insert_or_assign(KeyboardKey::X, 0);
-	started_.insert_or_assign(KeyboardKey::Y, 0);
-	started_.insert_or_assign(KeyboardKey::Z, 0);
-
-	started_.insert_or_assign(KeyboardKey::Num_1, 0);
-	started_.insert_or_assign(KeyboardKey::Num_2, 0);
-	started_.insert_or_assign(KeyboardKey::Num_3, 0);
-	started_.insert_or_assign(KeyboardKey::Num_4, 0);
-	started_.insert_or_assign(KeyboardKey::Num_5, 0);
-	started_.insert_or_assign(KeyboardKey::Num_6, 0);
-	started_.insert_or_assign(KeyboardKey::Num_7, 0);
-	started_.insert_or_assign(KeyboardKey::Num_8, 0);
-	started_.insert_or_assign(KeyboardKey::Num_9, 0);
-	started_.insert_or_assign(KeyboardKey::Num_0, 0);
-
-	started_.insert_or_assign(KeyboardKey::Tab, 0);
-	started_.insert_or_assign(KeyboardKey::Shift, 0);
-	started_.insert_or_assign(KeyboardKey::Ctrl, 0);
-	started_.insert_or_assign(KeyboardKey::Alt, 0);
-	started_.insert_or_assign(KeyboardKey::Space, 0);
-#pragma endregion
-
-#pragma region -ÉLÅ[É{Å[Éhì¸óÕÅiì¸óÕíÜÅj-
-	performed_.insert_or_assign(KeyboardKey::A, 0);
-	performed_.insert_or_assign(KeyboardKey::B, 0);
-	performed_.insert_or_assign(KeyboardKey::C, 0);
-	performed_.insert_or_assign(KeyboardKey::D, 0);
-	performed_.insert_or_assign(KeyboardKey::E, 0);
-	performed_.insert_or_assign(KeyboardKey::F, 0);
-	performed_.insert_or_assign(KeyboardKey::G, 0);
-	performed_.insert_or_assign(KeyboardKey::H, 0);
-	performed_.insert_or_assign(KeyboardKey::I, 0);
-	performed_.insert_or_assign(KeyboardKey::J, 0);
-	performed_.insert_or_assign(KeyboardKey::K, 0);
-	performed_.insert_or_assign(KeyboardKey::L, 0);
-	performed_.insert_or_assign(KeyboardKey::M, 0);
-	performed_.insert_or_assign(KeyboardKey::N, 0);
-	performed_.insert_or_assign(KeyboardKey::O, 0);
-	performed_.insert_or_assign(KeyboardKey::P, 0);
-	performed_.insert_or_assign(KeyboardKey::Q, 0);
-	performed_.insert_or_assign(KeyboardKey::R, 0);
-	performed_.insert_or_assign(KeyboardKey::S, 0);
-	performed_.insert_or_assign(KeyboardKey::T, 0);
-	performed_.insert_or_assign(KeyboardKey::U, 0);
-	performed_.insert_or_assign(KeyboardKey::V, 0);
-	performed_.insert_or_assign(KeyboardKey::W, 0);
-	performed_.insert_or_assign(KeyboardKey::X, 0);
-	performed_.insert_or_assign(KeyboardKey::Y, 0);
-	performed_.insert_or_assign(KeyboardKey::Z, 0);
-
-	performed_.insert_or_assign(KeyboardKey::Num_1, 0);
-	performed_.insert_or_assign(KeyboardKey::Num_2, 0);
-	performed_.insert_or_assign(KeyboardKey::Num_3, 0);
-	performed_.insert_or_assign(KeyboardKey::Num_4, 0);
-	performed_.insert_or_assign(KeyboardKey::Num_5, 0);
-	performed_.insert_or_assign(KeyboardKey::Num_6, 0);
-	performed_.insert_or_assign(KeyboardKey::Num_7, 0);
-	performed_.insert_or_assign(KeyboardKey::Num_8, 0);
-	performed_.insert_or_assign(KeyboardKey::Num_9, 0);
-	performed_.insert_or_assign(KeyboardKey::Num_0, 0);
-
-	performed_.insert_or_assign(KeyboardKey::Tab, 0);
-	performed_.insert_or_assign(KeyboardKey::Shift, 0);
-	performed_.insert_or_assign(KeyboardKey::Ctrl, 0);
-	performed_.insert_or_assign(KeyboardKey::Alt, 0);
-	performed_.insert_or_assign(KeyboardKey::Space, 0);
-#pragma endregion
-
-#pragma region -ÉLÅ[É{Å[Éhì¸óÕÅióßâ∫ÇËÅj-
-	canceled_.insert_or_assign(KeyboardKey::A, 0);
-	canceled_.insert_or_assign(KeyboardKey::B, 0);
-	canceled_.insert_or_assign(KeyboardKey::C, 0);
-	canceled_.insert_or_assign(KeyboardKey::D, 0);
-	canceled_.insert_or_assign(KeyboardKey::E, 0);
-	canceled_.insert_or_assign(KeyboardKey::F, 0);
-	canceled_.insert_or_assign(KeyboardKey::G, 0);
-	canceled_.insert_or_assign(KeyboardKey::H, 0);
-	canceled_.insert_or_assign(KeyboardKey::I, 0);
-	canceled_.insert_or_assign(KeyboardKey::J, 0);
-	canceled_.insert_or_assign(KeyboardKey::K, 0);
-	canceled_.insert_or_assign(KeyboardKey::L, 0);
-	canceled_.insert_or_assign(KeyboardKey::M, 0);
-	canceled_.insert_or_assign(KeyboardKey::N, 0);
-	canceled_.insert_or_assign(KeyboardKey::O, 0);
-	canceled_.insert_or_assign(KeyboardKey::P, 0);
-	canceled_.insert_or_assign(KeyboardKey::Q, 0);
-	canceled_.insert_or_assign(KeyboardKey::R, 0);
-	canceled_.insert_or_assign(KeyboardKey::S, 0);
-	canceled_.insert_or_assign(KeyboardKey::T, 0);
-	canceled_.insert_or_assign(KeyboardKey::U, 0);
-	canceled_.insert_or_assign(KeyboardKey::V, 0);
-	canceled_.insert_or_assign(KeyboardKey::W, 0);
-	canceled_.insert_or_assign(KeyboardKey::X, 0);
-	canceled_.insert_or_assign(KeyboardKey::Y, 0);
-	canceled_.insert_or_assign(KeyboardKey::Z, 0);
-
-	canceled_.insert_or_assign(KeyboardKey::Num_1, 0);
-	canceled_.insert_or_assign(KeyboardKey::Num_2, 0);
-	canceled_.insert_or_assign(KeyboardKey::Num_3, 0);
-	canceled_.insert_or_assign(KeyboardKey::Num_4, 0);
-	canceled_.insert_or_assign(KeyboardKey::Num_5, 0);
-	canceled_.insert_or_assign(KeyboardKey::Num_6, 0);
-	canceled_.insert_or_assign(KeyboardKey::Num_7, 0);
-	canceled_.insert_or_assign(KeyboardKey::Num_8, 0);
-	canceled_.insert_or_assign(KeyboardKey::Num_9, 0);
-	canceled_.insert_or_assign(KeyboardKey::Num_0, 0);
-
-	canceled_.insert_or_assign(KeyboardKey::Tab, 0);
-	canceled_.insert_or_assign(KeyboardKey::Shift, 0);
-	canceled_.insert_or_assign(KeyboardKey::Ctrl, 0);
-	canceled_.insert_or_assign(KeyboardKey::Alt, 0);
-	canceled_.insert_or_assign(KeyboardKey::Space, 0);
-#pragma endregion
-
-#pragma region -ÉLÅ[É{Å[Éhì¸óÕÅiì¸óÕÉtÉåÅ[ÉÄÉJÉEÉìÉgÅj-
-	performedFrames_.insert_or_assign(KeyboardKey::A, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::B, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::C, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::D, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::E, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::F, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::G, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::H, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::I, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::J, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::K, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::L, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::M, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::N, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::O, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::P, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Q, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::R, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::S, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::T, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::U, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::V, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::W, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::X, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Y, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Z, 0);
-
-	performedFrames_.insert_or_assign(KeyboardKey::Num_1, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Num_2, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Num_3, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Num_4, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Num_5, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Num_6, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Num_7, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Num_8, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Num_9, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Num_0, 0);
-
-	performedFrames_.insert_or_assign(KeyboardKey::Tab, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Shift, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Ctrl, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Alt, 0);
-	performedFrames_.insert_or_assign(KeyboardKey::Space, 0);
-#pragma endregion
-
-	performedConditionPastFrame_ = performed_;
 }
 
 void InputHandler::Tick_(float deltaTime)
 {
-#pragma region -à⁄ìÆé≤ì¸óÕ-
+#pragma region -ÁßªÂãïËª∏ÂÖ•Âäõ-
 	if (CheckHitKey(KEY_INPUT_A) == 1)	// left
 	{
 		moveVec_.x = -1;
@@ -353,10 +163,8 @@ void InputHandler::Tick_(float deltaTime)
 	CheckKeyboardInput();
 	CheckInputStarted();
 	CheckInputCanceled();
-	UpdatePastInputValues();
 }
 
 void InputHandler::End_()
 {
-
 }

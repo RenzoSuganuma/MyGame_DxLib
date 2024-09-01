@@ -6,7 +6,7 @@
 class CircleCollider final : public Component
 {
 protected:
-	float radius_ = 100.0f;
+	float radius_ = 100;
 public:
 
 	const bool IsIntersectedWith(const CircleCollider* other);

@@ -6,7 +6,7 @@
 
 const bool CircleCollider::IsIntersectedWith(const CircleCollider* other)
 {
-	if (other == nullptr)return false;
+	if (other == nullptr) return false;
 
 	auto c1 = ActorUtilities::GetComponent< CircleCollider* >
 		(const_cast<Actor*>(attachedActor_));

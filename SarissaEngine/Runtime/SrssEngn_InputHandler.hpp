@@ -29,15 +29,13 @@ class InputHandler final : public Component
 private:
 #pragma region -キーボード入力まわり-
 	// 入力立ち上がり
-	std::map< const KeyboardKey, bool > started_;
+	bool started_[41]{ false };
 	// 入力が１のとき
-	std::map< const KeyboardKey, bool > performed_;
+	bool performed_[41]{ false };
 	// 入力立下り
-	std::map< const KeyboardKey, bool > canceled_;
-	// 前フレームの入力の状態を保持する
-	std::map< const KeyboardKey, bool > performedConditionPastFrame_;
+	bool canceled_[41]{ false };
 	// 入力が入っているフレーム数
-	std::map< const KeyboardKey, int > performedFrames_;
+	int performedFrames_[41]{ 0 };
 
 	// キーボード入力受付処理
 	void const CheckKeyboardInput();
@@ -45,8 +43,6 @@ private:
 	void const CheckInputStarted();
 	// 入力の立下りを調べて状態の更新をする	
 	void const CheckInputCanceled();
-	// 前フレームの入力値を更新
-	void const UpdatePastInputValues();
 #pragma endregion
 
 public:
