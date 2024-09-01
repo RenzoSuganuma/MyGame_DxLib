@@ -48,9 +48,9 @@ public:
 
 	const VECTOR const GetPosition();
 
-	void const SetRotaton(VECTOR newRot);
+	void const SetRotation(VECTOR newRot);
 
-	const VECTOR const GetRotaton();
+	const VECTOR const GetRotation();
 
 	void const SetPlacedLevel(Level* level);
 };

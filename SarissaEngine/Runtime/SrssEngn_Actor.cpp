@@ -113,12 +113,12 @@ const VECTOR const Actor::GetPosition()
 	return position_;
 }
 
-void const Actor::SetRotaton(VECTOR newRot)
+void const Actor::SetRotation(VECTOR newRot)
 {
 	rotation_ = newRot;
 }
 
-const VECTOR const Actor::GetRotaton()
+const VECTOR const Actor::GetRotation()
 {
 	return rotation_;
 }

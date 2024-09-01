@@ -7,7 +7,7 @@
 void MovingCircle::Begin_()
 {
 	name_ = "_OBTSACLE_";
-	auto c =  ActorUtilities::GetComponent< CircleCollider* >(this);
+	auto c = ActorUtilities::GetComponent< CircleCollider* >(this); 
 	c->SetRadius(r);
 
 	using namespace SarissaEngine::Runtime::System;
@@ -17,8 +17,6 @@ void MovingCircle::Begin_()
 
 void MovingCircle::Tick_(float deltaTime)
 {
-	// DrawCircle( position_.x, position_.y, r * 1.4f, GetColor(0,0,255));
-	// DrawLine(position_.x, position_.y, position_.x + r, position_.y + r, -1);
 }
 
 void MovingCircle::End_()

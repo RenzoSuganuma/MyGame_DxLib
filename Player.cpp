@@ -2,6 +2,7 @@
 #include "SarissaEngine\Engine\SrssEngn_SoundHandler.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_InputHandler.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_ActorUtilities.hpp"
+#include "SarissaEngine\Runtime\SrssEngn_CircleCollider.hpp"
 #include "typeinfo"
 #include "Player.h"
 #include "DxLib.h"
@@ -10,6 +11,9 @@
 
 void Player::Begin_()
 {
+	auto c = ActorUtilities::GetComponent< CircleCollider* >(this);
+	c->SetRadius(r);
+
 	using namespace SarissaEngine::Runtime::System;
 	name_ = "Player";
 	position_.x = windowWidth_ / 2;
@@ -19,7 +23,6 @@ void Player::Begin_()
 void Player::Tick_(float deltaTime)
 {
 	elapsedTime += deltaTime;
-	// DrawCircle(position_.x, position_.y, r * 1.4f, color_);
 	if (elapsedTime > 1.0f)
 	{
 		color_ = GetColor(0, 255, 0);
@@ -40,7 +43,7 @@ void Player::Tick_(float deltaTime)
 	auto condition = input->GetInputStarted(KeyboardKey::Space);
 
 	using namespace SarissaEngine::Runtime::System;
-	if(condition)
+	if (condition)
 		PlaySoundFromMemory(*soundHandlers.begin(), SoundPlayMode::BackGround);
 
 	DrawFormatString(position_.x, position_.y, -1, "%s", name_.c_str());

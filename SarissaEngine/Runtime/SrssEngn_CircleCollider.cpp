@@ -21,20 +21,13 @@ const bool CircleCollider::IsIntersectedWith(const CircleCollider* other)
 	float dx2 = dx * dx;
 	float dy2 = dy * dy;
 	float dc2 = dx2 + dy2;	// ’†S“¯Žm‚Ì‹——£‚Ì‚Qæ
-	float dc = sqrt(dc2);
 	float r1 = c1->GetRadius();
 	float r2 = c2->GetRadius();
 
 	float r = r1 + r2;
-	float rr = r;
+	float rr = r * r;
 
-	// DEBUG
-
-	DrawFormatString(0, 0, -1, "r = %f \n dc = %f", r, dc);
-
-	// DEBUG END
-
-	return dc <= r;
+	return dc2 <= rr;
 }
 
 void CircleCollider::Begin_()
@@ -43,7 +36,7 @@ void CircleCollider::Tick_(float deltaTime)
 {
 	auto actor = const_cast<Actor*>(attachedActor_);
 	auto pos = actor->GetPosition();
-	DrawCircle(pos.x, pos.y, radius_ * .5f, GetColor(0, 255, 0), 1, 5);
+	DrawCircle(pos.x, pos.y, radius_, GetColor(0, 255, 0), 1, 5);
 }
 void CircleCollider::End_()
 {}
