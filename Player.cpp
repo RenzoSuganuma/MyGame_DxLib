@@ -19,7 +19,7 @@ void Player::Begin_()
 void Player::Tick_(float deltaTime)
 {
 	elapsedTime += deltaTime;
-	DrawCircle(position_.x, position_.y, 100, color_);
+	// DrawCircle(position_.x, position_.y, r * 1.4f, color_);
 	if (elapsedTime > 1.0f)
 	{
 		color_ = GetColor(0, 255, 0);
@@ -43,10 +43,25 @@ void Player::Tick_(float deltaTime)
 	if(condition)
 		PlaySoundFromMemory(*soundHandlers.begin(), SoundPlayMode::BackGround);
 
-	DrawFormatString(position_.x, position_.y, -1, "%s %d", name_.c_str(), condition);
+	DrawFormatString(position_.x, position_.y, -1, "%s", name_.c_str());
 }
 
 void Player::End_()
+{
+
+}
+
+void Player::OnBeginOverlap_(const CircleCollider* other)
+{
+
+}
+
+void Player::OnStillOverlap_(const CircleCollider* other)
+{
+	DrawFormatString(position_.x, position_.y + 10, -1, "OverLapping");
+}
+
+void Player::OnEndOverlap_(const CircleCollider* other)
 {
 
 }

@@ -2,6 +2,7 @@
 #include "SrssEngn_CircleCollider.hpp"
 #include "SrssEngn_Actor.hpp"
 #include "SrssEngn_Level.hpp"
+#include "DxLib.h"
 
 Level::Level()
 {
@@ -42,16 +43,42 @@ void const Level::MainLoopUpdate(float deltaTime)
 	}
 }
 
+inline void const Task(std::list< CircleCollider* > colliders)
+{
+	for (auto item1 : colliders) // i
+	{
+		auto list = colliders;
+		// i のitem以外のコライダーのリスト
+		list.remove(item1);
+
+		for (auto item2 : list)
+		{
+			auto a1 = const_cast<Actor*>(item1->GetActor());
+			auto a2 = const_cast<Actor*>(item2->GetActor());
+
+			if (item1->IsIntersectedWith(item2) || item2->IsIntersectedWith(item1))
+			{
+				a1->OnStillOverlap(item2);
+				a2->OnStillOverlap(item1);
+			}
+		}
+	}
+}
+
 void const Level::CollisionUpdate()
 {
 	auto itr = objects_.begin();
+	std::list< CircleCollider* > colliders;
 
 	while (itr != objects_.end())
 	{
-		auto c = ActorUtilities::GetComponent< CircleCollider* >((*itr));
+		auto c = ActorUtilities::GetComponent<CircleCollider*>(*itr);
+		if (c != nullptr)
+			colliders.emplace_back(c);
 
 		itr++;
 	}
+	Task(colliders);
 }
 
 void const Level::MainLoopExit()

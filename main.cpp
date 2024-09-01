@@ -49,9 +49,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 	// ウィンドウのセットアップ
-	SetScreenSize(1000, 800);
 	auto screenSize = GetScreenSize();
-	SetChangeWindowMode(true);
+	SetScreenSize(screenSize.first , screenSize.second);
+	SetChangeWindowMode(false);
 	ChangeWindowMode(GetChangeWindowMode());
 	SetRefreshRate(60);
 	frameTime = (1000.0f / (GetRefreshRate()) + 0.5f);
@@ -61,13 +61,20 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	auto player = new Player;
 	player->SetPlacedLevel(level);
 
+	auto obstacle = new MovingCircle;
+	obstacle->SetPlacedLevel(level);
+
 	InputHandler* input = new InputHandler;
 	player->AddComponent(input);
 
 	CircleCollider* cCollider = new CircleCollider;
 	player->AddComponent(cCollider);
 
+	CircleCollider* obstacleCollider = new CircleCollider;
+	obstacle->AddComponent(obstacleCollider);
+
 	level->AddObject(player);
+	level->AddObject(obstacle);
 
 	// 効果音読み込み
 	int se = LoadSoundToMemory(".\\Resources\\pigeon_se_.mp3");
@@ -89,6 +96,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		DrawFormatStringF(0, screenSize.second - 20, GetColor(255, 255, 255), "Hit Escape Key To Exit : ElapsedTime = %f", elapsedTime);
 
 		level->MainLoopUpdate(deltaTime);
+		level->CollisionUpdate();
 		elapsedTime += deltaTime;
 
 		if (CheckHitKey(GetQuitKey()) == 1)

@@ -16,6 +16,13 @@ protected:
 	VECTOR position_{ 0 }, rotation_{ 0 };
 	Level* placedLevel_;
 
+	virtual void Begin_();
+	virtual void Tick_(float deltaTime);
+	virtual void End_();
+
+	virtual void OnBeginOverlap_(const CircleCollider* other);
+	virtual void OnStillOverlap_(const CircleCollider* other);
+	virtual void OnEndOverlap_(const CircleCollider* other);
 public:
 	std::list< Component* > attachedComponents_;
 	std::string name_ = " Actor_ ";
@@ -28,17 +35,9 @@ public:
 	void Tick(float deltaTime);
 	void End();
 
-	virtual void Begin_();
-	virtual void Tick_(float deltaTime);
-	virtual void End_();
-
 	void OnBeginOverlap(const CircleCollider* other);
 	void OnStillOverlap(const CircleCollider* other);
 	void OnEndOverlap(const CircleCollider* other);
-
-	virtual void OnBeginOverlap_(const CircleCollider* other);
-	virtual void OnStillOverlap_(const CircleCollider* other);
-	virtual void OnEndOverlap_(const CircleCollider* other);
 
 	std::list< Component* >::iterator
 		const AddComponent(Component* component);
