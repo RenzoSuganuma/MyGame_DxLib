@@ -18,14 +18,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// 経過時間
 	float elapsedTime = 0;
 
+	if (DxLib_Init() == -1)
+		return -1;
+
 	ClearDrawScreen();
 	
 	while (1)
 	{
 		if (ProcessMessage() == -1)
-		{
 			break;
-		}
 
 		// 計測開始
 		clockStarted = std::chrono::system_clock::now();

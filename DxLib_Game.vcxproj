@@ -19,7 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Foundation\Entity.cpp" />
+    <ClCompile Include="Foundation\ICollidable.cpp" />
+    <ClCompile Include="Foundation\Vector3.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Foundation\Entity.h" />
+    <ClInclude Include="Foundation\ICollidable.h" />
+    <ClInclude Include="Foundation\ITaskSystem.h" />
+    <ClInclude Include="Foundation\Vector3.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

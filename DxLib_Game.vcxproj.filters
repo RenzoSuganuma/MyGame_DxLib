@@ -8,10 +8,24 @@
     <Filter Include="main_c">
       <UniqueIdentifier>{bd83871d-6f98-4790-a2c6-2af582d30600}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Foundation">
+      <UniqueIdentifier>{c86ba3db-0900-43ff-a032-5c2cadf14cbc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>main_c</Filter>
     </ClCompile>
+    <ClCompile Include="Foundation\Entity.cpp" />
+    <ClCompile Include="Foundation\ICollidable.cpp" />
+    <ClCompile Include="Foundation\Vector3.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Foundation\ITaskSystem.h">
+      <Filter>Foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="Foundation\Entity.h" />
+    <ClInclude Include="Foundation\ICollidable.h" />
+    <ClInclude Include="Foundation\Vector3.h" />
   </ItemGroup>
 </Project>
