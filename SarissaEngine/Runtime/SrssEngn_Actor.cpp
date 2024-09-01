@@ -29,6 +29,7 @@ Actor::~Actor()
 void Actor::Begin_() {}
 void Actor::Tick_(float deltaTime) {}
 void Actor::End_() {}
+void Actor::Draw_() {}
 
 void Actor::Begin()
 {
@@ -64,6 +65,18 @@ void Actor::End()
 	}
 
 	End_();
+}
+
+void Actor::Draw()
+{
+	auto it = attachedComponents_.begin();
+	while (it != attachedComponents_.end())
+	{
+		(*it)->Draw();
+		it++;
+	}
+
+	Draw_();
 }
 
 void Actor::OnBeginOverlap_(const CircleCollider* other)

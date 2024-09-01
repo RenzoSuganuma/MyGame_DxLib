@@ -3,7 +3,6 @@
 #include "SarissaEngine\Runtime\SrssEngn_InputHandler.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_ActorUtilities.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_CircleCollider.hpp"
-#include "typeinfo"
 #include "Player.h"
 #include "DxLib.h"
 

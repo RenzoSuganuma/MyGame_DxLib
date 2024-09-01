@@ -19,6 +19,7 @@ protected:
 	virtual void Begin_();
 	virtual void Tick_(float deltaTime);
 	virtual void End_();
+	virtual void Draw_();
 
 	virtual void OnBeginOverlap_(const CircleCollider* other);
 	virtual void OnStillOverlap_(const CircleCollider* other);
@@ -34,6 +35,7 @@ public:
 	void Begin();
 	void Tick(float deltaTime);
 	void End();
+	void Draw();
 
 	void OnBeginOverlap(const CircleCollider* other);
 	void OnStillOverlap(const CircleCollider* other);

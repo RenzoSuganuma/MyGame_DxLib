@@ -50,7 +50,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	// ウィンドウのセットアップ
 	auto screenSize = GetScreenSize();
-	SetScreenSize(screenSize.first , screenSize.second);
+	SetScreenSize(screenSize.first, screenSize.second);
 	SetChangeWindowMode(false);
 	ChangeWindowMode(GetChangeWindowMode());
 	SetRefreshRate(60);

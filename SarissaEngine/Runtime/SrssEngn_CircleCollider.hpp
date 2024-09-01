@@ -16,5 +16,6 @@ public:
 	void Begin_() override;
 	void Tick_(float deltaTime) override;
 	void End_() override;
+	void Draw_() override;
 };
 

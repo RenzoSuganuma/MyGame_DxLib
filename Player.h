@@ -7,7 +7,6 @@ class Player final : public Actor
 private:
 	unsigned int color_ = GetColor(255, 0, 0);
 	float elapsedTime = 0;
-	bool stay_ = false;
 public:
 	void Begin_() override;
 	void Tick_(float deltaTime) override;

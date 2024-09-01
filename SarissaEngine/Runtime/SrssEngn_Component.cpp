@@ -15,17 +15,18 @@ Component::~Component()
 
 void Component::Begin_()
 {
-
 }
 
 void Component::Tick_(float deltaTime)
 {
-
 }
 
 void Component::End_()
 {
+}
 
+void Component::Draw_()
+{
 }
 
 void Component::Begin()
@@ -41,6 +42,11 @@ void Component::Tick(float deltaTime)
 void Component::End()
 {
 	End_();
+}
+
+void Component::Draw()
+{
+	Draw_();
 }
 
 const Actor* const Component::GetActor() const

@@ -39,6 +39,7 @@ void const Level::MainLoopUpdate(float deltaTime)
 	while (itr != objects_.end())
 	{
 		(*itr)->Tick(deltaTime);
+		(*itr)->Draw();
 		itr++;
 	}
 }

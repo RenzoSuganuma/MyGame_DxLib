@@ -8,6 +8,10 @@ class Component
 protected:
 	const Actor* attachedActor_ = nullptr;
 
+	virtual void Begin_();
+	virtual void Tick_(float deltaTime);
+	virtual void End_();
+	virtual void Draw_();
 public:
 	bool enabled_ = true;
 
@@ -17,10 +21,7 @@ public:
 	void Begin();
 	void Tick(float deltaTime);
 	void End();
-
-	virtual void Begin_();
-	virtual void Tick_(float deltaTime);
-	virtual void End_();
+	void Draw();
 
 	const Actor* const GetActor() const;
 

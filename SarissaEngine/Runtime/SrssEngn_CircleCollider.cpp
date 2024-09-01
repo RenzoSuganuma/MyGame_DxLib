@@ -28,9 +28,12 @@ void CircleCollider::Begin_()
 {}
 void CircleCollider::Tick_(float deltaTime)
 {
+}
+void CircleCollider::End_()
+{}
+void CircleCollider::Draw_()
+{
 	auto actor = const_cast<Actor*>(attachedActor_);
 	auto pos = actor->GetPosition();
 	DrawCircle(pos.x, pos.y, radius_, GetColor(0, 255, 0), true, 5);
 }
-void CircleCollider::End_()
-{}
