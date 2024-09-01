@@ -20,6 +20,24 @@ void MovingCircle::Tick_(float deltaTime)
 
 void MovingCircle::End_()
 {
+}
 
+void MovingCircle::Draw_()
+{
+	DrawCircle(position_.x, position_.y,
+		ActorUtilities::GetComponent< CircleCollider* >(this)->GetRadius(), c);
+}
+
+void MovingCircle::OnBeginOverlap_(const CircleCollider* other)
+{
+}
+
+void MovingCircle::OnStillOverlap_(const CircleCollider* other)
+{
+	c = GetColor(128, 0, 128);
+}
+
+void MovingCircle::OnEndOverlap_(const CircleCollider* other)
+{
 }
 

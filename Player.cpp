@@ -21,15 +21,6 @@ void Player::Tick_(float deltaTime)
 	ActorUtilities::GetComponent< CircleCollider* >(this)->SetRadius(100);
 
 	elapsedTime += deltaTime;
-	if (elapsedTime > 1.0f)
-	{
-		color_ = GetColor(0, 255, 0);
-		elapsedTime = 0;
-	}
-	else
-	{
-		color_ = GetColor(255, 0, 0);
-	}
 
 	auto input = ActorUtilities::GetComponent<InputHandler*>(this);
 
@@ -50,6 +41,12 @@ void Player::End_()
 
 }
 
+void Player::Draw_()
+{
+	DrawCircle(position_.x, position_.y,
+		ActorUtilities::GetComponent<CircleCollider*>(this)->GetRadius(), color_);
+}
+
 void Player::OnBeginOverlap_(const CircleCollider* other)
 {
 
@@ -60,6 +57,8 @@ void Player::OnStillOverlap_(const CircleCollider* other)
 	DrawFormatString(position_.x, position_.y + 10, -1, "OverLapping");
 	position_.x -= 10;
 	position_.y -= 10;
+
+	color_ = GetColor(0, 255, 0);
 }
 
 void Player::OnEndOverlap_(const CircleCollider* other)
