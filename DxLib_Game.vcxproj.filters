@@ -5,13 +5,80 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="main_c">
+    <Filter Include="Source">
       <UniqueIdentifier>{bd83871d-6f98-4790-a2c6-2af582d30600}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Engine Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>main_c</Filter>
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Level.cpp">
+      <Filter>Engine Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SarissaEngine\Engine\SrssEngn_SoundHandler.cpp">
+      <Filter>Engine Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SarissaEngine\Engine\SrssEngn_WindowHandler.cpp">
+      <Filter>Engine Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Actor.cpp">
+      <Filter>Engine Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Component.cpp">
+      <Filter>Engine Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_InputHandler.cpp">
+      <Filter>Engine Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MovingCircle.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Engine Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_CircleCollider.cpp">
+      <Filter>Engine Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SarissaEngine\Engine\SrssEngn_SoundHandler.hpp">
+      <Filter>Engine Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Engine\SrssEngn_WindowHandler.hpp">
+      <Filter>Engine Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Actor.hpp">
+      <Filter>Engine Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Component.hpp">
+      <Filter>Engine Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.hpp">
+      <Filter>Engine Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_InputHandler.hpp">
+      <Filter>Engine Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_ActorUtilities.hpp">
+      <Filter>Engine Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingCircle.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_CircleCollider.hpp">
+      <Filter>Engine Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
