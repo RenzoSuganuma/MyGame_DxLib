@@ -23,9 +23,9 @@ public:
 	void const MainLoopExit();
 
 	const std::list< Actor* >::iterator
-		const AddObject(Actor* newObject);
+		const AddObject(const Actor * newObject);
 
-	void const RemoveObject(Actor* obj);
+	void const RemoveObject(const Actor * obj);
 
 	void const RemoveObject(const std::list< Actor* >::iterator place);
 };

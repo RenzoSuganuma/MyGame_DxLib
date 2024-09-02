@@ -4,22 +4,8 @@
 #include "SrssEngn_Level.hpp"
 #include "DxLib.h"
 
-Level::Level()
-{
-}
-
-Level::~Level()
-{
-	auto it = objects_.begin();
-
-	while (it != objects_.end())
-	{
-		delete (*it);
-		++it;
-	}
-
-	objects_.clear();
-}
+Level::Level() {}
+Level::~Level() {}
 
 void const Level::MainLoopEntry()
 {
@@ -44,12 +30,12 @@ void const Level::MainLoopUpdate(float deltaTime)
 	}
 }
 
-inline void const Task(std::list< CircleCollider* > colliders)
+inline void const DetectCollisions(std::list< CircleCollider* > colliders)
 {
-	for (auto item1 : colliders) // i
+	for (auto item1 : colliders) // (i)
 	{
+		// (i) のitem以外のコライダーのリスト
 		auto list = colliders;
-		// i のitem以外のコライダーのリスト
 		list.remove(item1);
 
 		for (auto item2 : list)
@@ -79,32 +65,34 @@ void const Level::CollisionUpdate()
 
 		itr++;
 	}
-	Task(colliders);
+	DetectCollisions(colliders);
 }
 
 void const Level::MainLoopExit()
 {
-	auto itr = objects_.begin();
+	auto it = objects_.begin();
 
-	while (itr != objects_.end())
+	while (it != objects_.end())
 	{
-		(*itr)->End();
-		itr++;
+		delete (*it);
+		++it;
 	}
+
+	objects_.clear();
 }
 
 const std::list< Actor* >::iterator
-const Level::AddObject(Actor* newObj)
+const Level::AddObject(const Actor* newObject)
 {
-	objects_.emplace_back(newObj);
+	objects_.emplace_back(const_cast<Actor*>(newObject));
 	auto it = objects_.end();
 	it--;
 	return it;
 }
 
-void const Level::RemoveObject(Actor* obj)
+void const Level::RemoveObject(const Actor* obj)
 {
-	objects_.remove(obj);
+	objects_.remove(const_cast<Actor*>(obj));
 }
 
 void const Level::RemoveObject(const std::list< Actor* >::iterator place)

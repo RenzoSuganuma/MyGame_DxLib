@@ -8,7 +8,7 @@ class ActorUtilities final
 {
 public:
 	template<typename T>
-	static T GetComponent(Actor* getComponentFrom)
+	static T GetComponent(const Actor * getComponentFrom)
 	{
 		auto it = getComponentFrom->attachedComponents_.begin();
 

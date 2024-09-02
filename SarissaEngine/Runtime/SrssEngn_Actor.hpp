@@ -42,9 +42,9 @@ public:
 	void OnEndOverlap(const CircleCollider* other);
 
 	std::list< Component* >::iterator
-		const AddComponent(Component* component);
+		const AddComponent(Component * component);
 
-	void const RemoveComponent(std::list< Component* >::iterator place);
+	void const RemoveComponent(const std::list<Component*>::iterator place);
 
 	void const SetPosition(VECTOR newPos);
 
@@ -54,5 +54,5 @@ public:
 
 	const VECTOR const GetRotation();
 
-	void const SetPlacedLevel(Level* level);
+	void const SetPlacedLevel(const Level* level);
 };

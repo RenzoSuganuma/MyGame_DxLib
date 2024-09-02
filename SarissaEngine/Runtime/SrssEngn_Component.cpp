@@ -2,35 +2,20 @@
 #include "SrssEngn_Actor.hpp"
 #include "SrssEngn_Component.hpp"
 
-Component::Component()
-{
-	enabled_ = true;
-}
+Component::Component(){}
+Component::~Component(){}
 
-Component::~Component()
-{
-	attachedActor_ = nullptr;
-	enabled_ = false;
-}
-
-void Component::Begin_()
-{
-}
-
-void Component::Tick_(float deltaTime)
-{
-}
-
-void Component::End_()
-{
-}
-
-void Component::Draw_()
-{
-}
+#pragma region virtual-functions
+void Component::Begin_(){}
+void Component::Tick_(float deltaTime){}
+void Component::End_(){}
+void Component::Draw_(){}
+#pragma endregion
 
 void Component::Begin()
 {
+	enabled_ = true;
+
 	Begin_();
 }
 
@@ -41,6 +26,9 @@ void Component::Tick(float deltaTime)
 
 void Component::End()
 {
+	attachedActor_ = nullptr;
+	enabled_ = false;
+
 	End_();
 }
 

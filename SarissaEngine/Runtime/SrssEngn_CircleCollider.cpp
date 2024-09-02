@@ -4,6 +4,13 @@
 #include "math.h"
 #include "DxLib.h"
 
+#pragma region virtual-functions
+void CircleCollider::Begin_() {}
+void CircleCollider::Tick_(float deltaTime) {}
+void CircleCollider::End_() {}
+void CircleCollider::Draw_() {}
+#pragma endregion
+
 const bool CircleCollider::IsIntersectedWith(const CircleCollider* other)
 {
 	auto c1 = ActorUtilities::GetComponent< CircleCollider* >
@@ -24,13 +31,3 @@ const bool CircleCollider::IsIntersectedWith(const CircleCollider* other)
 	return  (dx * dx) + (dy * dy) <= (r1 + r2) * (r1 + r2);
 }
 
-void CircleCollider::Begin_()
-{}
-void CircleCollider::Tick_(float deltaTime)
-{
-}
-void CircleCollider::End_()
-{}
-void CircleCollider::Draw_()
-{
-}

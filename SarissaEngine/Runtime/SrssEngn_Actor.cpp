@@ -5,31 +5,18 @@
 #include "SrssEngn_Level.hpp"
 #include "SrssEngn_CircleCollider.hpp"
 
-Actor::Actor()
-{
-	enabled_ = true;
-}
+Actor::Actor() {}
+Actor::~Actor() {}
 
-Actor::~Actor()
-{
-	enabled_ = false;
-
-	auto it = attachedComponents_.begin();
-
-	while (it != attachedComponents_.end())
-	{
-		delete (*it);
-		++it;
-	}
-
-	attachedComponents_.clear();
-	placedLevel_ = nullptr;
-}
-
+#pragma region virtual-funcitons
 void Actor::Begin_() {}
 void Actor::Tick_(float deltaTime) {}
 void Actor::End_() {}
 void Actor::Draw_() {}
+void Actor::OnBeginOverlap_(const CircleCollider* other) {}
+void Actor::OnStillOverlap_(const CircleCollider* other) {}
+void Actor::OnEndOverlap_(const CircleCollider* other) {}
+#pragma endregion
 
 void Actor::Begin()
 {
@@ -39,6 +26,8 @@ void Actor::Begin()
 		(*it)->Begin();
 		it++;
 	}
+
+	enabled_ = true;
 
 	Begin_();
 }
@@ -64,6 +53,10 @@ void Actor::End()
 		it++;
 	}
 
+	attachedComponents_.clear();
+	enabled_ = false;
+	placedLevel_ = nullptr;
+
 	End_();
 }
 
@@ -78,13 +71,6 @@ void Actor::Draw()
 
 	Draw_();
 }
-
-void Actor::OnBeginOverlap_(const CircleCollider* other)
-{}
-void Actor::OnStillOverlap_(const CircleCollider* other)
-{}
-void Actor::OnEndOverlap_(const CircleCollider* other)
-{}
 
 void Actor::OnBeginOverlap(const CircleCollider* other)
 {
@@ -108,10 +94,11 @@ const Actor::AddComponent(Component* component)
 	attachedComponents_.emplace_back(component);
 	auto it = attachedComponents_.end();
 	it--;
+
 	return it;
 }
 
-void const Actor::RemoveComponent(std::list< Component* >::iterator place)
+void const Actor::RemoveComponent(const std::list<Component*>::iterator place)
 {
 	attachedComponents_.erase(place);
 }
@@ -136,8 +123,8 @@ const VECTOR const Actor::GetRotation()
 	return rotation_;
 }
 
-void const Actor::SetPlacedLevel(Level* level)
+void const Actor::SetPlacedLevel(const Level* level)
 {
-	placedLevel_ = level;
+	placedLevel_ = const_cast<Level*>(level);
 }
 
