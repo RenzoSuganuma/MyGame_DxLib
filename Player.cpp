@@ -3,6 +3,7 @@
 #include "SarissaEngine\Runtime\SrssEngn_InputHandler.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_ActorUtilities.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_CircleCollider.hpp"
+#include "SarissaEngine\Runtime\SrssEngn_Actor.hpp"
 #include "Player.h"
 #include "DxLib.h"
 
@@ -55,8 +56,12 @@ void Player::OnBeginOverlap_(const CircleCollider* other)
 void Player::OnStillOverlap_(const CircleCollider* other)
 {
 	DrawFormatString(position_.x, position_.y + 10, -1, "OverLapping");
-	position_.x -= 10;
-	position_.y -= 10;
+
+	auto o_actor = const_cast<Actor*>(other->GetActor());
+	auto o_pos = o_actor->GetPosition();
+	VECTOR dir = { o_pos.x - position_.x , o_pos.y - position_.y , 0 };
+	position_.x -= dir.x * .1f;
+	position_.y -= dir.y * .1f;
 
 	color_ = GetColor(0, 255, 0);
 }
