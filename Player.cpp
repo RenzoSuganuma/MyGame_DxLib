@@ -4,6 +4,7 @@
 #include "SarissaEngine\Runtime\SrssEngn_ActorUtilities.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_CircleCollider.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_Actor.hpp"
+#include "SarissaEngine\Runtime\SrssEngn_Vector3.h"
 #include "Player.h"
 #include "DxLib.h"
 
@@ -59,9 +60,8 @@ void Player::OnStillOverlap_(const CircleCollider* other)
 
 	auto o_actor = const_cast<Actor*>(other->GetActor());
 	auto o_pos = o_actor->GetPosition();
-	VECTOR dir = { o_pos.x - position_.x , o_pos.y - position_.y , 0 };
-	position_.x -= dir.x * .1f;
-	position_.y -= dir.y * .1f;
+	Vector3 dir = { o_pos.x - position_.x , o_pos.y - position_.y , 0 };
+	position_ -= dir * .1f;
 
 	color_ = GetColor(0, 255, 0);
 }

@@ -3,6 +3,7 @@
 #include "list"
 #include "string"
 #include "DxLib.h"
+#include "SrssEngn_Vector3.h"
 
 // ‘O•û’è‹`
 class Level;
@@ -13,8 +14,8 @@ class CircleCollider;
 class Actor
 {
 protected:
-	VECTOR position_{ 0 };
-	VECTOR rotation_{ 0 };
+	Vector3 position_{ 0 };
+	Vector3 rotation_{ 0 };
 	Level* placedLevel_;
 
 	virtual void Begin_();
@@ -47,13 +48,13 @@ public:
 
 	void const RemoveComponent(const std::list<Component*>::iterator place);
 
-	void const SetPosition(VECTOR newPos);
+	void const SetPosition(Vector3 newPos);
 
-	const VECTOR const GetPosition();
+	const Vector3 const GetPosition();
 
-	void const SetRotation(VECTOR newRot);
+	void const SetRotation(Vector3 newRot);
 
-	const VECTOR const GetRotation();
+	const Vector3 const GetRotation();
 
 	void const SetPlacedLevel(const Level* level);
 };

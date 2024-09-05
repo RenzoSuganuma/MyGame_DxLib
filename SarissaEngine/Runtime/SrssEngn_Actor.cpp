@@ -103,22 +103,22 @@ void const Actor::RemoveComponent(const std::list<Component*>::iterator place)
 	attachedComponents_.erase(place);
 }
 
-void const Actor::SetPosition(VECTOR newPos)
+void const Actor::SetPosition(Vector3 newPos)
 {
 	position_ = newPos;
 }
 
-const VECTOR const Actor::GetPosition()
+const Vector3 const Actor::GetPosition()
 {
 	return position_;
 }
 
-void const Actor::SetRotation(VECTOR newRot)
+void const Actor::SetRotation(Vector3 newRot)
 {
 	rotation_ = newRot;
 }
 
-const VECTOR const Actor::GetRotation()
+const Vector3 const Actor::GetRotation()
 {
 	return rotation_;
 }

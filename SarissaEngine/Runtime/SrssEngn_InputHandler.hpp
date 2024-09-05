@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SrssEngn_Component.hpp"
+#include "SrssEngn_Vector3.h"
 #include "DxLib.h"
 #include "string"
 #include "list"
@@ -46,7 +47,7 @@ private:
 #pragma endregion
 
 public:
-	VECTOR moveVec_{ 0 };
+	Vector3 moveVec_{ 0 };
 	const bool const GetInput(int inputAction, InputDeviceType inputType);
 	const bool const GetInputStarted(const KeyboardKey key);
 	const bool const GetInputPerformed(const KeyboardKey key);

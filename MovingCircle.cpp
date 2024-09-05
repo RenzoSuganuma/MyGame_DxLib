@@ -6,7 +6,7 @@
 
 void MovingCircle::Begin_()
 {
-	name_ = "_OBTSACLE_";
+	name_ = "OBTSACLE_";
 
 	using namespace SarissaEngine::Runtime::System;
 	position_.x = windowWidth_ * (3.0f / 4.0f);
