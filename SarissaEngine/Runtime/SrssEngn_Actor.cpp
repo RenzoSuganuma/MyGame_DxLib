@@ -1,5 +1,4 @@
 #include "DxLib.h"
-#include "typeinfo"
 #include "SrssEngn_Actor.hpp"
 #include "SrssEngn_Component.hpp"
 #include "SrssEngn_Level.hpp"

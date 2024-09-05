@@ -57,12 +57,6 @@ void Player::OnBeginOverlap_(const CircleCollider* other)
 void Player::OnStillOverlap_(const CircleCollider* other)
 {
 	DrawFormatString(position_.x, position_.y + 10, -1, "OverLapping");
-
-	auto o_actor = const_cast<Actor*>(other->GetActor());
-	auto o_pos = o_actor->GetPosition();
-	Vector3 dir = { o_pos.x - position_.x , o_pos.y - position_.y , 0 };
-	position_ -= dir * .1f;
-
 	color_ = GetColor(0, 255, 0);
 }
 
