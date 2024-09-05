@@ -95,11 +95,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		level->CollisionUpdate();
 		elapsedTime += deltaTime;
 
-		// Å´ TEST_VEC3
-		Vector3 vec3 = { 100.0f , 50.0f , 10.0f };
-		// Å™ TEST_VEC3
+		Vector3 v = { 1 };
 
-		DrawString(windowWidth_ / 2, windowHeigth_ / 2, vec3.ToString(), -1);
+		DrawFormatString(0, 0, -1, "%f", v.Magnitude());
 
 		if (CheckHitKey(GetQuitKey()) == 1)
 		{
