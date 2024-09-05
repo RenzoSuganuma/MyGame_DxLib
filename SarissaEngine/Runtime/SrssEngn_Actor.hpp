@@ -22,9 +22,11 @@ protected:
 	virtual void Tick_(float deltaTime);
 	virtual void End_();
 	virtual void Draw_();
-
+	// ŒÄ‚Ño‚µ‚ğ–¢À‘•
 	virtual void OnBeginOverlap_(const CircleCollider* other);
+	// À‘•Ï‚İ
 	virtual void OnStillOverlap_(const CircleCollider* other);
+	// ŒÄ‚Ño‚µ‚ğ–¢À‘•
 	virtual void OnEndOverlap_(const CircleCollider* other);
 public:
 	std::list< Component* > attachedComponents_;

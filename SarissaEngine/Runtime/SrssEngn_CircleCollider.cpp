@@ -30,11 +30,11 @@ const bool CircleCollider::IsIntersectedWith(const CircleCollider* other)
 
 	bool condition = (dx * dx) + (dy * dy) <= (r1 + r2) * (r1 + r2);
 	if (condition)
-	{
+	{ // « “–‚½‚Á‚Ä‚¢‚é‚È‚ç‘Ş‚­
 		auto bck_v = p_c1 - p_c2;
 		bck_v *= .1f;
 		const_cast<Actor*>(attachedActor_)->SetPosition(p_c1 + bck_v);
-	}
+	} // ª “–‚½‚Á‚Ä‚¢‚é‚È‚ç‘Ş‚­
 	return  condition;
 }
 
