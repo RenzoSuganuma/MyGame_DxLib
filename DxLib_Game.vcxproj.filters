@@ -42,11 +42,11 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Engine Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SarissaEngine\Runtime\SrssEngn_CircleCollider.cpp">
       <Filter>Engine Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +78,9 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_CircleCollider.hpp">
+      <Filter>Engine Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Vector3.h">
       <Filter>Engine Header Files</Filter>
     </ClInclude>
   </ItemGroup>

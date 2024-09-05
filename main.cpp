@@ -10,16 +10,11 @@
 #include "SarissaEngine\Runtime\SrssEngn_InputHandler.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_CircleCollider.hpp"
 
+#include "SarissaEngine\Runtime\SrssEngn_Vector3.h"
 #include "Player.h"
 #include "MovingCircle.h"
 
 #pragma comment (lib , "winmm.lib")
-
-/* 【Layer:0】 */
-
-/* ゲームエンジン【ライブラリ】 レイヤ */
-
-/* ここではゲーム本体のコーディングをしない。あくまでもシステム面【エンジン内部】のコードのみ書くこと */
 
 // エントリーポイントを提供
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -57,7 +52,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	frameTime = (1000.0f / (GetRefreshRate()) + 0.5f);
 	SetQuitKey(KEY_INPUT_ESCAPE);
 
-	// テスト用のシーン内セットアップ
+	// ↓ テスト用のシーン内セットアップ
 	auto player = new Player;
 	player->SetPlacedLevel(level);
 
@@ -75,6 +70,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	level->AddObject(player);
 	level->AddObject(obstacle);
+	// ↑ TEST_IMPLEMENT
 
 	// 効果音読み込み
 	int se = LoadSoundToMemory(".\\Resources\\pigeon_se_.mp3");
@@ -98,6 +94,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		level->MainLoopUpdate(deltaTime);
 		level->CollisionUpdate();
 		elapsedTime += deltaTime;
+
+		// ↓ TEST_VEC3
+		Vector3 vec3 = { 100.0f , 50.0f , 10.0f };
+		// ↑ TEST_VEC3
+
+		DrawString(windowWidth_ / 2, windowHeigth_ / 2, vec3.ToString(), -1);
 
 		if (CheckHitKey(GetQuitKey()) == 1)
 		{

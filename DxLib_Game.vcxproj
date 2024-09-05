@@ -41,6 +41,7 @@
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Component.hpp" />
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_InputHandler.hpp" />
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Level.hpp" />
+    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Vector3.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

@@ -13,7 +13,8 @@ class CircleCollider;
 class Actor
 {
 protected:
-	VECTOR position_{ 0 }, rotation_{ 0 };
+	VECTOR position_{ 0 };
+	VECTOR rotation_{ 0 };
 	Level* placedLevel_;
 
 	virtual void Begin_();
