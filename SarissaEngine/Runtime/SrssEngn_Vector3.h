@@ -54,13 +54,15 @@ public:
 	bool operator==(const Vector3& other) const noexcept {
 		return this->x == other.x && this->y == other.y && this->z == other.z;
 	}
-	inline const char* const ToString() const {
+	// C言語の文字列へ変換した値を返す
+	const char* const ToString() const {
 		char buff[64];
 		snprintf(buff, sizeof(buff), "x:%.3f,y:%.3f,z:%.3f", x, y, z);
-		buff[63] = '\0';
+		buff[63] = '\0'; // 文字列の末尾には必ず'\0'が番兵として配置されている。これがないと文字列として認識されない。
 		return &buff[0];
 	}
-	Vector3 Normalized() noexcept {
+	// ベクトルの正規化をしたのち、正規化されたベクトルを返す
+	Vector3 normalized() noexcept {
 		float magnitude = sqrtf(x * x + y * y + z * z);
 		float calc_x = this->x / magnitude;
 		float calc_y = this->y / magnitude;
@@ -68,7 +70,8 @@ public:
 
 		return Vector3(calc_x, calc_y, calc_z);
 	}
-	float Magnitude() noexcept {
+	// 大きさを返す
+	float magnitude() noexcept {
 		float magnitude = sqrtf(x * x + y * y + z * z);
 		return magnitude;
 	}
