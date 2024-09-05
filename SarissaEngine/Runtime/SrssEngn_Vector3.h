@@ -5,6 +5,7 @@
 #include "sstream"
 #include "stdio.h"
 
+// 三次元ベクトルを提供する
 struct Vector3
 {
 public:

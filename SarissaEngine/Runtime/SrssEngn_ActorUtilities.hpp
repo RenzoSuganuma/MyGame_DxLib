@@ -3,7 +3,7 @@
 #include "SrssEngn_Component.hpp"
 #include "SrssEngn_Actor.hpp"
 
-// アクタークラスのユーティリティクラス
+// アクタークラスのユーティリティクラス。煩雑な操作を吸収した機能を提供する。
 class ActorUtilities final
 {
 public:

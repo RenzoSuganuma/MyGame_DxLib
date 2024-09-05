@@ -9,8 +9,8 @@
 #include "SarissaEngine\Runtime\SrssEngn_Component.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_InputHandler.hpp"
 #include "SarissaEngine\Runtime\SrssEngn_CircleCollider.hpp"
-
 #include "SarissaEngine\Runtime\SrssEngn_Vector3.h"
+
 #include "Player.h"
 #include "MovingCircle.h"
 
@@ -94,18 +94,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		level->MainLoopUpdate(deltaTime);
 		level->CollisionUpdate();
 		elapsedTime += deltaTime;
-
-		Vector3 v1 = { 9 };
-		Vector3 v2 = { 10 };
-
-		if (v1 == v2)
-		{
-			DrawString(0, 0, "yes", -1);
-		}
-		else
-		{
-			DrawString(0, 0, "no", -1);
-		}
 
 		if (CheckHitKey(GetQuitKey()) == 1)
 		{

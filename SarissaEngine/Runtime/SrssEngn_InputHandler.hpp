@@ -23,7 +23,7 @@ enum class KeyboardKey : int
 	Tab, Shift, Ctrl, Alt, Space,
 };
 
-// 入力ハンドラー
+// 入力ハンドラー、入力デバイスからの入力処理を実行する。
 class InputHandler final : public Component
 {
 private:

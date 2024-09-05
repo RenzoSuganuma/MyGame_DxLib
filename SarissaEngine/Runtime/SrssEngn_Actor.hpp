@@ -9,7 +9,7 @@ class Level;
 class Component;
 class CircleCollider;
 
-// アクタークラス
+// ゲーム内のオブジェクトとして扱うクラスの基底クラス
 class Actor
 {
 protected:
