@@ -20,21 +20,39 @@ public:
 	Vector3 operator-(const Vector3& other) noexcept {
 		return Vector3(x - other.x, y - other.y, z - other.z);
 	}
+	Vector3 operator*(const Vector3& other) noexcept {
+		return Vector3(x * other.x, y * other.y, z * other.z);
+	}
+	Vector3 operator/(const Vector3& other) noexcept {
+		return Vector3(x / other.x, y / other.y, z / other.z);
+	}
 	Vector3& operator+=(const Vector3& other) noexcept {
-		x + other.x;
-		y + other.y;
-		z + other.z;
+		x = x + other.x;
+		y = y + other.y;
+		z = z + other.z;
 		return *this;
 	}
 	Vector3& operator-=(const Vector3& other) noexcept {
-		x - other.x;
-		y - other.y;
-		z - other.z;
+		x = x - other.x;
+		y = y - other.y;
+		z = z - other.z;
+		return *this;
+	}
+	Vector3& operator*=(const Vector3& other) noexcept {
+		x = x * other.x;
+		y = y * other.y;
+		z = z * other.z;
+		return *this;
+	}
+	Vector3& operator/=(const Vector3& other) noexcept {
+		x = x / other.x;
+		y = y / other.y;
+		z = z / other.z;
 		return *this;
 	}
 	// Še¬•ª‚Ì’l‚ª‚·‚×‚Äˆê’v‚µ‚Ä‚¢‚½‚ç ^
-	bool operator==(const Vector3& other) noexcept {
-		return x == other.x && y == other.y && z == other.z;
+	bool operator==(const Vector3& other) const noexcept {
+		return this->x == other.x && this->y == other.y && this->z == other.z;
 	}
 	inline const char* const ToString() const {
 		char buff[64];

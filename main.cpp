@@ -95,9 +95,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		level->CollisionUpdate();
 		elapsedTime += deltaTime;
 
-		Vector3 v = { 1 };
+		Vector3 v1 = { 9 };
+		Vector3 v2 = { 10 };
 
-		DrawFormatString(0, 0, -1, "%f", v.Magnitude());
+		if (v1 == v2)
+		{
+			DrawString(0, 0, "yes", -1);
+		}
+		else
+		{
+			DrawString(0, 0, "no", -1);
+		}
 
 		if (CheckHitKey(GetQuitKey()) == 1)
 		{
