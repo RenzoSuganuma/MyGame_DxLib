@@ -29,7 +29,7 @@ void Player::Tick_(float deltaTime)
 	position_.x += input->moveVec_.x * 1000 * deltaTime;
 	position_.y += input->moveVec_.y * 1000 * deltaTime;
 
-	auto condition = input->GetInputStarted(KeyboardKey::Space);
+	auto condition = input->GetInputCanceled(KeyboardKey::Space);
 
 	using namespace SarissaEngine::Runtime::System;
 	if (condition)
