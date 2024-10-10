@@ -1,15 +1,15 @@
-#pragma once
+ï»¿#pragma once
 
 #include "list"
 
-// ‘O•û’è‹`
+// å‰æ–¹å®šç¾©
 class Actor;
 
-// Unity‚Å‚¢‚¤ƒV[ƒ“A‚·‚×‚Ä‚ÌƒAƒNƒ^‚ª‘¶İ‚·‚éƒNƒ‰ƒXBi\‘¢‘Ì‚Å‚à‚¢‚¢‚©‚àj
+// Unityã§ã„ã†ã‚·ãƒ¼ãƒ³ã€ã™ã¹ã¦ã®ã‚¢ã‚¯ã‚¿ãŒå­˜åœ¨ã™ã‚‹ã‚¯ãƒ©ã‚¹ã€‚ï¼ˆæ§‹é€ ä½“ã§ã‚‚ã„ã„ã‹ã‚‚ï¼‰
 class Level final
 {
 private:
-	std::list< Actor* > objects_;
+	std::list< std::shared_ptr< Actor > > objects_;
 
 public:
 	Level();
@@ -23,10 +23,10 @@ public:
 
 	void const MainLoopExit();
 
-	const std::list< Actor* >::iterator
+	const std::list< std::shared_ptr< Actor > >::iterator
 		const AddObject(const Actor * newObject);
 
 	void const RemoveObject(const Actor * obj);
 
-	void const RemoveObject(const std::list< Actor* >::iterator place);
+	void const RemoveObject(const std::list< std::shared_ptr< Actor > >::iterator place);
 };

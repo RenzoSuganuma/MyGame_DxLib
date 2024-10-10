@@ -1,4 +1,4 @@
-#include "chrono"
+ï»¿#include "chrono"
 #include "DxLib.h"
 #include "Windows.h"
 #include "SarissaEngine\Engine\SrssEngn_SoundHandler.hpp"
@@ -16,34 +16,34 @@
 
 #pragma comment (lib , "winmm.lib")
 
-// ƒGƒ“ƒgƒŠ[ƒ|ƒCƒ“ƒg‚ğ’ñ‹Ÿ
+// ã‚¨ãƒ³ãƒˆãƒªãƒ¼ãƒã‚¤ãƒ³ãƒˆã‚’æä¾›
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	using namespace SarissaEngine::Runtime::System;
 
-	// ƒtƒŒ[ƒ€ƒŒ[ƒg§ŒÀ‚Ì‚½‚ß‚Ì•Ï”ŒQ
-	// ‚PƒtƒŒ[ƒ€“–‚½‚è‚ÌŠÔ[ms]
+	// ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¬ãƒ¼ãƒˆåˆ¶é™ã®ãŸã‚ã®å¤‰æ•°ç¾¤
+	// ï¼‘ãƒ•ãƒ¬ãƒ¼ãƒ å½“ãŸã‚Šã®æ™‚é–“[ms]
 	float frameTime = 0;
-	// ‰ß‹ŠÔ
+	// éå»æ™‚é–“
 	std::chrono::system_clock::time_point clockStarted;
-	// Œ»İŠÔ
+	// ç¾åœ¨æ™‚é–“
 	std::chrono::system_clock::time_point clockEnded;
-	// ƒÂ•b
+	// Î´ç§’
 	float deltaTime = frameTime / 1000.0f;
-	// Œo‰ßŠÔ
+	// çµŒéæ™‚é–“
 	float elapsedTime = 0;
 
 	// Initialize:
 
 	Level* level = new Level;
 
-	// DXLib‚Ì‰Šú‰»
+	// DXLibã®åˆæœŸåŒ–
 	if (DxLib_Init() == -1)
 	{
 		return -1;
 	}
 
-	// ƒEƒBƒ“ƒhƒE‚ÌƒZƒbƒgƒAƒbƒv
+	// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—
 	auto screenSize = GetScreenSize();
 	SetScreenSize(screenSize.first, screenSize.second);
 	SetChangeWindowMode(false);
@@ -52,27 +52,27 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	frameTime = (1000.0f / (GetRefreshRate()) + 0.5f);
 	SetQuitKey(KEY_INPUT_ESCAPE);
 
-	// « ƒeƒXƒg—p‚ÌƒV[ƒ““àƒZƒbƒgƒAƒbƒv
-	auto player = new Player;
-	player->SetPlacedLevel(level);
+	// â†“ ãƒ†ã‚¹ãƒˆç”¨ã®ã‚·ãƒ¼ãƒ³å†…ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—
+	auto player = std::make_shared< Player > ();
+	player.get()->SetPlacedLevel(level);
 
-	auto obstacle = new MovingCircle;
+	auto obstacle = std::make_shared< MovingCircle > ();
 	obstacle->SetPlacedLevel(level);
 
-	InputHandler* input = new InputHandler;
-	player->AddComponent(input);
+	auto input = std::make_shared< InputHandler >();
+	player->AddComponent(input.get());
 
-	CircleCollider* cCollider = new CircleCollider;
-	player->AddComponent(cCollider);
+	auto cCollider = std::make_shared< CircleCollider >();
+	player->AddComponent(cCollider.get());
 
-	CircleCollider* obstacleCollider = new CircleCollider;
-	obstacle->AddComponent(obstacleCollider);
+	auto obstacleCollider = std::make_shared< CircleCollider >();
+	obstacle->AddComponent(obstacleCollider.get());
 
-	level->AddObject(player);
-	level->AddObject(obstacle);
-	// ª TEST_IMPLEMENT
+	level->AddObject(player.get());
+	level->AddObject(obstacle.get());
+	// â†‘ TEST_IMPLEMENT
 
-	// Œø‰Ê‰¹“Ç‚İ‚İ
+	// åŠ¹æœéŸ³èª­ã¿è¾¼ã¿
 	int se = LoadSoundToMemory(".\\Resources\\pigeon_se_.mp3");
 
 	ClearDrawScreen();
@@ -85,7 +85,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			break;
 		}
 
-		// Œv‘ªŠJn
+		// è¨ˆæ¸¬é–‹å§‹
 		clockStarted = std::chrono::system_clock::now();
 
 		ClearDrawScreen();
@@ -99,7 +99,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		{
 			level->MainLoopExit();
 
-			delete level;
+			// delete level;
 
 			DxLib_End();
 
