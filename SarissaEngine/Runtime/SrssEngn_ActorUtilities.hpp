@@ -1,11 +1,10 @@
-#pragma once
+ï»¿#pragma once
 
 #include "SrssEngn_Component.hpp"
 #include "SrssEngn_Actor.hpp"
 
-// ƒAƒNƒ^[ƒNƒ‰ƒX‚Ìƒ†[ƒeƒBƒŠƒeƒBƒNƒ‰ƒXB”ÏG‚È‘€ì‚ğ‹zû‚µ‚½‹@”\‚ğ’ñ‹Ÿ‚·‚éB
-class ActorUtilities final
-{
+// ã‚¢ã‚¯ã‚¿ãƒ¼ã‚¯ãƒ©ã‚¹ã®ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£ã‚¯ãƒ©ã‚¹ã€‚ç…©é›‘ãªæ“ä½œã‚’å¸åã—ãŸæ©Ÿèƒ½ã‚’æä¾›ã™ã‚‹ã€‚
+class ActorUtilities final {
 public:
 	template<typename T>
 	static T GetComponent(const Actor * getComponentFrom)

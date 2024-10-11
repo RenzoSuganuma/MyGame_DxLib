@@ -1,14 +1,12 @@
-#pragma once
+ï»¿#pragma once
 
 #include "list"
 #include "string"
 
-namespace SarissaEngine::Runtime::System
-{
+namespace SarissaEngine::Runtime::System {
 
-	// ƒTƒEƒ“ƒhÄ¶ƒ‚[ƒh
-	extern enum class SoundPlayMode
-	{
+	// ã‚µã‚¦ãƒ³ãƒ‰å†ç”Ÿãƒ¢ãƒ¼ãƒ‰
+	extern enum class SoundPlayMode {
 		Normal,
 		BackGround,
 		Loop

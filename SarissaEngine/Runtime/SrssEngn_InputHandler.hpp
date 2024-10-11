@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "SrssEngn_Component.hpp"
 #include "SrssEngn_Vector3.h"
@@ -7,42 +7,39 @@
 #include "list"
 #include "map"
 
-// “ü—ÍƒfƒoƒCƒX‚Ìƒ^ƒCƒv
-enum class InputDeviceType
-{
+// å…¥åŠ›ãƒ‡ãƒã‚¤ã‚¹ã®ã‚¿ã‚¤ãƒ—
+enum class InputDeviceType {
 	Mouse,
 	KeyBoard,
 	GamePad,
 	XInput,
 };
 
-// ƒL[ƒ{[ƒh‚ÌƒL[‚Ì—ñ‹“Œ^
-enum class KeyboardKey : int
-{
+// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã®ã‚­ãƒ¼ã®åˆ—æŒ™å‹
+enum class KeyboardKey : int {
 	A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
 	Num_1, Num_2, Num_3, Num_4, Num_5, Num_6, Num_7, Num_8, Num_9, Num_0,
 	Tab, Shift, Ctrl, Alt, Space,
 };
 
-// “ü—Íƒnƒ“ƒhƒ‰[A“ü—ÍƒfƒoƒCƒX‚©‚ç‚Ì“ü—Íˆ—‚ğÀs‚·‚éB
-class InputHandler final : public Component
-{
+// å…¥åŠ›ãƒãƒ³ãƒ‰ãƒ©ãƒ¼ã€å…¥åŠ›ãƒ‡ãƒã‚¤ã‚¹ã‹ã‚‰ã®å…¥åŠ›å‡¦ç†ã‚’å®Ÿè¡Œã™ã‚‹ã€‚
+class InputHandler final : public Component {
 private:
-#pragma region -ƒL[ƒ{[ƒh“ü—Í‚Ü‚í‚è-
-	// “ü—Í—§‚¿ã‚ª‚è
+#pragma region -ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰å…¥åŠ›ã¾ã‚ã‚Š-
+	// å…¥åŠ›ç«‹ã¡ä¸ŠãŒã‚Š
 	bool started_[41]{ false };
-	// “ü—Í‚ª‚P‚Ì‚Æ‚«
+	// å…¥åŠ›ãŒï¼‘ã®ã¨ã
 	bool performed_[41]{ false };
-	// “ü—Í—§‰º‚è
+	// å…¥åŠ›ç«‹ä¸‹ã‚Š
 	bool canceled_[41]{ false };
-	// “ü—Í‚ª“ü‚Á‚Ä‚¢‚éƒtƒŒ[ƒ€”
+	// å…¥åŠ›ãŒå…¥ã£ã¦ã„ã‚‹ãƒ•ãƒ¬ãƒ¼ãƒ æ•°
 	int performedFrames_[41]{ 0 };
 
-	// ƒL[ƒ{[ƒh“ü—Íó•tˆ—
+	// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰å…¥åŠ›å—ä»˜å‡¦ç†
 	void const CheckKeyboardInput();
-	// “ü—Í‚Ì —§‚¿ã‚ª‚èA—§‰º‚è‚Ì“ü—Í‚ğXV‚·‚é
+	// å…¥åŠ›ã® ç«‹ã¡ä¸ŠãŒã‚Šã€ç«‹ä¸‹ã‚Šã®å…¥åŠ›ã‚’æ›´æ–°ã™ã‚‹
 	void const CheckInputStarted();
-	// “ü—Í‚Ì—§‰º‚è‚ğ’²‚×‚Äó‘Ô‚ÌXV‚ğ‚·‚é	
+	// å…¥åŠ›ã®ç«‹ä¸‹ã‚Šã‚’èª¿ã¹ã¦çŠ¶æ…‹ã®æ›´æ–°ã‚’ã™ã‚‹	
 	void const CheckInputCanceled();
 #pragma endregion
 

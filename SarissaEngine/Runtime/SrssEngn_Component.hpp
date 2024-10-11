@@ -1,12 +1,11 @@
-#pragma once
+﻿#pragma once
 
-// �O����`
+// 前方定義
 class Actor;
 
-// �A�N�^�[�֋@�\��ǉ�����ۂɂ���ɋ@�\�̎��������ăA�N�^�փA�^�b�`����
-// �R���|�[�l���g�N���X�̊��N���X
-class Component
-{
+// アクターへ機能を追加する際にこれに機能の実装をしてアクタへアタッチする
+// コンポーネントクラスの基底クラス
+class Component {
 protected:
 	const Actor* attachedActor_ = nullptr;
 

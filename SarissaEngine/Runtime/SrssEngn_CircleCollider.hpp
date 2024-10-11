@@ -1,10 +1,9 @@
-#pragma once
+ï»¿#pragma once
 
 #include "SrssEngn_Component.hpp"
 
-// ‰~Œ`ƒRƒ‰ƒCƒ_[
-class CircleCollider final : public Component
-{
+// å††å½¢ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼
+class CircleCollider final : public Component {
 protected:
 	float radius_ = 100;
 public:

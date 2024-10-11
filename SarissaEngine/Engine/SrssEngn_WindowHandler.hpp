@@ -1,9 +1,8 @@
-#pragma once
+﻿#pragma once
 
 #include "iostream"
 
-namespace SarissaEngine::Runtime::System
-{
+namespace SarissaEngine::Runtime::System {
 
 	extern unsigned int windowWidth_;
 	extern unsigned int windowHeigth_;

@@ -1,18 +1,17 @@
-#pragma once
+ï»¿#pragma once
 
 #include "list"
 #include "string"
 #include "DxLib.h"
 #include "SrssEngn_Vector3.h"
 
-// ‘O•û’è‹`
+// å‰æ–¹å®šç¾©
 class Level;
 class Component;
 class CircleCollider;
 
-// ƒQ[ƒ€“à‚ÌƒIƒuƒWƒFƒNƒg‚Æ‚µ‚Äˆµ‚¤ƒNƒ‰ƒX‚ÌŠî’êƒNƒ‰ƒX
-class Actor
-{
+// ã‚²ãƒ¼ãƒ å†…ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¨ã—ã¦æ‰±ã†ã‚¯ãƒ©ã‚¹ã®åŸºåº•ã‚¯ãƒ©ã‚¹
+class Actor {
 protected:
 	Vector3 position_{ 0 };
 	Vector3 rotation_{ 0 };
@@ -22,11 +21,11 @@ protected:
 	virtual void Tick_(float deltaTime);
 	virtual void End_();
 	virtual void Draw_();
-	// ŒÄ‚Ño‚µ‚ğ–¢À‘•
+	// å‘¼ã³å‡ºã—ã‚’æœªå®Ÿè£…
 	virtual void OnBeginOverlap_(const CircleCollider* other);
-	// À‘•Ï‚İ
+	// å®Ÿè£…æ¸ˆã¿
 	virtual void OnStillOverlap_(const CircleCollider* other);
-	// ŒÄ‚Ño‚µ‚ğ–¢À‘•
+	// å‘¼ã³å‡ºã—ã‚’æœªå®Ÿè£…
 	virtual void OnEndOverlap_(const CircleCollider* other);
 public:
 	std::list< Component* > attachedComponents_;

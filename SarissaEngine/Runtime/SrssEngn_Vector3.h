@@ -1,13 +1,12 @@
-#pragma once
+ï»¿#pragma once
 
 #include "string"
 #include "math.h"
 #include "sstream"
 #include "stdio.h"
 
-// OŸŒ³ƒxƒNƒgƒ‹‚ğ’ñ‹Ÿ‚·‚é
-struct Vector3
-{
+// ä¸‰æ¬¡å…ƒãƒ™ã‚¯ãƒˆãƒ«ã‚’æä¾›ã™ã‚‹
+struct Vector3 {
 public:
 	float x, y, z;
 
@@ -51,18 +50,18 @@ public:
 		z = z / other.z;
 		return *this;
 	}
-	// Še¬•ª‚Ì’l‚ª‚·‚×‚Äˆê’v‚µ‚Ä‚¢‚½‚ç ^
+	// å„æˆåˆ†ã®å€¤ãŒã™ã¹ã¦ä¸€è‡´ã—ã¦ã„ãŸã‚‰ çœŸ
 	bool operator==(const Vector3& other) const noexcept {
 		return this->x == other.x && this->y == other.y && this->z == other.z;
 	}
-	// CŒ¾Œê‚Ì•¶š—ñ‚Ö•ÏŠ·‚µ‚½’l‚ğ•Ô‚·
+	// Cè¨€èªã®æ–‡å­—åˆ—ã¸å¤‰æ›ã—ãŸå€¤ã‚’è¿”ã™
 	const char* const ToString() const {
 		char buff[64];
 		snprintf(buff, sizeof(buff), "x:%.3f,y:%.3f,z:%.3f", x, y, z);
-		buff[63] = '\0'; // •¶š—ñ‚Ì––”ö‚É‚Í•K‚¸'\0'‚ª”Ô•º‚Æ‚µ‚Ä”z’u‚³‚ê‚Ä‚¢‚éB‚±‚ê‚ª‚È‚¢‚Æ•¶š—ñ‚Æ‚µ‚Ä”F¯‚³‚ê‚È‚¢B
+		buff[63] = '\0'; // æ–‡å­—åˆ—ã®æœ«å°¾ã«ã¯å¿…ãš'\0'ãŒç•ªå…µã¨ã—ã¦é…ç½®ã•ã‚Œã¦ã„ã‚‹ã€‚ã“ã‚ŒãŒãªã„ã¨æ–‡å­—åˆ—ã¨ã—ã¦èªè­˜ã•ã‚Œãªã„ã€‚
 		return &buff[0];
 	}
-	// ƒxƒNƒgƒ‹‚Ì³‹K‰»‚ğ‚µ‚½‚Ì‚¿A³‹K‰»‚³‚ê‚½ƒxƒNƒgƒ‹‚ğ•Ô‚·
+	// ãƒ™ã‚¯ãƒˆãƒ«ã®æ­£è¦åŒ–ã‚’ã—ãŸã®ã¡ã€æ­£è¦åŒ–ã•ã‚ŒãŸãƒ™ã‚¯ãƒˆãƒ«ã‚’è¿”ã™
 	Vector3 normalized() noexcept {
 		float magnitude = sqrtf(x * x + y * y + z * z);
 		float calc_x = this->x / magnitude;
@@ -71,7 +70,7 @@ public:
 
 		return Vector3(calc_x, calc_y, calc_z);
 	}
-	// ‘å‚«‚³‚ğ•Ô‚·
+	// å¤§ãã•ã‚’è¿”ã™
 	float magnitude() noexcept {
 		float magnitude = sqrtf(x * x + y * y + z * z);
 		return magnitude;
