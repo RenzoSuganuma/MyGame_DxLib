@@ -29,7 +29,7 @@ protected:
 	virtual void OnEndOverlap_(const CircleCollider* other);
 public:
 	std::list< Component* > attachedComponents_;
-	std::string name_ = " Actor_ ";
+	std::string name_ = "";
 	bool enabled_ = true;
 
 	Actor();
@@ -43,6 +43,10 @@ public:
 	void OnBeginOverlap(const CircleCollider* other);
 	void OnStillOverlap(const CircleCollider* other);
 	void OnEndOverlap(const CircleCollider* other);
+
+	static const Actor* Create() {
+		return new Actor;
+	}
 
 	std::list< Component* >::iterator
 		const AddComponent(Component * component);

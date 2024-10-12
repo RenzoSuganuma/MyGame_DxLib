@@ -19,6 +19,10 @@ public:
 	Component();
 	~Component();
 
+	static const Component* Create() {
+		return new Component;
+	}
+
 	void Begin();
 	void Tick(float deltaTime);
 	void End();

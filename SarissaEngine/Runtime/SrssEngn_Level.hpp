@@ -14,6 +14,10 @@ public:
 	Level();
 	~Level();
 
+	static const Level* Create() {
+		return new Level;
+	}
+
 	void const MainLoopEntry();
 
 	void const MainLoopUpdate(float deltaTime);
