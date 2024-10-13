@@ -48,9 +48,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="SarissaEngine\Runtime\SrssEngn_Collider.cpp">
-      <Filter>Engine Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SarissaEngine\Engine\SrssEngn_SoundHandler.hpp">
@@ -84,9 +81,6 @@
       <Filter>Engine Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Vector3.h">
-      <Filter>Engine Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SarissaEngine\Runtime\SrssEngn_Collider.h">
       <Filter>Engine Header Files</Filter>
     </ClInclude>
   </ItemGroup>

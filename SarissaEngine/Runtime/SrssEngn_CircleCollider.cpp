@@ -1,51 +1,40 @@
-ï»¿#include "SrssEngn_CircleCollider.hpp"
+#include "SrssEngn_CircleCollider.hpp"
 #include "SrssEngn_ActorUtilities.hpp"
 #include "SrssEngn_Actor.hpp"
 #include "math.h"
 #include "DxLib.h"
 
 #pragma region virtual-functions
-void CircleCollider::Begin_() {
-	type_ = Collider::Other;
-}
+void CircleCollider::Begin_() {}
 void CircleCollider::Tick_(float deltaTime) {}
 void CircleCollider::End_() {}
 void CircleCollider::Draw_() {}
 #pragma endregion
 
-const bool CircleCollider::IsIntersectedWith(const Collider* other)
+const bool CircleCollider::IsIntersectedWith(const CircleCollider* other)
 {
-	switch (other->type_)
-	{
-	case Collider::AABB:
-		break;
-	case Collider::OBB:
-		break;
-	default:
-		auto c1 = ActorUtilities::GetComponent< CircleCollider* >
-			(const_cast<Actor*>(attachedActor_));
-		auto c2 = ActorUtilities::GetComponent< CircleCollider* >
-			(const_cast<Actor*>(other->GetActor()));
+	auto c1 = ActorUtilities::GetComponent< CircleCollider* >
+		(const_cast<Actor*>(attachedActor_));
+	auto c2 = ActorUtilities::GetComponent< CircleCollider* >
+		(const_cast<Actor*>(other->GetActor()));
 
-		auto p_c1 = const_cast<Actor*>(attachedActor_)->GetPosition();
-		auto p_c2 = const_cast<Actor*>(other->GetActor())->GetPosition();
+	auto p_c1 = const_cast<Actor*>(attachedActor_)->GetPosition();
+	auto p_c2 = const_cast<Actor*>(other->GetActor())->GetPosition();
 
-		double dx = p_c1.x - p_c2.x;
-		double dy = p_c1.y - p_c2.y;
-		double r1 = c1->GetRadius();
-		double r2 = c2->GetRadius();
+	double dx = p_c1.x - p_c2.x;
+	double dy = p_c1.y - p_c2.y;
+	double r1 = c1->GetRadius();
+	double r2 = c2->GetRadius();
 
-		double rr = (r1 + r2) * (r1 + r2);
+	double rr = (r1 + r2) * (r1 + r2);
 
-		bool condition = (dx * dx) + (dy * dy) <= (r1 + r2) * (r1 + r2);
-		if (condition)
-		{ // â†“ å½“ãŸã£ã¦ã„ã‚‹ãªã‚‰é€€ã
-			auto bck_v = p_c1 - p_c2;
-			bck_v *= .1f;
-			const_cast<Actor*>(attachedActor_)->SetPosition(p_c1 + bck_v);
-		} // â†‘ å½“ãŸã£ã¦ã„ã‚‹ãªã‚‰é€€ã
-		return  condition;
-		break;
-	}
+	bool condition = (dx * dx) + (dy * dy) <= (r1 + r2) * (r1 + r2);
+	if (condition)
+	{ // « “–‚½‚Á‚Ä‚¢‚é‚È‚ç‘Ş‚­
+		auto bck_v = p_c1 - p_c2;
+		bck_v *= .1f;
+		const_cast<Actor*>(attachedActor_)->SetPosition(p_c1 + bck_v);
+	} // ª “–‚½‚Á‚Ä‚¢‚é‚È‚ç‘Ş‚­
+	return  condition;
 }
 
